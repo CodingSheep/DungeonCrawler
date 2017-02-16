@@ -34,32 +34,34 @@ Motivation:
   Frequent communication.
   
 ##Requirements
-  ###1.User story 1
-    As a player, I want to play a game with a rhythm game like mechanic, so that I can feel engaged to the game.
-     Priority: Critical
-     Story Points: 8
-  ###2.User story 2
-    As a new player, I want a tutorial level, so that I can learn how to play the game.
-     Priority: Low
-     Story Points: 2
-  ###3.User story 3
-    As a skilled player, I want a game that continosly provides a challenge, so that I can never get bored.
-     Priority: Medium
-     Story Points: 5
-  ###4.User story 4
-    As a player or a watcher, I want an aesthetically interesting game, so that I can enjoy watching the game.
-    Priority: High
-    Story Points: 13
-  ###5.User story 5
-    As a player, I want a intuitive and minimal user interface, so that interacting with non-core game mechanics isn't a negative experience.
-    priority: Medium
-    Story Points: 3
-  ###6.User story 6
-    As a player, I want fast-paced gameplay and movement, so that the game feels more engaging.
-    Priority: Critical
-    Story Points: 1
+  1. User story 1
+    * As a player, I want to play a game with a rhythm game like mechanic, so that I can feel engaged to the game.
+    * Priority: Critical
+    * Story Points: 8
+  2. User story 2
+    * As a new player, I want a tutorial level, so that I can learn how to play the game.
+    * Priority: Low
+    * Story Points: 2
+  3. User story 3
+    * As a skilled player, I want a game that continosly provides a challenge, so that I can never get bored.
+    * Priority: Medium
+    * Story Points: 5
+  4. User story 4
+    * As a player or a watcher, I want an aesthetically interesting game, so that I can enjoy watching the game.
+    * Priority: High
+    * Story Points: 13
+  5. User story 5
+    * As a player, I want a intuitive and minimal user interface, so that interacting with non-core game mechanics isn't a negative experience.
+    * Priority: Medium
+    * Story Points: 3
+  6. User story 6
+    * As a player, I want fast-paced gameplay and movement, so that the game feels more engaging.
+    * Priority: Critical
+    * Story Points: 1
+    
 ##Methodology
-  Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycles, with frequent meeting and testing. But with a set end goal.
+
+Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycles, with frequent meeting and testing. But with a set end goal.
 
 ##Tracking Software
  Github Issues and Milestones/Projects of the Organization
