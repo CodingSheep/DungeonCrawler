@@ -9,7 +9,7 @@ Our attempt at a dungeon crawler game.
   5.  Stevan Maksimovic, stevmak
 
 ##Title
-  That one Dungeon Crawler
+  That One Dungeon Crawler
 ##Description
 
   A game that uses a rhythm game like interaction as a pivotal part of the base game mechanic. This game will be a dungeon crawler-esk 2.5d isometric rouge-like hack and slash. Made in Unity.
