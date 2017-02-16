@@ -10,8 +10,6 @@ Our attempt at a dungeon crawler game.
 
 ##Title
 
-  That One Dungeon Crawler
-
 ##Description
 
   A game that uses a rhythm game like interaction as a pivotal part of the base game mechanic. This game will be a dungeon crawler-esk 2.5d isometric rouge-like hack and slash. Made in Unity.
@@ -67,6 +65,7 @@ Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycl
 
 ##Tracking Software
  Github Issues and Milestones/Projects of the Organization
+ [Github Milestones](https://github.com/softdev3308/DungeonCrawler/milestones)
  [Github Project Tracking](https://github.com/softdev3308/DungeonCrawler/projects/1)
 ##Project Plan
-  
+![project](https://puu.sh/u6dqd/8710624e34.png)
