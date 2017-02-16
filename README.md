@@ -65,7 +65,8 @@ Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycl
 
 ##Tracking Software
  Github Issues and Milestones/Projects of the Organization
- [Github Milestones](https://github.com/softdev3308/DungeonCrawler/milestones)
- [Github Project Tracking](https://github.com/softdev3308/DungeonCrawler/projects/1)
+ 1. [Github Milestones](https://github.com/softdev3308/DungeonCrawler/milestones)
+ 2. [Github Project Tracking](https://github.com/softdev3308/DungeonCrawler/projects/1)
+ 
 ##Project Plan
 ![project](https://puu.sh/u6dqd/8710624e34.png)
