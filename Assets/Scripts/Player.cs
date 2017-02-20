@@ -23,7 +23,11 @@ public class Player : MonoBehaviour {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
-        transform.position = deltamovement;
+        //Im very sure this bit is obvious, though I will explain the Time.deltaTime.
+ -	//Time.deltaTime is basically the time it took to finish the last frame
+ -	//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
+	    
+	transform.position = deltamovement;
     }
 
 }
