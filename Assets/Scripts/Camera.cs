@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour {
 
-	//Sets up player
-	public Transform player = null;
-	public Transform target = null;
 
-	public Vector3 speed = new Vector3(4.0f, 0.0f, 4.0f);
-	public Vector3 nextPosition = Vector3.zero;
+    private Vector3 offset;
 
-	void Start()
-	{
-		this.transform.LookAt (player.position);
-	}
+    //Sets up player
+    private GameObject player;
 
-	void LateUpdate()
-	{
-		nextPosition.x = target.position.x;
-		nextPosition.y = target.position.y;
-		nextPosition.z = target.position.z;
+    // Use this for initialization
+    void Start()
+    {
+        offset = this.GetComponent<Transform>().position;
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
-		/*
-		nextPosition.x = Mathf.Lerp(this.transform.position.x, target.position.x, speed.x * Time.deltaTime);
-		nextPosition.y = Mathf.Lerp(this.transform.position.y, target.position.y, speed.y * Time.deltaTime);
-		nextPosition.z = Mathf.Lerp(this.transform.position.z, target.position.z, speed.z * Time.deltaTime);
-		*/
+    
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
+        transform.LookAt(player.transform);
+    }
 
-
-		this.transform.position = nextPosition;
-		this.transform.LookAt (player.position);
-	}
 }
