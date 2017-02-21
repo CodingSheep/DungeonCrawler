@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour {
+public class CameraController : MonoBehaviour {
 
 
     private Vector3 offset;
@@ -21,7 +21,7 @@ public class Camera : MonoBehaviour {
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;
-        transform.LookAt(player.transform);
+        //transform.LookAt(player.transform);
     }
 
 }
