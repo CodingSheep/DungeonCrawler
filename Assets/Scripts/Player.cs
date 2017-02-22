@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 	public float speed = 5.0f;
 
 	private Camera mainCam;
+	private GameObject cursor;
 	private Ray camRay; //Ray from camera to mouse position
 	private RaycastHit camRayHit; //Hit point of raycast
 	private Vector3 deltamovement;
@@ -16,7 +17,8 @@ public class Player : MonoBehaviour {
     //For future use.
     void Start()
     {
-        gamecontroller = GameObject.FindGameObjectWithTag("GameController");
+		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
+		cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
     }
 
@@ -40,7 +42,10 @@ public class Player : MonoBehaviour {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
 			Vector3 targetPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
+			Vector3 cursorPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
+			cursor.transform.position = cursorPos;
 			transform.LookAt(targetPos);
+			transform.eulerAngles = transform.eulerAngles + 180 * Vector3.up;
 		}
 	}
 
