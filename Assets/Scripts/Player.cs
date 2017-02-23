@@ -35,15 +35,20 @@ public class Player : MonoBehaviour {
 	    
 		transform.position = deltamovement;
 
-		AimPlayer ();
     }
+
+	void FixedUpdate() {
+		AimPlayer ();
+
+	}
 
 	void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
 			Vector3 targetPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
-			Vector3 cursorPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
-			cursor.transform.position = cursorPos;
+			//Custom cursor is jittery, using default cursor for now
+			/*Vector3 cursorPos = new Vector3(camRayHit.point.x, transform.position.y-.9f, camRayHit.point.z);
+			cursor.transform.position = cursorPos;*/
 			transform.LookAt(targetPos);
 			transform.eulerAngles = transform.eulerAngles + 180 * Vector3.up;
 		}
