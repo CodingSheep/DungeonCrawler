@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
-	public float speed = 5.0f;
+	public float speed;
 
 	private Camera mainCam;
 	private GameObject cursor;
