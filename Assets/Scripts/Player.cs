@@ -6,7 +6,6 @@ public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
 	public float speed;
-	public SpellController spellUI;
 
 	private Camera mainCam;
 	private GameObject cursor;
@@ -15,19 +14,12 @@ public class Player : MonoBehaviour {
 	private Vector3 deltamovement;
     private GameObject gamecontroller;
 
-	private double timeHeld;
-	private double test;
-	private bool rightClicked;
-
     //For future use.
     void Start()
     {
 		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
 		cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
-		spellUI.setup ();
-
-		timeHeld = 0.0;
     }
 
     //Every Frame I believe
@@ -43,28 +35,11 @@ public class Player : MonoBehaviour {
 	    
 		transform.position = deltamovement;
 
-		if (Input.GetMouseButtonDown (1))
-			rightClicked = true;
-		if (Input.GetMouseButtonUp (1))
-			rightClicked = false;
-
-		//Handles whether we're starting a spell or a regular arrow
-		if (rightClicked)
-			timeHeld += Time.deltaTime;
-		else {
-			timeHeld = 0;
-
-			//We're just firing a regular arrow. CREATE OBJECT HERE
-		}
     }
 
 	void FixedUpdate() {
-		if (timeHeld < 1.0)
-			AimPlayer ();
-		else {
-			spellUI.firing = true;
-			SpellManager ();
-		}
+		AimPlayer ();
+
 	}
 
 	void AimPlayer() {
@@ -79,11 +54,4 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void SpellManager () {
-		if (spellUI.firing) {
-			spellUI.Osu ();
-		}
-		else
-			timeHeld = 0;
-	}
 }
