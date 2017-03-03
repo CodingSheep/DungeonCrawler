@@ -18,6 +18,8 @@ public class Spell
 
 public class SpellController : MonoBehaviour {
 
+	private GameObject player;
+	public GameObject basicArrow;
 	//public Texture2D cursorTexture;
 
 	//Setup
@@ -35,12 +37,26 @@ public class SpellController : MonoBehaviour {
 	public int div;
 
 	//Spells!
+	public Spell basic = new Spell(true, 1.0, "Basic");
 	public Spell fire = new Spell(true, 5.0, "Fire");
 	public Spell lightning = new Spell(false, 5.0, "Lightning");
 	public Spell earth = new Spell(false, 5.0, "Earth");
 	public Spell ice = new Spell(true, 5.0, "Ice");
 
 	//private Vector2 hotSpot = Vector2.zero;
+
+	public void Start() {
+		player = GameObject.FindWithTag ("Player");
+	}
+
+	public void Update() {
+		//Basic arrow shot (right click)
+		if (Input.GetButtonDown ("Fire2")) {
+			SpawnArrow (basic);
+		}
+		//Other input events can be set up here to spawn arrows based on the final osu
+		//circle hit
+	}
 
 	//This is where we all all possible spells to a regular spell queue.
 	public void setup () {
@@ -84,5 +100,10 @@ public class SpellController : MonoBehaviour {
 			osuTime = 0;
 			settingUp = true;
 		}
+	}
+
+	public void SpawnArrow(Spell spell) {
+		GameObject toSpawn = Instantiate (basicArrow, player.transform.position, player.transform.rotation, this.transform);
+		toSpawn.GetComponent<Arrow> ().spell = spell;
 	}
 }

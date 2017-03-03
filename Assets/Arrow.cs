@@ -13,7 +13,7 @@ public class Arrow : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		transform.Translate (transform.forward * speed * Time.deltaTime);
+		transform.Translate (Vector3.forward * speed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision col) {
