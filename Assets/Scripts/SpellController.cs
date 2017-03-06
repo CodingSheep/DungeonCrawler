@@ -7,12 +7,14 @@ public class Spell
 	public bool unlocked;
 	public double dmg;
 	public string name;
+	public float speed;
 
-	public Spell(bool un, double dm, string na)
+	public Spell(bool un, double dm, string na, float sp)
 	{
 		unlocked = un;
 		dmg = dm;
 		name = na;
+		speed = sp;
 	}
 }
 
@@ -37,11 +39,11 @@ public class SpellController : MonoBehaviour {
 	public int div;
 
 	//Spells!
-	public Spell basic = new Spell(true, 1.0, "Basic");
-	public Spell fire = new Spell(true, 5.0, "Fire");
-	public Spell lightning = new Spell(false, 5.0, "Lightning");
-	public Spell earth = new Spell(false, 5.0, "Earth");
-	public Spell ice = new Spell(true, 5.0, "Ice");
+	public Spell basic = new Spell(true, 1.0, "Basic", 40f);
+	public Spell fire = new Spell(true, 5.0, "Fire", 40f);
+	public Spell lightning = new Spell(false, 5.0, "Lightning", 40f);
+	public Spell earth = new Spell(false, 5.0, "Earth", 40f);
+	public Spell ice = new Spell(true, 5.0, "Ice", 40f);
 
 	//private Vector2 hotSpot = Vector2.zero;
 
