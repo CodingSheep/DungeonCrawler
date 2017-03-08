@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
 	public float speed = 5.0f;
+	public float arrowSpeed = 40f;
+	public float arrowDmg = 5f;
 	public SpellController spellUI;
 
 	private Camera mainCam;

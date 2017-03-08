@@ -5,16 +5,16 @@ using UnityEngine;
 public class Spell
 {
 	public bool unlocked;
-	public double dmg;
+	public double dmgMult;
 	public string name;
-	public float speed;
+	public float speedMult;
 
-	public Spell(bool un, double dm, string na, float sp)
+	public Spell(bool un, double dm, string na, float sm)
 	{
 		unlocked = un;
-		dmg = dm;
+		dmgMult = dm;
 		name = na;
-		speed = sp;
+		speedMult = sm;
 	}
 }
 
@@ -53,11 +53,16 @@ public class SpellController : MonoBehaviour {
 
 	public void Update() {
 		//Basic arrow shot (right click)
-		if (Input.GetButtonDown ("Fire2")) {
+		if (Input.GetButtonUp ("Fire2")) {
+			//if (finalHit == null)
 			SpawnArrow (basic);
+
+
+			/*Other input events can be set up here to spawn arrows based on the final osu
+			circle hit*/
+			//else
+			//SpawnArrow(finalHit.spell);
 		}
-		//Other input events can be set up here to spawn arrows based on the final osu
-		//circle hit
 	}
 
 	//This is where we all all possible spells to a regular spell queue.
