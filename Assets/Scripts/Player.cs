@@ -6,7 +6,8 @@ public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
 	public float speed = 5.0f;
-	public SpellController spellUI;
+	public float arrowSpeed = 40f;
+	public float arrowDmg = 5f;
 
 	private Camera mainCam;
 	private GameObject cursor;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour {
 	private RaycastHit camRayHit; //Hit point of raycast
 	private Vector3 deltamovement;
     private GameObject gamecontroller;
+
+	private SpellAndArrowManager manager;
 
 	private double timeHeld;
 	private double test;
@@ -25,7 +28,7 @@ public class Player : MonoBehaviour {
 		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
 		cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
-		spellUI.setup ();
+		manager.setup ();
 
 		timeHeld = 0.0;
     }
@@ -48,24 +51,23 @@ public class Player : MonoBehaviour {
 		if (Input.GetMouseButtonUp (1))
 			rightClicked = false;
 
+		//Must pass this test first to see if we're firing a regular arrow or a basic arrow.
+		if (timeHeld < 1.5)
+			AimPlayer ();
+		else
+			//For some reason, this causes an error right here. Any way to fix it?
+			manager.toOsu ();
+
 		//Handles whether we're starting a spell or a regular arrow
 		if (rightClicked)
 			timeHeld += Time.deltaTime;
 		else {
 			timeHeld = 0;
 
-			//We're just firing a regular arrow. CREATE OBJECT HERE
+			//Spawns Basic Arrow. FIX SYNTAX
+			//GameObject toSpawn = Instantiate (manager.basicArrow, player.transform.position, player.transform.rotation, this.transform);
 		}
     }
-
-	void FixedUpdate() {
-		if (timeHeld < 1.0)
-			AimPlayer ();
-		else {
-			spellUI.firing = true;
-			SpellManager ();
-		}
-	}
 
 	void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
@@ -77,13 +79,5 @@ public class Player : MonoBehaviour {
 			transform.LookAt(targetPos);
 			transform.eulerAngles = transform.eulerAngles + 180 * Vector3.up;
 		}
-	}
-
-	void SpellManager () {
-		if (spellUI.firing) {
-			spellUI.Osu ();
-		}
-		else
-			timeHeld = 0;
 	}
 }
