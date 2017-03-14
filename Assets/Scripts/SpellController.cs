@@ -2,26 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell
-{
-	public bool unlocked;
-	public double dmgMult;
-	public string name;
-	public float speedMult;
-
-	public Spell(bool un, double dm, string na, float sm)
-	{
-		unlocked = un;
-		dmgMult = dm;
-		name = na;
-		speedMult = sm;
-	}
-}
-
 public class SpellController : MonoBehaviour {
 
 	private GameObject player;
 	public GameObject basicArrow;
+    public GameObject FastArrow;
 	//public Texture2D cursorTexture;
 
 	//Setup
@@ -38,7 +23,7 @@ public class SpellController : MonoBehaviour {
 	//UI Wheel
 	public int div;
 
-	//Spells!
+    //Spells!
 	public Spell basic = new Spell(true, 1.0, "Basic", 40f);
 	public Spell fire = new Spell(true, 5.0, "Fire", 40f);
 	public Spell lightning = new Spell(false, 5.0, "Lightning", 40f);
@@ -55,7 +40,7 @@ public class SpellController : MonoBehaviour {
 		//Basic arrow shot (right click)
 		if (Input.GetButtonUp ("Fire2")) {
 			//if (finalHit == null)
-			SpawnArrow (basic);
+			SpawnArrow (basicArrow);
 
 
 			/*Other input events can be set up here to spawn arrows based on the final osu
@@ -63,7 +48,19 @@ public class SpellController : MonoBehaviour {
 			//else
 			//SpawnArrow(finalHit.spell);
 		}
-	}
+        //TODO: Fix this part
+        if (Input.GetButtonUp("Fire1"))
+        {
+            //if (finalHit == null)
+            SpawnArrow(FastArrow);
+
+
+            /*Other input events can be set up here to spawn arrows based on the final osu
+			circle hit*/
+            //else
+            //SpawnArrow(finalHit.spell);
+        }
+    }
 
 	//This is where we all all possible spells to a regular spell queue.
 	public void setup () {
@@ -109,8 +106,8 @@ public class SpellController : MonoBehaviour {
 		}
 	}
 
-	public void SpawnArrow(Spell spell) {
-		GameObject toSpawn = Instantiate (basicArrow, player.transform.position, player.transform.rotation, this.transform);
-		toSpawn.GetComponent<Arrow> ().spell = spell;
+	public void SpawnArrow(GameObject arrow) {
+		GameObject toSpawn = Instantiate (arrow, player.transform.position, player.transform.rotation, this.transform);
+		//toSpawn.GetComponent<Arrow> ().spell = spell;
 	}
 }

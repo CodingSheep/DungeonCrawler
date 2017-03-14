@@ -8,7 +8,6 @@ public class Player : MonoBehaviour {
 	public float speed = 5.0f;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
-	
 
 	private Camera mainCam;
 	private GameObject cursor;
