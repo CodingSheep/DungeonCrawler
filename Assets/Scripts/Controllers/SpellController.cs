@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpellController : MonoBehaviour {
+    private UIController UIController;
 
 	private GameObject player;
 	public GameObject basicArrow;
@@ -37,6 +38,7 @@ public class SpellController : MonoBehaviour {
 	//private Vector2 hotSpot = Vector2.zero;
 
 	public void Start() {
+        UIController = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
 		player = GameObject.FindWithTag ("Player");
         firing = false;
 
@@ -45,7 +47,7 @@ public class SpellController : MonoBehaviour {
 	public void Update() {
         if (firing) {
             osuTime += osuTimeScale*Time.deltaTime;
-            Debug.Log(osuTime);
+            //Debug.Log(osuTime);
         }
     }
 
@@ -56,7 +58,7 @@ public class SpellController : MonoBehaviour {
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
 		*/
 
-		osuTime = 0;
+		//osuTime = 0;
 
 		//Spell Setup
 		allSpells.Add(fire);
@@ -79,6 +81,7 @@ public class SpellController : MonoBehaviour {
     }
 
     //WIP
+    /*
     public void Osu () {
 		//This is where the initial circles are made
 		if (settingUp) {
@@ -97,7 +100,7 @@ public class SpellController : MonoBehaviour {
 			settingUp = true;
 		}
 	}
-
+    */
 	public void SpawnArrow(GameObject arrow) {
 		GameObject toSpawn = Instantiate (arrow, player.transform.position, player.transform.rotation, this.transform);
 		//toSpawn.GetComponent<Arrow> ().spell = spell;
@@ -105,6 +108,7 @@ public class SpellController : MonoBehaviour {
 
     public void StartSpawnSequence()
     {
+        UIController.SetIsShooting(true);
         loaded = basicArrow;
         firing = true;
         osuTime = 0;
@@ -112,6 +116,7 @@ public class SpellController : MonoBehaviour {
 
     public void EndSpawnSequence()
     {
+        UIController.SetIsShooting(false);
         SpawnArrow(loaded);
         firing = false;
         osuTime = 0;

@@ -83,7 +83,7 @@ public class Player : MonoBehaviour {
 
 	void SpellManager () {
 		if (spellUI.firing) {
-			spellUI.Osu ();
+			//spellUI.Osu ();
 		}
 		else
 			timeHeld = 0;
