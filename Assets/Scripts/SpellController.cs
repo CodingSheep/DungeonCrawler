@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,29 +38,7 @@ public class SpellController : MonoBehaviour {
 	}
 
 	public void Update() {
-		//Basic arrow shot (right click)
-		if (Input.GetButtonUp ("Fire2")) {
-			//if (finalHit == null)
-			SpawnArrow (basicArrow);
-
-
-			/*Other input events can be set up here to spawn arrows based on the final osu
-			circle hit*/
-			//else
-			//SpawnArrow(finalHit.spell);
-		}
-        //TODO: Fix this part
-        if (Input.GetButtonUp("Fire1"))
-        {
-            //if (finalHit == null)
-            SpawnArrow(FastArrow);
-
-
-            /*Other input events can be set up here to spawn arrows based on the final osu
-			circle hit*/
-            //else
-            //SpawnArrow(finalHit.spell);
-        }
+		
     }
 
 	//This is where we all all possible spells to a regular spell queue.
@@ -86,8 +65,13 @@ public class SpellController : MonoBehaviour {
 		int div = 360 / unlockedSpells.Count;
 	}
 
-	//WIP
-	public void Osu () {
+    internal void SpawnArrow(object fastArrow)
+    {
+        throw new NotImplementedException();
+    }
+
+    //WIP
+    public void Osu () {
 		//This is where the initial circles are made
 		if (settingUp) {
 			//INSERT CODE FOR SPAWNING THE WHEEL FROM PREFABS

@@ -17,8 +17,6 @@ public class OsuCircle : MonoBehaviour {
 	private OsuCircle[] circle_arr;
 
 	void Start () {
-
-
 		//initializes variables
 		shrink = false;
 		cam = GameObject.FindGameObjectWithTag ("MainCamera");
@@ -55,9 +53,7 @@ public class OsuCircle : MonoBehaviour {
 
 	//updates position
 	void LateUpdate(){
-
 		transform.position = cam.transform.position + offset;
-	
 	}
 
 	void OnMouseDown(){
