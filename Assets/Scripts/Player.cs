@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 	public float arrowDmg = 5f;
 
 	private Camera mainCam;
-	private GameObject cursor;
+	//private GameObject cursor;
 	private Ray camRay; //Ray from camera to mouse position
 	private RaycastHit camRayHit; //Hit point of raycast
 	private Vector3 deltamovement;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
 		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
-		cursor = GameObject.FindGameObjectWithTag("Cursor");
+		//cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 

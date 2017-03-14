@@ -16,7 +16,7 @@ public class Arrow : MonoBehaviour {
 		Invoke ("DestroySelf", lifetime);
 		//speedMult = spell.speedMult;
 		model = Resources.Load ("Models/" + spell.name) as GameObject;
-		if (model != null) {Debug.Log ("model loaded");}
+		//if (model != null) {Debug.Log ("model loaded");}
 		this.GetComponentInChildren<MeshFilter> ().mesh = model.GetComponent<MeshFilter> ().sharedMesh;
         Exists = true;
     }

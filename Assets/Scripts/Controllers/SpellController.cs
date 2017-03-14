@@ -15,7 +15,10 @@ public class SpellController : MonoBehaviour {
 	private bool settingUp = true;
 
 	//Part of Osu Mechanic
-	public int osuTime;
+	private float osuTime;
+    public float osuTimeScale;
+
+    public GameObject loaded;
 
 	//Spell List!
 	public List<Spell> allSpells = new List<Spell>();
@@ -35,10 +38,15 @@ public class SpellController : MonoBehaviour {
 
 	public void Start() {
 		player = GameObject.FindWithTag ("Player");
-	}
+        firing = false;
+
+    }
 
 	public void Update() {
-		
+        if (firing) {
+            osuTime += osuTimeScale*Time.deltaTime;
+            Debug.Log(osuTime);
+        }
     }
 
 	//This is where we all all possible spells to a regular spell queue.
@@ -94,4 +102,22 @@ public class SpellController : MonoBehaviour {
 		GameObject toSpawn = Instantiate (arrow, player.transform.position, player.transform.rotation, this.transform);
 		//toSpawn.GetComponent<Arrow> ().spell = spell;
 	}
+
+    public void StartSpawnSequence()
+    {
+        loaded = basicArrow;
+        firing = true;
+        osuTime = 0;
+    }
+
+    public void EndSpawnSequence()
+    {
+        SpawnArrow(loaded);
+        firing = false;
+        osuTime = 0;
+    }
+
+    public float GetOsuTime() {
+        return osuTime;
+    }
 }

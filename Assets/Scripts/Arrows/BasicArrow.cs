@@ -12,7 +12,7 @@ public class BasicArrow : Arrow {
     {
         BaseArrow = base.gameObject.GetComponent<Arrow>();
         BaseArrow.Start();
-        Debug.Log("Basic Arrow");
+        //Debug.Log("Basic Arrow");
     }
 
     // Update is called once per frame

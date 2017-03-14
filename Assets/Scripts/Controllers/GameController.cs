@@ -23,28 +23,14 @@ public class GameController : MonoBehaviour {
 		}
 
         //Basic arrow shot (right click)
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonDown("Fire2"))
         {
             //if (finalHit == null)
-            spellController.SpawnArrow(spellController.basicArrow);
+            spellController.StartSpawnSequence();
 
-
-            /*Other input events can be set up here to spawn arrows based on the final osu
-			circle hit*/
-            //else
-            //SpawnArrow(finalHit.spell);
         }
-        //TODO: Fix this part
-        if (Input.GetButtonUp("Fire1"))
-        {
-            //if (finalHit == null)
-            spellController.SpawnArrow(spellController.FastArrow);
-
-
-            /*Other input events can be set up here to spawn arrows based on the final osu
-			circle hit*/
-            //else
-            //SpawnArrow(finalHit.spell);
+        if (Input.GetButtonUp("Fire2")) {
+            spellController.EndSpawnSequence();
         }
 
     }
