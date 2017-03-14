@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	public float speed = 5.0f;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
-	public SpellController spellUI;
+	
 
 	private Camera mainCam;
 	private GameObject cursor;
@@ -16,8 +16,9 @@ public class Player : MonoBehaviour {
 	private RaycastHit camRayHit; //Hit point of raycast
 	private Vector3 deltamovement;
     private GameObject gamecontroller;
+    private SpellController spellUI;
 
-	private double timeHeld;
+    private double timeHeld;
 	private double test;
 	private bool rightClicked;
 
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour {
 		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
 		cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
-		spellUI.setup ();
+        spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 
 		timeHeld = 0.0;
     }
