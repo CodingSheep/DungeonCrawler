@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
 	public float speed = 5.0f;
+    public float rotationSpeed;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
 
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour {
 	private Ray camRay; //Ray from camera to mouse position
 	private RaycastHit camRayHit; //Hit point of raycast
 	private Vector3 deltamovement;
-    private GameObject gamecontroller;
+    private GameController gamecontroller;
     private SpellController spellUI;
 
     private double timeHeld;
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour {
     //For future use.
     void Start()
     {
-		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
+		gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		//cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
@@ -44,48 +45,20 @@ public class Player : MonoBehaviour {
  		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
 	    
 		transform.position = deltamovement;
-
-		if (Input.GetMouseButtonDown (1))
-			rightClicked = true;
-		if (Input.GetMouseButtonUp (1))
-			rightClicked = false;
-
-		//Handles whether we're starting a spell or a regular arrow
-		if (rightClicked)
-			timeHeld += Time.deltaTime;
-		else {
-			timeHeld = 0;
-
-			//We're just firing a regular arrow. CREATE OBJECT HERE
-		}
+    }
+    void LateUpdate() {
+        if (!gamecontroller.playerIsFiring) {
+            AimPlayer();
+        }
     }
 
-	void FixedUpdate() {
-		if (timeHeld < 1.0)
-			AimPlayer ();
-		else {
-			spellUI.firing = true;
-			SpellManager ();
-		}
-	}
-
-	void AimPlayer() {
+    void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
 			Vector3 targetPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
-			//Custom cursor is jittery, using default cursor for now
-			/*Vector3 cursorPos = new Vector3(camRayHit.point.x, transform.position.y-.9f, camRayHit.point.z);
-			cursor.transform.position = cursorPos;*/
-			transform.LookAt(targetPos);
+
+            transform.LookAt(targetPos);
 			transform.eulerAngles = transform.eulerAngles + 180 * Vector3.up;
 		}
-	}
-
-	void SpellManager () {
-		if (spellUI.firing) {
-			//spellUI.Osu ();
-		}
-		else
-			timeHeld = 0;
 	}
 }

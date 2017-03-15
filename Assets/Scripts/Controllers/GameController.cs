@@ -7,11 +7,12 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	public GameObject osuCircles;
     private SpellController spellController;
-
+    public bool playerIsFiring;
 	void Start () {
-        spellController = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();  
+        spellController = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
+        playerIsFiring = false;
 
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -27,10 +28,12 @@ public class GameController : MonoBehaviour {
         {
             //if (finalHit == null)
             spellController.StartSpawnSequence();
+            playerIsFiring = true;
 
         }
         if (Input.GetButtonUp("Fire2")) {
             spellController.EndSpawnSequence();
+            playerIsFiring = false;
         }
 
     }
