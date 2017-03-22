@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpellController : MonoBehaviour {
     private UIController UIController;
-    private GameController gameController;
+    private GameController GameController;
 	private GameObject player;
 	public GameObject basicArrow;
     public GameObject FastArrow;
@@ -22,7 +22,7 @@ public class SpellController : MonoBehaviour {
 
 	public void Start() {
         UIController = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        GameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         player = GameObject.FindWithTag ("Player");
         firing = false;
@@ -30,7 +30,8 @@ public class SpellController : MonoBehaviour {
     }
 
 	public void Update() {
-        if (gameController.playerIsFiring) {
+        //Currently Breaking here for some reason
+		if (GameController.playerIsFiring) {
             osuTime += osuTimeScale*Time.deltaTime;
         }
     }
@@ -42,14 +43,14 @@ public class SpellController : MonoBehaviour {
 
     public void StartSpawnSequence()
     {
-        UIController.SetIsShooting(true);
+		UIController.isShooting = true;
         loaded = basicArrow;
         osuTime = 0;
     }
 
     public void EndSpawnSequence()
     {
-        UIController.SetIsShooting(false);
+		UIController.isShooting = false;
         SpawnArrow(loaded);
         osuTime = 0;
     }

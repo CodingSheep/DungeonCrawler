@@ -5,9 +5,10 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject osuCircles;
+	public GameObject OsuCircle;
     private SpellController spellController;
     public bool playerIsFiring;
+
 	void Start () {
         spellController = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
         playerIsFiring = false;
@@ -18,9 +19,15 @@ public class GameController : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyDown (KeyCode.Q)) {
-			Instantiate (osuCircles, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-			OsuCircle this_circle = osuCircles.GetComponent<OsuCircle> ();
-			//this_circle.cluster (4);
+			//creates game object
+			GameObject osu_Circle= Instantiate (OsuCircle);
+
+			//displaces the circle 2 times its size above player
+			float displacement = osu_Circle.transform.localScale.x * 50;
+
+			//sets postions and parent
+			osu_Circle.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform);
+			osu_Circle.transform.position = new Vector2 (Screen.width / 2, Screen.height / 2 + displacement);
 		}
 
         //Basic arrow shot (right click)

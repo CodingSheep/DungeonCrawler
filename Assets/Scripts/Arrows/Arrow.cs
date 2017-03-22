@@ -9,7 +9,6 @@ public class Arrow : MonoBehaviour {
 	public float lifetime = 2f;
 	public GameObject model;
 	public GameObject player = null;
-    public bool Exists = false;
 
 	public void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -18,19 +17,12 @@ public class Arrow : MonoBehaviour {
 		model = Resources.Load ("Models/" + spell.name) as GameObject;
 		//if (model != null) {Debug.Log ("model loaded");}
 		this.GetComponentInChildren<MeshFilter> ().mesh = model.GetComponent<MeshFilter> ().sharedMesh;
-        Exists = true;
     }
 
     void FixedUpdate()
     {
-        if(Exists)
-        {
             //player = GameObject.FindGameObjectWithTag("Player");
             transform.Translate(Vector3.forward * speedMult * player.GetComponent<Player>().arrowSpeed);
-        }
-        else{
-            Start();
-        }
     }
 
     void OnCollisionEnter(Collision col) {
