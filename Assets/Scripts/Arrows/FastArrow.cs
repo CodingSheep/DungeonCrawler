@@ -12,7 +12,7 @@ public class FastArrow : Arrow {
     {
         BaseArrow = base.gameObject.GetComponent<Arrow>();
         BaseArrow.Start();
-        Debug.Log("Fast Arrow");
+        //Debug.Log("Fast Arrow");
     }
 
     // Update is called once per frame

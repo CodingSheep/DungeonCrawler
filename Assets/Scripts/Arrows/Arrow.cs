@@ -21,7 +21,7 @@ public class Arrow : MonoBehaviour {
         Exists = true;
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if(Exists)
         {
