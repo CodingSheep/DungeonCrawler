@@ -25,8 +25,4 @@ public class UIController : MonoBehaviour {
 	void Update () {
         
 	}
-
-    public void SetIsShooting(bool val) {
-        isShooting = val;
-    }
 }
