@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
 		cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
+		manager = GameObject.Find ("SpellController").GetComponent<SpellAndArrowManager>();
 		manager.setup ();
 
 		timeHeld = 0.0;
@@ -52,9 +53,12 @@ public class Player : MonoBehaviour {
 			rightClicked = false;
 
 		//Must pass this test first to see if we're firing a regular arrow or a basic arrow.
+
+		/* Removed aim player check from update, moved it to fixedupdate
 		if (timeHeld < 1.5)
 			AimPlayer ();
-		else
+		else */
+		if (timeHeld >= 1.5)
 			//For some reason, this causes an error right here. Any way to fix it?
 			manager.toOsu ();
 
@@ -68,6 +72,11 @@ public class Player : MonoBehaviour {
 			//GameObject toSpawn = Instantiate (manager.basicArrow, player.transform.position, player.transform.rotation, this.transform);
 		}
     }
+
+	void FixedUpdate() {
+		if (timeHeld < 1.5)
+			AimPlayer ();
+	}
 
 	void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);

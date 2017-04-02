@@ -50,6 +50,7 @@ public class SpellAndArrowManager : MonoBehaviour {
 
 	public void Start() {
 		player = GameObject.FindWithTag ("Player");
+		osu = GameObject.FindWithTag ("OsuController").GetComponent<OsuMechanic> ();
 	}
 
 	//I don't think we need this Update as this is an expansion to Player (where all the updates are)
@@ -73,7 +74,7 @@ public class SpellAndArrowManager : MonoBehaviour {
         hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
 		*/
-
+		osu = GameObject.FindWithTag ("OsuController").GetComponent<OsuMechanic> ();
 		osu.osuTime = 0;
 		runningOsu = false;
 
