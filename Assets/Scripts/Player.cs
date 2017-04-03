@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
+	public int maxHealth = 5;
+	public int health = 5;
 	public float speed = 5.0f;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
