@@ -7,6 +7,8 @@ public class Pickup : MonoBehaviour {
 	Player player;
 
 	public bool randomVal = false;
+	public float minVal = 1;
+	public float maxVal = 1;
 	public bool randomType = false;
 	public enum pickupTypes
 	{
@@ -26,7 +28,7 @@ public class Pickup : MonoBehaviour {
 			pickupType = (pickupTypes)Random.Range (1, 6);
 		}
 		if ((pickupType == pickupTypes.speed || pickupType == pickupTypes.arrowSpeed || pickupType == pickupTypes.damage) && randomVal) {
-			pickupValueOrMult = Random.Range (1.25f, 1.75f);
+			pickupValueOrMult = Random.Range (minVal, maxVal);
 		}
 			/*switch ((int)Random.Range (0f, 2.99f)) {
 			case 0:

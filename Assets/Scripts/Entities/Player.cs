@@ -51,7 +51,7 @@ public class Player : MonoBehaviour {
 	    
 		transform.position = deltamovement;
     }
-    void LateUpdate() {
+    void FixedUpdate() {
         if (!gamecontroller.playerIsFiring) {
             AimPlayer();
         }
