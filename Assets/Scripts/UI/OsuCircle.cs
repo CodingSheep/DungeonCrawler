@@ -6,18 +6,21 @@ public class OsuCircle : MonoBehaviour {
 
 	// Use this for initialization
 	public float collapse_speed;
-	public float target_size;
-	public Vector3 scale;
-
+	//public float target_size;
+	//public Vector3 scale;
+    /*
 	private bool shrink;
 	private Vector3 offset;
 	private GameObject cam;
 	private GameObject player;
 	private Vector3 pos;
 	private OsuCircle[] circle_arr;
+    */
+    public GameObject Arrow;
 
 	void Start () {
 		//initializes variables
+        /*
 		shrink = false;
 		cam = GameObject.FindGameObjectWithTag ("MainCamera");
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -32,12 +35,13 @@ public class OsuCircle : MonoBehaviour {
 		offset.z -= (UnityEngine.Camera.main.transform.position.z);
 		offset.x += 5.0f;
 		transform.position = offset;
+        */
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-
+        /*
 		if (shrink) {
 
 			//checks for shrink if variable object has been clicked
@@ -48,23 +52,22 @@ public class OsuCircle : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		}	
+        */
 	}
 
 
 	//updates position
 	void LateUpdate(){
-		transform.position = cam.transform.position + offset;
+		//transform.position = cam.transform.position + offset;
 	}
 
-	void OnMouseDown(){
-
-		shrink = true;	
+	void OnMouseDown(){	
 
 	}
 
 	//void cluster creates a cluster of circles from a parent circle
 	public void cluster(int num_of_obj){
-
+        /*
 		circle_arr = new OsuCircle[num_of_obj];
 		int randomn_val = Random.Range (1, 3);
 		float z_output;
@@ -97,8 +100,11 @@ public class OsuCircle : MonoBehaviour {
 			circle_arr [i] = (OsuCircle)Instantiate (this, new Vector3 (transform.position.x + i + 1.0f , 0.0f , z_output), Quaternion.identity);
 
 		}
-
+        */
 
 	}
 		
+    public void ExchangeArrow() {
+        GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>().loaded = Arrow;
+    }
 }
