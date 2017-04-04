@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class OsuCircle : MonoBehaviour {
 
@@ -8,14 +10,14 @@ public class OsuCircle : MonoBehaviour {
 	public float collapse_speed;
 	//public float target_size;
 	//public Vector3 scale;
-    /*
+    ///*
 	private bool shrink;
 	private Vector3 offset;
 	private GameObject cam;
 	private GameObject player;
 	private Vector3 pos;
 	private OsuCircle[] circle_arr;
-    */
+    //*/
     public GameObject Arrow;
 
     public float TimeDelay;
@@ -83,6 +85,10 @@ public class OsuCircle : MonoBehaviour {
         
 	}
 
+	void OnPointerEnter(PointerEventData eventData) {
+		Debug.Log ("dfasd");
+		//HitCircle ();
+	}
 
 	//updates position
 	void LateUpdate(){
@@ -91,40 +97,47 @@ public class OsuCircle : MonoBehaviour {
 
 	//void cluster creates a cluster of circles from a parent circle
 	public void cluster(int num_of_obj){
-        /*
+        ///*
 		circle_arr = new OsuCircle[num_of_obj];
-		int randomn_val = Random.Range (1, 3);
-		float z_output;
+		int random_val = Random.Range (-1, 2);
+		float z_output = this.GetComponent<RectTransform> ().localPosition.y + (35 * random_val);
+		random_val = Random.Range (-1, 2);
+		float x_output = this.GetComponent<RectTransform> ().localPosition.x + (35 * random_val);
 
 		for (int i = 0; i < num_of_obj; i++) {
 
 
 			//switch statement to choose mathematical function
-
-			switch (randomn_val) {
+			/*
+			switch (random_val) {
 				
 			case 1: 
-				z_output = Mathf.Pow (transform.position.x + i + 1.0f, 2);
+				z_output = Mathf.Pow (this.GetComponent<RectTransform>().localPosition.x + i + 1.0f, 2);
 				break;
 
 			case 2:
-				z_output = Mathf.Sin (transform.position.x + i + 1.0f);
+				z_output = Mathf.Sin (this.GetComponent<RectTransform>().localPosition.x + i + 1.0f);
 				break;
 			
 			case 3:
-				z_output = Mathf.Log (transform.position.x + i + 1.0f, 3);
+				z_output = Mathf.Log (this.GetComponent<RectTransform>().localPosition.x + i + 1.0f, 3);
 				break;
 			
 			default:
-				z_output = transform.localPosition.x + i + 1.0f;
+				z_output = this.GetComponent<RectTransform>().localPosition.x + i + 1.0f;
 				break;
 
-			}
+			}*/
 			//start a new circle
-			circle_arr [i] = (OsuCircle)Instantiate (this, new Vector3 (transform.position.x + i + 1.0f , 0.0f , z_output), Quaternion.identity);
+			GameObject newCircle = Instantiate (this.gameObject, Vector3.zero, Quaternion.identity);
+			newCircle.transform.SetParent (GameObject.FindWithTag ("UIController").transform);
+			newCircle.GetComponent<RectTransform> ().localPosition = new Vector3 (x_output, z_output, 0);//this.GetComponent<RectTransform>().localPosition.x + (i * 400.0f), 0, 0);
+			newCircle.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+			newCircle.SetActive (true);
+			circle_arr [i] = newCircle.GetComponent<OsuCircle> ();
 
 		}
-        */
+        //*/
 
 	}
 	public void HitCircle() {
@@ -133,6 +146,7 @@ public class OsuCircle : MonoBehaviour {
         hitScore = Time.time - PerfectHitTime;
         Debug.Log(hitScore);
         this.gameObject.SetActive(false);
+		cluster (1);
         Destroy(this.gameObject);
     }
     public void ExchangeArrow() {

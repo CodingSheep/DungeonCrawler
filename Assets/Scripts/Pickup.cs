@@ -43,7 +43,7 @@ public class Pickup : MonoBehaviour {
 			}*/
 
 	}
-	
+
 	void FixedUpdate () {
 		//bobbing up and down movement can be added here
 	}
