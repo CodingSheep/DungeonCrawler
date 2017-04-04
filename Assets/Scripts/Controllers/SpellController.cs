@@ -45,14 +45,14 @@ public class SpellController : MonoBehaviour {
 
     public void StartSpawnSequence()
     {
-		UIController.isShooting = true;
+		UIController.Shooting();
         loaded = basicArrow;
         osuTime = 0;
     }
 
     public void EndSpawnSequence()
     {
-		UIController.isShooting = false;
+		UIController.Release();
         SpawnArrow(loaded);
         osuTime = 0;
     }

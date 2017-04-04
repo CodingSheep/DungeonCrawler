@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour {
     public GameObject ShootingAimLine;
     private GameObject shootline;
     public bool isShooting;
+
+    public GameObject OsuCircle;
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -25,4 +27,18 @@ public class UIController : MonoBehaviour {
 	void Update () {
         
 	}
+
+    public void Shooting() {
+        isShooting = true;
+        GameObject firstCircle = Instantiate(OsuCircle,Input.mousePosition, Quaternion.identity, this.transform ) as GameObject;
+    }
+
+    public void Release() {
+        isShooting = false;
+        GameObject[] Circles = GameObject.FindGameObjectsWithTag("OsuCircle");
+
+        for (var i = 0; i < Circles.Length; i++) {
+            Destroy(Circles[i]);
+        }
+    }
 }
