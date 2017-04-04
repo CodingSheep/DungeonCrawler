@@ -8,32 +8,34 @@ public class Player : MonoBehaviour {
 	public int maxHealth = 5;
 	public int health = 5;
 	public float speed = 5.0f;
+    public float rotationSpeed;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
 
 	private Camera mainCam;
-	private GameObject cursor;
+	//private GameObject cursor;
 	private Ray camRay; //Ray from camera to mouse position
 	private RaycastHit camRayHit; //Hit point of raycast
 	private Vector3 deltamovement;
-    private GameObject gamecontroller;
+    private GameController gamecontroller;
+    private SpellController spellUI;
 
-	private SpellAndArrowManager manager;
-
-	private double timeHeld;
+    private double timeHeld;
 	private double test;
 	private bool rightClicked;
 
     //For future use.
+    private void Awake() {
+        
+    }
     void Start()
     {
-		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
-		cursor = GameObject.FindGameObjectWithTag("Cursor");
-		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
-		manager = GameObject.Find ("SpellController").GetComponent<SpellAndArrowManager>();
-		manager.setup ();
+        gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //cursor = GameObject.FindGameObjectWithTag("Cursor");
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 
-		timeHeld = 0.0;
+        timeHeld = 0.0;
     }
 
     //Every Frame I believe
@@ -48,46 +50,19 @@ public class Player : MonoBehaviour {
  		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
 	    
 		transform.position = deltamovement;
-
-		if (Input.GetMouseButtonDown (1))
-			rightClicked = true;
-		if (Input.GetMouseButtonUp (1))
-			rightClicked = false;
-
-		//Must pass this test first to see if we're firing a regular arrow or a basic arrow.
-
-		/* Removed aim player check from update, moved it to fixedupdate
-		if (timeHeld < 1.5)
-			AimPlayer ();
-		else */
-		if (timeHeld >= 1.5)
-			//For some reason, this causes an error right here. Any way to fix it?
-			manager.toOsu ();
-
-		//Handles whether we're starting a spell or a regular arrow
-		if (rightClicked)
-			timeHeld += Time.deltaTime;
-		else {
-			timeHeld = 0;
-
-			//Spawns Basic Arrow. FIX SYNTAX
-			//GameObject toSpawn = Instantiate (manager.basicArrow, player.transform.position, player.transform.rotation, this.transform);
-		}
+    }
+    void LateUpdate() {
+        if (!gamecontroller.playerIsFiring) {
+            AimPlayer();
+        }
     }
 
-	void FixedUpdate() {
-		if (timeHeld < 1.5)
-			AimPlayer ();
-	}
-
-	void AimPlayer() {
+    void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
 			Vector3 targetPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
-			//Custom cursor is jittery, using default cursor for now
-			/*Vector3 cursorPos = new Vector3(camRayHit.point.x, transform.position.y-.9f, camRayHit.point.z);
-			cursor.transform.position = cursorPos;*/
-			transform.LookAt(targetPos);
+
+            transform.LookAt(targetPos);
 			transform.eulerAngles = transform.eulerAngles + 180 * Vector3.up;
 		}
 	}
