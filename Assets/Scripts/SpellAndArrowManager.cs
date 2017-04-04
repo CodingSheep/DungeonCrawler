@@ -32,8 +32,8 @@ public class SpellAndArrowManager : MonoBehaviour {
 	private bool runningOsu;
 
 	//Spell Lists!
-	private List<Spell> allSpells = new List<Spell>();
-	private List<Spell> unlockedSpells = new List<Spell>();
+	public List<Spell> allSpells = new List<Spell>();
+	public List<Spell> unlockedSpells = new List<Spell>();
 
 	//UI Wheel Setup. Must be initialized here as the lists are private
 	public int div;
@@ -42,7 +42,7 @@ public class SpellAndArrowManager : MonoBehaviour {
 	private Spell basic = new Spell(true, 1.0, "Basic", 40f);
 	private Spell fire = new Spell(true, 1.0, "Fire", 40f);
 	private Spell lightning = new Spell(false, 1.0, "Lightning", 40f);
-	private Spell earth = new Spell(false, 1.0, "Earth", 40f);
+	private Spell earth = new Spell(true, 1.0, "Earth", 40f);
 	private Spell ice = new Spell(true, 1.0, "Ice", 40f);
 	private Spell toUse;
 
@@ -50,6 +50,7 @@ public class SpellAndArrowManager : MonoBehaviour {
 
 	public void Start() {
 		player = GameObject.FindWithTag ("Player");
+
 	}
 
 	//I don't think we need this Update as this is an expansion to Player (where all the updates are)
@@ -74,6 +75,7 @@ public class SpellAndArrowManager : MonoBehaviour {
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
 		*/
 
+		osu = GameObject.Find ("OsuController").GetComponent<OsuMechanic> ();
 		osu.osuTime = 0;
 		runningOsu = false;
 
@@ -95,7 +97,7 @@ public class SpellAndArrowManager : MonoBehaviour {
 	//WIP
 	public void toOsu () {
 		//This is where the initial circles are made
-		if (osu.settingUp) {
+		if (!osu.settingUp) {
 
 			//This will kickstart the Osu Mechanic. Most everything regarding it is wrapped up in OsuMechanic.cs
 			//The Spell type will be pulled from a variable in OsuMechanic and the dmg multiplier will be from the osuTime.
@@ -118,6 +120,9 @@ public class SpellAndArrowManager : MonoBehaviour {
 				break;
 			case "Lightning":
 				toUse = lightning;
+				break;
+			default:
+				toUse = basic;
 				break;
 			}
 

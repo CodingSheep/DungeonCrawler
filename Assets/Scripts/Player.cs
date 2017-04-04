@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 		gamecontroller = GameObject.FindGameObjectWithTag("GameController");
 		cursor = GameObject.FindGameObjectWithTag("Cursor");
 		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
+		manager = GameObject.Find ("SpellController").GetComponent<SpellAndArrowManager>();
 		manager.setup ();
 
 		timeHeld = 0.0;

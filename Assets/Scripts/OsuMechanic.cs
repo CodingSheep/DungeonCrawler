@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OsuMechanic : MonoBehaviour {
 
@@ -22,14 +23,31 @@ public class OsuMechanic : MonoBehaviour {
 	public bool stillGoing;
 	public string spellName;
 
+	public GameObject osuCircle;
+
+	private SpellAndArrowManager spellManager;
+
+	public void Start() {
+		spellManager = GameObject.Find ("SpellController").GetComponent<SpellAndArrowManager> ();
+	}
+
 	//Spawns Initial Selection Wheel
 	public void OsuSetup () {
 
 		//THIS IS WHERE WE WILL SPAWN THE INITIAL UI WHEEL FROM PREFABS
 		//This will set the spellName to pass to the SpellAndArrowManager to set up the arrows
 
+		Debug.Log ("Setup called");
+
+		for (int i = 0; i < spellManager.unlockedSpells.Count; i++) {
+			GameObject toSpawn = Instantiate (osuCircle, Vector3.zero, Quaternion.identity);
+			toSpawn.transform.SetParent (GameObject.FindWithTag ("Canvas").transform);
+			toSpawn.GetComponent<RectTransform> ().localPosition = new Vector3 (120 * Mathf.Sin (Mathf.PI / 180 * (-spellManager.div * i + 90)), 120 * Mathf.Cos (Mathf.PI / 180 * (-spellManager.div * i + 90)), 0);
+
+		}
+
 		stillGoing = true;
-		settingUp = false;
+		settingUp = true;
 
 		OsuStart ();
 	}

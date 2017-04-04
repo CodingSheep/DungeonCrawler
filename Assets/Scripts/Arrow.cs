@@ -7,16 +7,16 @@ public class Arrow : MonoBehaviour {
 	public Spell spell = new Spell(true, 1, "Basic", 1f);
 	public float speedMult = 1f;
 	public float lifetime = 2f;
-	public GameObject model;
+	//public GameObject model;
 	public Player player;
 
 	void Start () {
 		player = GameObject.FindWithTag ("Player").GetComponent<Player> ();
 		Invoke ("DestroySelf", lifetime);
 		speedMult = spell.speedMult;
-		model = Resources.Load ("Models/" + spell.name) as GameObject;
-		if (model != null) {Debug.Log ("model loaded");}
-		this.GetComponentInChildren<MeshFilter> ().mesh = model.GetComponent<MeshFilter> ().sharedMesh;
+		//model = Resources.Load ("Models/" + spell.name) as GameObject;
+		//if (model != null) {Debug.Log ("model loaded");}
+		//this.GetComponentInChildren<MeshFilter> ().mesh = model.GetComponent<MeshFilter> ().sharedMesh;
 	}
 	
 	void FixedUpdate () {
