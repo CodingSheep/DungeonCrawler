@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	//This sets a default speed for how fast our player can move in any direction
+	public int maxHealth = 5;
+	public int health = 5;
 	public float speed = 5.0f;
     public float rotationSpeed;
 	public float arrowSpeed = 40f;
@@ -23,14 +25,17 @@ public class Player : MonoBehaviour {
 	private bool rightClicked;
 
     //For future use.
+    private void Awake() {
+        
+    }
     void Start()
     {
-		gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-		//cursor = GameObject.FindGameObjectWithTag("Cursor");
-		mainCam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
+        gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //cursor = GameObject.FindGameObjectWithTag("Cursor");
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 
-		timeHeld = 0.0;
+        timeHeld = 0.0;
     }
 
     //Every Frame I believe

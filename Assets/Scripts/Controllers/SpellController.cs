@@ -31,8 +31,10 @@ public class SpellController : MonoBehaviour {
 
 	public void Update() {
         //Currently Breaking here for some reason
-		if (GameController.playerIsFiring) {
-            osuTime += osuTimeScale*Time.deltaTime;
+        if (GameController != null) {
+            if (GameController.playerIsFiring) {
+                osuTime += osuTimeScale * Time.deltaTime;
+            }
         }
     }
 
