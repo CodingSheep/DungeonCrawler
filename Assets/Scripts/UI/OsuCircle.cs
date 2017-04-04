@@ -28,6 +28,7 @@ public class OsuCircle : MonoBehaviour {
 
     public float approachDistance;
 
+    public bool hit;
 
 	void Start () {
         //initializes variables
@@ -51,6 +52,7 @@ public class OsuCircle : MonoBehaviour {
         ApproachCircle = this.GetComponentsInChildren<RectTransform>()[1];
         ApproachCircle.localScale = ApproachCircle.localScale * approachDistance;
         ApproachRate = (1-approachDistance) / (Time.time - PerfectHitTime);
+        hit = false;
     }
 
 	// Update is called once per frame
@@ -60,8 +62,10 @@ public class OsuCircle : MonoBehaviour {
                 Destroy(ApproachCircle.gameObject);
             }
         }else {
-            float AP = ApproachRate * Time.deltaTime;
-            ApproachCircle.localScale = ApproachCircle.localScale - new Vector3(AP, AP, AP);
+            if (!hit) {
+                float AP = ApproachRate * Time.deltaTime;
+                ApproachCircle.localScale = ApproachCircle.localScale - new Vector3(AP, AP, AP);
+            }
         }
         //ApproachCircle.localScale = ApproachCircle.localScale + ((1/Time.deltaTime) * ApproachCircle.localScale);
         /*
@@ -124,9 +128,12 @@ public class OsuCircle : MonoBehaviour {
 
 	}
 	public void HitCircle() {
+        hit = true;
         ExchangeArrow();
         hitScore = Time.time - PerfectHitTime;
         Debug.Log(hitScore);
+        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
     }
     public void ExchangeArrow() {
         GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>().loaded = Arrow;
