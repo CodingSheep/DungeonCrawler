@@ -18,8 +18,19 @@ public class OsuCircle : MonoBehaviour {
     */
     public GameObject Arrow;
 
+    public float TimeDelay;
+    private float PerfectHitTime;
+
+    private float hitScore;
+
+    private RectTransform ApproachCircle;
+    private float ApproachRate;
+
+    public float approachDistance;
+
+
 	void Start () {
-		//initializes variables
+        //initializes variables
         /*
 		shrink = false;
 		cam = GameObject.FindGameObjectWithTag ("MainCamera");
@@ -36,11 +47,23 @@ public class OsuCircle : MonoBehaviour {
 		offset.x += 5.0f;
 		transform.position = offset;
         */
-
-	}
+        PerfectHitTime = Time.time + TimeDelay;
+        ApproachCircle = this.GetComponentsInChildren<RectTransform>()[1];
+        ApproachCircle.localScale = ApproachCircle.localScale * approachDistance;
+        ApproachRate = (1-approachDistance) / (Time.time - PerfectHitTime);
+    }
 
 	// Update is called once per frame
 	void Update () {
+        if (Time.time - PerfectHitTime > 0) {
+            if(ApproachCircle != null) {
+                Destroy(ApproachCircle.gameObject);
+            }
+        }else {
+            float AP = ApproachRate * Time.deltaTime;
+            ApproachCircle.localScale = ApproachCircle.localScale - new Vector3(AP, AP, AP);
+        }
+        //ApproachCircle.localScale = ApproachCircle.localScale + ((1/Time.deltaTime) * ApproachCircle.localScale);
         /*
 		if (shrink) {
 
@@ -53,16 +76,13 @@ public class OsuCircle : MonoBehaviour {
 			}
 		}	
         */
+        
 	}
 
 
 	//updates position
 	void LateUpdate(){
 		//transform.position = cam.transform.position + offset;
-	}
-
-	void OnMouseDown(){	
-
 	}
 
 	//void cluster creates a cluster of circles from a parent circle
@@ -103,7 +123,11 @@ public class OsuCircle : MonoBehaviour {
         */
 
 	}
-		
+	public void HitCircle() {
+        ExchangeArrow();
+        hitScore = Time.time - PerfectHitTime;
+        Debug.Log(hitScore);
+    }
     public void ExchangeArrow() {
         GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>().loaded = Arrow;
     }
