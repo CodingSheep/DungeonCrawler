@@ -52,7 +52,7 @@ public class OsuCircle : MonoBehaviour {
         */
         PerfectHitTime = Time.time + TimeDelay;
         ApproachCircle = this.GetComponentsInChildren<RectTransform>()[1];
-        ApproachCircle.localScale = ApproachCircle.localScale * approachDistance;
+		ApproachCircle.localScale = ApproachCircle.localScale * 1;//approachDistance;
         ApproachRate = (1-approachDistance) / (Time.time - PerfectHitTime);
         hit = false;
     }
@@ -100,9 +100,13 @@ public class OsuCircle : MonoBehaviour {
         ///*
 		circle_arr = new OsuCircle[num_of_obj];
 		int random_val = Random.Range (-1, 2);
-		float z_output = this.GetComponent<RectTransform> ().localPosition.y + (35 * random_val);
+		while (Mathf.Abs (this.GetComponent<RectTransform> ().localPosition.y + (100 * random_val)) > 140)
+			random_val = Random.Range (-1, 2);
+		float z_output = this.GetComponent<RectTransform> ().localPosition.y + (100 * random_val);
 		random_val = Random.Range (-1, 2);
-		float x_output = this.GetComponent<RectTransform> ().localPosition.x + (35 * random_val);
+		while (Mathf.Abs (this.GetComponent<RectTransform> ().localPosition.x + (150 * random_val)) > 400)
+			random_val = Random.Range (-1, 2);
+		float x_output = this.GetComponent<RectTransform> ().localPosition.x + (150 * random_val);
 
 		for (int i = 0; i < num_of_obj; i++) {
 
@@ -133,6 +137,7 @@ public class OsuCircle : MonoBehaviour {
 			newCircle.transform.SetParent (GameObject.FindWithTag ("UIController").transform);
 			newCircle.GetComponent<RectTransform> ().localPosition = new Vector3 (x_output, z_output, 0);//this.GetComponent<RectTransform>().localPosition.x + (i * 400.0f), 0, 0);
 			newCircle.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+			newCircle.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
 			newCircle.SetActive (true);
 			circle_arr [i] = newCircle.GetComponent<OsuCircle> ();
 
