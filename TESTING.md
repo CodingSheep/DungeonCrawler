@@ -34,4 +34,19 @@ In the image above, we set up the test to fail to show what happens if it ever d
 
 # User Acceptance Tests #
 
-SET UP USER ACCEPTANCE STEPS HERE
+UAT 1  
+&nbsp;&nbsp;Use case name
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed pick-up  
+&nbsp;&nbsp;Description  
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases when picking up the yellow speed pick-up
+&nbsp;&nbsp;Preconditions 
+&nbsp;&nbsp;&nbsp;&nbsp;None  
+&nbsp;&nbsp;Test steps  
+&nbsp;&nbsp;&nbsp;&nbsp;Move player object with arrow keys into yellow circle
+&nbsp;&nbsp;Expected result
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases slightly
+&nbsp;&nbsp;Actual result
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases from 10 to 13
+&nbsp;&nbsp;Status
+&nbsp;&nbsp;&nbsp;&nbsp;Pass
+    
