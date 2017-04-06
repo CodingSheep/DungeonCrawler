@@ -24,13 +24,13 @@ We all want to make a game that we would want to play.
 
 # Automated Tests #
 
-For automated testing, we used Unity Test Tools which is an asset package provided by Unity in order to test certain game mechanics.
-![alt tag](http://i.imgur.com/YeFUt28.png)
-This package is essentially a collection of scripts that we can add to any game object to test changes during the game. As you can see, we added an AssertionComponent to the player object.
-![alt tag](http://i.imgur.com/M2iXgQC.png)
-In the AssertionComponent, we can set what type of variable is being tested, when the test should arise, and what to test for, and all of this happens automatically during playtests. In the case above, we test whether player speed increases when he/she gets a speed pick-up. If the test were to fail, an error message would appear in the console, and the game would pause.
-![alt tag](http://i.imgur.com/ZlSNvZO.png)
-In the image above, we set up the test to fail to show what happens if it ever does fail. The console message shows what assertion failed and how it failed. Above that, there is a button labeled "Error Pause," and what this means is that the game will pause whenever an error occurs during testing, so that we can see under what circumstances within the game caused this error.
+For automated testing, we used Unity Test Tools which is an asset package provided by Unity in order to test certain game mechanics.  
+![alt tag](http://i.imgur.com/YeFUt28.png)  
+This package is essentially a collection of scripts that we can add to any game object to test changes during the game. As you can see, we added an AssertionComponent to the player object.  
+![alt tag](http://i.imgur.com/M2iXgQC.png)  
+In the AssertionComponent, we can set what type of variable is being tested, when the test should arise, and what to test for, and all of this happens automatically during playtests. In the case above, we test whether player speed increases when he/she gets a speed pick-up. If the test were to fail, an error message would appear in the console, and the game would pause.  
+![alt tag](http://i.imgur.com/ZlSNvZO.png)  
+In the image above, we set up the test to fail to show what happens if it ever does fail. The console message shows what assertion failed and how it failed. Above that, there is a button labeled "Error Pause," and what this means is that the game will pause whenever an error occurs during testing, so that we can see under what circumstances within the game caused this error.  
 
 # User Acceptance Tests #
 
