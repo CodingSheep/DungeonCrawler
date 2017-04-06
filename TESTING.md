@@ -42,42 +42,42 @@ UAT 1
 &nbsp;&nbsp;Preconditions 
 &nbsp;&nbsp;&nbsp;&nbsp;None  
 &nbsp;&nbsp;Test steps  
-&nbsp;&nbsp;&nbsp;&nbsp;Move player object with arrow keys into yellow circle
-&nbsp;&nbsp;Expected result
-&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases slightly and pick-up disappears
-&nbsp;&nbsp;Actual result
-&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases from 10 to 13 and pick-up disappears
-&nbsp;&nbsp;Status
+&nbsp;&nbsp;&nbsp;&nbsp;Move player object with arrow keys into yellow circle   
+&nbsp;&nbsp;Expected result  
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases slightly and pick-up disappears  
+&nbsp;&nbsp;Actual result   
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases from 10 to 13 and pick-up disappears  
+&nbsp;&nbsp;Status  
 &nbsp;&nbsp;&nbsp;&nbsp;Pass    
     
 UAT 2   
 &nbsp;&nbsp;Use case name   
 &nbsp;&nbsp;&nbsp;&nbsp;Arrow speed pick-up  
 &nbsp;&nbsp;Description  
-&nbsp;&nbsp;&nbsp;&nbsp;Arrow speed increases when picking up the orange arrow speed pick-up
-&nbsp;&nbsp;Preconditions 
+&nbsp;&nbsp;&nbsp;&nbsp;Arrow speed increases when picking up the orange arrow speed pick-up    
+&nbsp;&nbsp;Preconditions  
 &nbsp;&nbsp;&nbsp;&nbsp;None  
 &nbsp;&nbsp;Test steps  
-&nbsp;&nbsp;&nbsp;&nbsp;Move player object with arrow keys into orange circle
-&nbsp;&nbsp;Expected result
-&nbsp;&nbsp;&nbsp;&nbsp;Arrow speed increases slightly and pick-up disappears
-&nbsp;&nbsp;Actual result
-&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases from 1 to 2 and pick-up disappears
-&nbsp;&nbsp;Status
-&nbsp;&nbsp;&nbsp;&nbsp;Pass     
+&nbsp;&nbsp;&nbsp;&nbsp;Move player object with arrow keys into orange circle   
+&nbsp;&nbsp;Expected result  
+&nbsp;&nbsp;&nbsp;&nbsp;Arrow speed increases slightly and pick-up disappears   
+&nbsp;&nbsp;Actual result   
+&nbsp;&nbsp;&nbsp;&nbsp;Player speed increases from 1 to 2 and pick-up disappears   
+&nbsp;&nbsp;Status  
+&nbsp;&nbsp;&nbsp;&nbsp;Pass  
     
-UAT 2   
+UAT 3   
 &nbsp;&nbsp;Use case name   
 &nbsp;&nbsp;&nbsp;&nbsp;Osu circle appears  
 &nbsp;&nbsp;Description  
 &nbsp;&nbsp;&nbsp;&nbsp;A circle appears near the player when right-click is held down, and the player can left-click on the circle.    
-&nbsp;&nbsp;Preconditions 
+&nbsp;&nbsp;Preconditions  
 &nbsp;&nbsp;&nbsp;&nbsp;None  
 &nbsp;&nbsp;Test steps  
 &nbsp;&nbsp;&nbsp;&nbsp;Click and hold right-click, and left-click on the circle that appears   
 &nbsp;&nbsp;Expected result  
 &nbsp;&nbsp;&nbsp;&nbsp;Circle appears near the player and disappears once the player left-clicks on it  
 &nbsp;&nbsp;Actual result   
-&nbsp;&nbsp;&nbsp;&nbsp;Circle appears next to the player and disappears once the player left-clicks on it
+&nbsp;&nbsp;&nbsp;&nbsp;Circle appears next to the player and disappears once the player left-clicks on it  
 &nbsp;&nbsp;Status  
 &nbsp;&nbsp;&nbsp;&nbsp;Pass    
