@@ -13,6 +13,8 @@ public class UIController : MonoBehaviour {
     private GameObject shootline;
     public bool isShooting;
 
+	public bool isPause = false;
+
     public GameObject OsuCircle;
     // Use this for initialization
     void Start () {

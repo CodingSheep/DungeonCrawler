@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
     private double timeHeld;
 	private double test;
 	private bool rightClicked;
+	private float speedAfterPause;
 
     //For future use.
     private void Awake() {
@@ -38,21 +39,14 @@ public class Player : MonoBehaviour {
         timeHeld = 0.0;
     }
 
-    //Every Frame I believe
     void Update()
 	{
-        //Uses the default Unity Input object too manage player input. This allows for multiple platforms, and easy customization in the future.
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
-        //Im very sure this bit is obvious, though I will explain the Time.deltaTime.
- 		//Time.deltaTime is basically the time it took to finish the last frame
- 		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
-	    
-		transform.position = deltamovement;
+		if (!gamecontroller.isPaused)
+			Movement ();
     }
+
     void FixedUpdate() {
-        if (!gamecontroller.playerIsFiring) {
+		if (!gamecontroller.playerIsFiring && !gamecontroller.isPaused) {
             AimPlayer();
         }
     }
@@ -65,5 +59,17 @@ public class Player : MonoBehaviour {
             transform.LookAt(targetPos);
 			transform.eulerAngles = transform.eulerAngles + 180 * Vector3.up;
 		}
+	}
+
+	void Movement () {
+		//Uses the default Unity Input object too manage player input. This allows for multiple platforms, and easy customization in the future.
+		float h = Input.GetAxisRaw("Horizontal");
+		float v = Input.GetAxisRaw("Vertical");
+		deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
+		//Im very sure this bit is obvious, though I will explain the Time.deltaTime.
+		//Time.deltaTime is basically the time it took to finish the last frame
+		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
+
+		transform.position = deltamovement;
 	}
 }

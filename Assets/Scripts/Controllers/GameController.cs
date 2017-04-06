@@ -6,13 +6,17 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject OsuCircle;
-    private SpellController spellController;
     public bool playerIsFiring;
+	public bool isPaused;
+
+	private SpellController spellController;
+	public PauseMenu Menu;
+	private UIController UI;
 
 	void Start () {
         spellController = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
         playerIsFiring = false;
-
+		isPaused = false;
     }
 
 	// Update is called once per frame
@@ -30,18 +34,34 @@ public class GameController : MonoBehaviour {
 			osu_Circle.transform.position = new Vector2 (Screen.width / 2, Screen.height / 2 + displacement);
 		}
 
-        //Basic arrow shot (right click)
-        if (Input.GetButtonDown("Fire2"))
-        {
-            //if (finalHit == null)
-            spellController.StartSpawnSequence();
-            playerIsFiring = true;
+		//Basic arrow shot (right click)
+		if (Input.GetButtonDown("Fire2"))
+		{
+			//if (finalHit == null)
+			spellController.StartSpawnSequence();
+			playerIsFiring = true;
 
-        }
-        if (Input.GetButtonUp("Fire2")) {
-            spellController.EndSpawnSequence();
-            playerIsFiring = false;
-        }
-
+		}
+		if (Input.GetButtonUp("Fire2")) {
+			spellController.EndSpawnSequence();
+			playerIsFiring = false;
+		}
     }
+
+	public void TogglePauseMenu()
+	{
+		// Not Optimal but readable
+		if (Menu.GetComponentInChildren<Canvas>().enabled)
+		{
+			Menu.GetComponentInChildren<Canvas>().enabled = false;
+			isPaused = false;
+			Time.timeScale = 1.0f;
+		}
+		else
+		{
+			Menu.GetComponentInChildren<Canvas>().enabled = true;
+			isPaused = true;
+			Time.timeScale = 0.0f;
+		}
+	}
 }
