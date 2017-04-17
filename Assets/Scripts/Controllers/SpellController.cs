@@ -31,6 +31,7 @@ public class SpellController : MonoBehaviour {
 
 	public void Update() {
         //Currently Breaking here for some reason
+        UIController = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
         if (GameController != null) {
             if (GameController.playerIsFiring) {
                 osuTime += osuTimeScale * Time.deltaTime;
