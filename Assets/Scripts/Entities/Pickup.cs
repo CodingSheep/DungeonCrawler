@@ -30,7 +30,7 @@ public class Pickup : MonoBehaviour {
 		if ((pickupType == pickupTypes.speed || pickupType == pickupTypes.arrowSpeed || pickupType == pickupTypes.damage) && randomVal) {
 			pickupValueOrMult = Random.Range (minVal, maxVal);
 		}
-			/*switch ((int)Random.Range (0f, 2.99f)) {
+			/*switch ((int)Random.Range (0, 3)) {
 			case 0:
 				speedMult = Random.Range (1.25f, 1.75f);
 				break;
