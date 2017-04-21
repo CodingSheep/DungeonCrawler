@@ -26,7 +26,7 @@ public class Mob2Movement : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(new Vector3(transform.forward.x*500, Random.Range(300f, 350f), transform.forward.z*500));
+        rb.AddForce(new Vector3(transform.forward.x*Random.Range(400f, 800f), Random.Range(300f, 350f), transform.forward.z* Random.Range(400f, 800f)));
     }
 
 /*    IEnumerator JumpLogic()
