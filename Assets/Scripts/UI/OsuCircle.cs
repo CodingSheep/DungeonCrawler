@@ -99,7 +99,14 @@ public class OsuCircle : MonoBehaviour {
 	public void cluster(int num_of_obj){
         ///*
 		circle_arr = new OsuCircle[num_of_obj];
-		int random_val = Random.Range (-1, 2);
+		float angle_seperation = 360 / num_of_obj;
+		Vector3 center = transform.position;
+		float radius = 100.0f;
+
+		//int random_val = Random.Range (-1, 2);
+
+		/*
+
 		while (Mathf.Abs (this.GetComponent<RectTransform> ().localPosition.y + (100 * random_val)) > 140)
 			random_val = Random.Range (-1, 2);
 		float z_output = this.GetComponent<RectTransform> ().localPosition.y + (100 * random_val);
@@ -107,35 +114,20 @@ public class OsuCircle : MonoBehaviour {
 		while (Mathf.Abs (this.GetComponent<RectTransform> ().localPosition.x + (150 * random_val)) > 400)
 			random_val = Random.Range (-1, 2);
 		float x_output = this.GetComponent<RectTransform> ().localPosition.x + (150 * random_val);
+		*/
 
 		for (int i = 0; i < num_of_obj; i++) {
 
+			float ang = angle_seperation * i;
+			Vector3 pos;
+			pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
+			pos.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
+			pos.z = center.z;
 
-			//switch statement to choose mathematical function
-			/*
-			switch (random_val) {
-				
-			case 1: 
-				z_output = Mathf.Pow (this.GetComponent<RectTransform>().localPosition.x + i + 1.0f, 2);
-				break;
 
-			case 2:
-				z_output = Mathf.Sin (this.GetComponent<RectTransform>().localPosition.x + i + 1.0f);
-				break;
-			
-			case 3:
-				z_output = Mathf.Log (this.GetComponent<RectTransform>().localPosition.x + i + 1.0f, 3);
-				break;
-			
-			default:
-				z_output = this.GetComponent<RectTransform>().localPosition.x + i + 1.0f;
-				break;
-
-			}*/
-			//start a new circle
-			GameObject newCircle = Instantiate (this.gameObject, Vector3.zero, Quaternion.identity);
+			GameObject newCircle = Instantiate (this.gameObject, pos, Quaternion.identity);
 			newCircle.transform.SetParent (GameObject.FindWithTag ("UIController").transform);
-			newCircle.GetComponent<RectTransform> ().localPosition = new Vector3 (x_output, z_output, 0);//this.GetComponent<RectTransform>().localPosition.x + (i * 400.0f), 0, 0);
+			//newCircle.GetComponent<RectTransform> ().localPosition = pos;//this.GetComponent<RectTransform>().localPosition.x + (i * 400.0f), 0, 0);
 			newCircle.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 			newCircle.GetComponentInChildren<RectTransform>().localScale = new Vector3(1, 1, 1);
 			newCircle.SetActive (true);
@@ -145,16 +137,18 @@ public class OsuCircle : MonoBehaviour {
         //*/
 
 	}
+		
 	public void HitCircle() {
         hit = true;
         ExchangeArrow();
         hitScore = Time.time - PerfectHitTime;
         Debug.Log(hitScore);
         this.gameObject.SetActive(false);
-		cluster (1);
         Destroy(this.gameObject);
     }
     public void ExchangeArrow() {
         GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>().loaded = Arrow;
     }
+		
+
 }
