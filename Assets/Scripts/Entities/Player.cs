@@ -24,6 +24,8 @@ public class Player : MonoBehaviour {
 	private double test;
 	private bool rightClicked;
 	private float speedAfterPause;
+	private Vector3 startShiftMouse; //position holder for initial shift press 
+	private bool shift_start;//bool for later calculations
 
     //For future use.
     private void Awake() {
@@ -41,8 +43,18 @@ public class Player : MonoBehaviour {
 
     void Update()
 	{
-		if (!gamecontroller.isPaused)
+		if (!gamecontroller.isPaused) {
 			Movement ();
+			//get key down only works in update or late update
+			//used here to set initial bool 
+			if (Input.GetKeyDown (KeyCode.LeftShift)) {
+				shift_start = true;
+			}
+			if (Input.GetKeyUp (KeyCode.LeftShift)) {
+				shift_start = false;
+				startShiftMouse = Vector3.zero;
+			}
+		}
     }
 
     void FixedUpdate() {
@@ -52,7 +64,17 @@ public class Player : MonoBehaviour {
     }
 
     void AimPlayer() {
-		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
+
+		Vector3 mouse_pos = Input.mousePosition;
+
+		if (shift_start) {
+
+			mouse_pos = ShiftAim() ;
+		}
+
+			
+		camRay = mainCam.ScreenPointToRay (mouse_pos);
+
 		if (Physics.Raycast(camRay, out camRayHit)) {
 			Vector3 targetPos = new Vector3(camRayHit.point.x, transform.position.y, camRayHit.point.z);
 
@@ -71,5 +93,23 @@ public class Player : MonoBehaviour {
 		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
 
 		transform.position = deltamovement;
+	}
+
+
+
+	Vector3 ShiftAim(){
+	
+		//Checks if shift has been pressed
+
+		if (startShiftMouse == Vector3.zero){
+			//set position of when shift is initially pressed			
+			startShiftMouse = Input.mousePosition;
+		} 
+	
+		//reduce distance between origional mouse position and current mouse position
+		Vector3 delta_position = (Input.mousePosition - startShiftMouse)/4;
+		//set global the origional poisition plus reduced distance vector
+		return startShiftMouse + delta_position;
+
 	}
 }
