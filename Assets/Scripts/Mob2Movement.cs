@@ -5,32 +5,40 @@ using UnityEngine;
 public class Mob2Movement : MonoBehaviour
 {
     Transform player;
+    //UnityEngine.AI.NavMeshAgent nav;
+    Rigidbody rb;
 
-
-    // Use this for initialization
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        //nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        InvokeRepeating("Jump", Random.Range(1f,2f), Random.Range(2f,3f));
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.LookAt(player);
         //nav.speed = 0;
         //nav.acceleration = 0;
+        //nav.SetDestination(player.position);
     }
 
-    IEnumerator JumpLogic()
+    void Jump()
+    {
+        rb.AddForce(new Vector3(transform.forward.x*500, Random.Range(300f, 350f), transform.forward.z*500));
+    }
+
+/*    IEnumerator JumpLogic()
     {
         float minWaitTime = 2;
         float maxWaitTime = 4;
 
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
             //Jump();
         }
-    }
+    }*/
 
 }
