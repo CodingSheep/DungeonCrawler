@@ -1,24 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mob2Movement : MonoBehaviour
 {
 	Transform player;
+	NavMeshAgent nav;
+	Rigidbody rb;
 
-
-	// Use this for initialization
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+		nav = GetComponent<NavMeshAgent>();
+		rb = GetComponent<Rigidbody> ();
+		InvokeRepeating ("Jump", 0, 2f);
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		transform.LookAt(player);
-		//nav.speed = 0;
-		//nav.acceleration = 0;
+		nav.speed = 0;
+		nav.acceleration = 0;
+	}
+
+	void Jump() {
+		rb.AddForce (new Vector3(transform.forward.x*100, 1000, transform.forward.z*100));
 	}
 
 	IEnumerator JumpLogic()
