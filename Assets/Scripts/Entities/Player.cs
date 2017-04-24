@@ -11,6 +11,9 @@ public class Player : MonoBehaviour {
     public float rotationSpeed;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
+	public int burnAmount = 5;
+	public float freezeTime = 2f;
+	public float slowMult = 1.5f;
 
 	private Camera mainCam;
 	//private GameObject cursor;
