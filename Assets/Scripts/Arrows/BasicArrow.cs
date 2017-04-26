@@ -11,6 +11,7 @@ public class BasicArrow : Arrow {
     void Start()
     {
         BaseArrow = base.gameObject.GetComponent<Arrow>();
+		base.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         BaseArrow.Start();
         //Debug.Log("Basic Arrow");
     }

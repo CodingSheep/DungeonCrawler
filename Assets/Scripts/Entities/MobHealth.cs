@@ -32,6 +32,12 @@ public class MobHealth : MonoBehaviour {
 	//--------------------------------------------------------
 	//
 
+	public void DoDamage(float dmg) {
+		health -= dmg;
+	}
+
+	//--------------------------------------------------------
+
 	public IEnumerator ApplyBurn(float dmg, int burnsLeft) {
 		yield return new WaitForSeconds (.5f); //half second burn rate
 		BurnEffect (dmg);
@@ -44,7 +50,7 @@ public class MobHealth : MonoBehaviour {
 
 	public void ApplyFreeze(float dmg, float time) {
 		/*audioSource.Play(freezeSound);*/
-		health -= dmg;
+		DoDamage (dmg);
 
 		//for simple movement mobs, zero nav speed for freeze effect
 		if (nav != null) {
@@ -62,7 +68,7 @@ public class MobHealth : MonoBehaviour {
 
 	public void ApplySlow(float dmg, float slowMult) {
 		/*audioSource.play(slowSound)*/
-		health -= dmg;
+		DoDamage (dmg);
 
 		if (!alreadySlowed) {
 			alreadySlowed = true;
@@ -88,7 +94,7 @@ public class MobHealth : MonoBehaviour {
 
 	void BurnEffect(float dmg) {
 		//audioSource.Play(burnSound);
-		health -= dmg;
+		DoDamage(dmg);
 	}
 
 	//--------------------------------------------------------
