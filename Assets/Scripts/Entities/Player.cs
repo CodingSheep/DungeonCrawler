@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -26,11 +25,6 @@ public class Player : MonoBehaviour {
 	private bool rightClicked;
 	private float speedAfterPause;
 
-	public GameObject UI;
-
-	private Text thing;
-	private string text;
-
     //For future use.
     private void Awake() {
         
@@ -42,26 +36,19 @@ public class Player : MonoBehaviour {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 
-		//Player Health setup
-		thing = UI.GetComponent <Text> ();
-		thing.text = "Health: " + health + "/" + maxHealth;
-
         timeHeld = 0.0;
     }
 
     void Update()
 	{
-		//Update player health
-		thing.text = "Health: " + health + "/" + maxHealth;
-
-		//Check if Game is paused or not
 		if (!gamecontroller.isPaused)
 			Movement ();
     }
 
     void FixedUpdate() {
-		if (!gamecontroller.playerIsFiring && !gamecontroller.isPaused)
+		if (!gamecontroller.playerIsFiring && !gamecontroller.isPaused) {
             AimPlayer();
+        }
     }
 
     void AimPlayer() {
