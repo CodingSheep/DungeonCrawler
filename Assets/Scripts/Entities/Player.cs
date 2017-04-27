@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public float rotationSpeed;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
+	public bool invulnerable = false;
 
 	private Camera mainCam;
 	//private GameObject cursor;
@@ -63,6 +64,34 @@ public class Player : MonoBehaviour {
         }
     }
 
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			TakeDamage ();
+		}
+	}
+
+	void OnCollisionStay(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			TakeDamage ();
+		}
+	}
+
+	void TakeDamage() {
+		if (health > 1) {
+			invulnerable = true;
+			health--;
+			Invoke ("EndInvulnerability", 1.5f);
+		} else if (health <= 1) {
+			Debug.Log ("Player dead");
+			Time.timeScale = 0.1f;
+			//display game over screen here
+		}
+	}
+
+	void EndInvulnerability() {
+		invulnerable = false;
+	}
+
     void AimPlayer() {
 
 		Vector3 mouse_pos = Input.mousePosition;
@@ -91,8 +120,8 @@ public class Player : MonoBehaviour {
 		//Im very sure this bit is obvious, though I will explain the Time.deltaTime.
 		//Time.deltaTime is basically the time it took to finish the last frame
 		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
-
-		transform.position = deltamovement;
+		GetComponent<CharacterController>().SimpleMove(speed * (new Vector3(h, 0, v)).normalized);
+		//transform.position = deltamovement;
 	}
 
 
