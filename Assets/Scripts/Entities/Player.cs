@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public float rotationSpeed;
 	public float arrowSpeed = 40f;
 	public float arrowDmg = 5f;
+	public bool invulnerable = false;
 
 	private Camera mainCam;
 	//private GameObject cursor;
@@ -50,6 +51,34 @@ public class Player : MonoBehaviour {
             AimPlayer();
         }
     }
+
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			TakeDamage ();
+		}
+	}
+
+	void OnCollisionStay(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			TakeDamage ();
+		}
+	}
+
+	void TakeDamage() {
+		if (health > 1) {
+			invulnerable = true;
+			health--;
+			Invoke ("EndInvulnerability", 1.5f);
+		} else if (health <= 1) {
+			Debug.Log ("Player dead");
+			Time.timeScale = 0.1f;
+			//display game over screen here
+		}
+	}
+
+	void EndInvulnerability() {
+		invulnerable = false;
+	}
 
     void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
