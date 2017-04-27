@@ -28,7 +28,9 @@ public class Player : MonoBehaviour {
 	private Vector3 startShiftMouse; //position holder for initial shift press 
 	private bool shift_start;//bool for later calculations
 
+    private Animator anim;
     //For future use.
+
     private void Awake() {
         
     }
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour {
         //cursor = GameObject.FindGameObjectWithTag("Cursor");
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
-
+        anim = GetComponent<Animator>();
         timeHeld = 0.0;
     }
 
@@ -116,11 +118,15 @@ public class Player : MonoBehaviour {
 		//Uses the default Unity Input object too manage player input. This allows for multiple platforms, and easy customization in the future.
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
-		deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
-		//Im very sure this bit is obvious, though I will explain the Time.deltaTime.
-		//Time.deltaTime is basically the time it took to finish the last frame
-		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
-		GetComponent<CharacterController>().SimpleMove(speed * (new Vector3(h, 0, v)).normalized);
+        Vector3 movement = new Vector3(h, 0, v).normalized;
+        //deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
+        //Im very sure this bit is obvious, though I will explain the Time.deltaTime.
+        //Time.deltaTime is basically the time it took to finish the last frame
+        //It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
+        GetComponent<CharacterController>().SimpleMove(speed * movement);
+        if(movement.magnitude > 0.3f) {
+            anim.SetTrigger("Run");
+        }
 		//transform.position = deltamovement;
 	}
 
@@ -141,4 +147,9 @@ public class Player : MonoBehaviour {
 		return startShiftMouse + delta_position;
 
 	}
+
+    public void PlayerArrowAttack() {
+
+        anim.SetTrigger("Arrow Attack");
+    }
 }
