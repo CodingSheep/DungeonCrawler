@@ -10,6 +10,7 @@ public class Mob2Movement : MonoBehaviour
 	Rigidbody rb;
 
 	public float jumpRate = 2f;
+	public float jumpHeight = 1000f;
 
 	void Awake()
 	{
@@ -25,7 +26,7 @@ public class Mob2Movement : MonoBehaviour
 	}
 
 	void Jump() {
-		rb.AddForce (new Vector3(transform.forward.x*100, 1000, transform.forward.z*100));
+		rb.AddForce (new Vector3(transform.forward.x*jumpHeight*1.75f, jumpHeight, transform.forward.z*jumpHeight*1.75f));
 	}
 
 }
