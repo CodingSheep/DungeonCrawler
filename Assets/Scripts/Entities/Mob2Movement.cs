@@ -26,7 +26,7 @@ public class Mob2Movement : MonoBehaviour
 	}
 
 	void Jump() {
-		rb.AddForce (new Vector3(transform.forward.x*jumpHeight*1.75f, jumpHeight, transform.forward.z*jumpHeight*1.75f));
+		rb.AddForce (new Vector3(transform.forward.x*jumpHeight*1.8f, jumpHeight*0.7f, transform.forward.z*jumpHeight*1.8f));
 	}
 
 }
