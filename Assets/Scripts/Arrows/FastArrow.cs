@@ -11,6 +11,7 @@ public class FastArrow : Arrow {
     void Start()
     {
         BaseArrow = base.gameObject.GetComponent<Arrow>();
+		base.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         BaseArrow.Start();
         //Debug.Log("Fast Arrow");
     }

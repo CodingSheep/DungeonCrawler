@@ -4,30 +4,44 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour {
 
-	public Spell spell = new Spell(true, 1, "Basic", 1f);
 	public float speedMult;
 	public float lifetime = 2f;
 	public GameObject model;
-	public GameObject player = null;
+	public Player player = null;
+
+	public enum arrowDmgTypes
+	{
+		basic = 0, fire = 1, ice = 2, slow = 3
+	}
+	public arrowDmgTypes arrowDmgType = arrowDmgTypes.basic;
 
 	public void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		Invoke ("DestroySelf", lifetime);
-		//speedMult = spell.speedMult;
-		model = Resources.Load ("Models/" + spell.name) as GameObject;
-		//if (model != null) {Debug.Log ("model loaded");}
-		this.GetComponentInChildren<MeshFilter> ().mesh = model.GetComponent<MeshFilter> ().sharedMesh;
     }
 
     public void FixedUpdate(){
-            player = GameObject.FindGameObjectWithTag("Player"); // This most definetly can be optimized
-            transform.Translate(Vector3.forward * speedMult * player.GetComponent<Player>().arrowSpeed);
+		transform.Translate(Vector3.forward * speedMult * player.arrowSpeed);
     }
 
     void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag == "Enemy") {
-			/*Enemy hit sequence (do damage, apply status effects, kill arrow)*/
-			//col.gameObject.GetComponent<EnemyHealth>().health -= player.arrowDmg * spell.dmgMult;
+			MobHealth enemy = col.gameObject.GetComponent<MobHealth> ();
+
+			switch (arrowDmgType) {
+			case arrowDmgTypes.basic:
+				enemy.DoDamage (player.arrowDmg);
+				break;
+			case arrowDmgTypes.fire:
+				enemy.ApplyBurn (player.arrowDmg, player.burnAmount);
+				break;
+			case arrowDmgTypes.ice:
+				enemy.ApplyFreeze (player.arrowDmg, player.freezeTime);
+				break;
+			case arrowDmgTypes.slow:
+				enemy.ApplySlow (player.arrowDmg, player.slowMult);
+				break;
+			}
 			DestroySelf();
 		} else if (col.gameObject.tag == "World") {
 			DestroySelf();
