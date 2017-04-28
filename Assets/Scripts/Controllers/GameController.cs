@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour {
 		}
 		if (Input.GetButtonUp("Fire2")) {
 			spellController.EndSpawnSequence();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().PlayerArrowAttack();
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().PlayerArrowAttack();
 			playerIsFiring = false;
 		}
     }

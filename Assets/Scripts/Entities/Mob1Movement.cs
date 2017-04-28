@@ -6,6 +6,8 @@ public class Mob1Movement : MonoBehaviour {
 	Transform player;
 	UnityEngine.AI.NavMeshAgent nav;
 
+	public float speed;
+
 	// Use this for initialization
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
