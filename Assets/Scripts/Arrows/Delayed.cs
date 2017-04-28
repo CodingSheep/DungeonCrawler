@@ -14,7 +14,7 @@ public class Delayed : Arrow {
         BaseArrow = base.gameObject.GetComponent<Arrow>();
         BaseArrow.Start();
         spawntime = Time.time + spawntimer;
-        base.player = GameObject.FindGameObjectWithTag("Player");
+		base.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         InitialPosition = transform.position;
         //Debug.Log("Fast Arrow");
     }
