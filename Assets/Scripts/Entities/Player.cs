@@ -124,7 +124,7 @@ public class Player : MonoBehaviour {
         //Time.deltaTime is basically the time it took to finish the last frame
         //It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
         GetComponent<CharacterController>().SimpleMove(speed * movement);
-        if(movement.magnitude > 0.3f) {
+        if(movement.magnitude*speed > 1f) {
             anim.SetTrigger("Run");
         }
 		//transform.position = deltamovement;
