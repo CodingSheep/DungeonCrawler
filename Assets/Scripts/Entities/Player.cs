@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -28,6 +29,10 @@ public class Player : MonoBehaviour {
 	private bool rightClicked;
 	private float speedAfterPause;
 
+	public GameObject UI;
+	private Text thing;
+	private string text;
+
     //For future use.
     private void Awake() {
         
@@ -40,10 +45,17 @@ public class Player : MonoBehaviour {
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 
         timeHeld = 0.0;
+
+		//Player Health setup
+		thing = UI.GetComponent <Text> ();
+		thing.text = "Health: " + health + "/" + maxHealth;
     }
 
     void Update()
 	{
+		//Update player health
+		thing.text = "Health: " + health + "/" + maxHealth;
+
 		if (!gamecontroller.isPaused)
 			Movement ();
     }
