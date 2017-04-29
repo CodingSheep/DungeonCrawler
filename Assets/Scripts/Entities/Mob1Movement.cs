@@ -19,6 +19,10 @@ public class Mob1Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		nav.SetDestination(player.position);
+		StabilizeCanvas ();
+		if (Input.GetKey (KeyCode.T)) {
+			DamageHit();
+		}
 	}
 
 	void DamageHit(){
@@ -46,6 +50,17 @@ public class Mob1Movement : MonoBehaviour {
 		//sets the damage text and destroy in 1 second
 		Temp.GetComponent<UnityEngine.UI.Text> ().text = damage;
 		Destroy (Temp, 1);
+
+	}
+
+	//Stabilizes the canvas with respect to the camera because the player is moving
+	void StabilizeCanvas(){
+
+		float stable_y = -this.transform.rotation.y;
+
+		//52.0f for the camera angle and stable_y to make up for rotation of the player
+		MobCanvas.transform.eulerAngles = new Vector3 (52.0f, stable_y, 0.0f);
+
 
 	}
 
