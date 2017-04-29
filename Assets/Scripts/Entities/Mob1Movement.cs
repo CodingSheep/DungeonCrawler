@@ -5,6 +5,8 @@ using UnityEngine;
 public class Mob1Movement : MonoBehaviour {
 	Transform player;
 	UnityEngine.AI.NavMeshAgent nav;
+	public GameObject MobCanvas;
+	public GameObject MobTextPrefab;
 
 	public float speed;
 
@@ -17,6 +19,34 @@ public class Mob1Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		nav.SetDestination(player.position);
+	}
+
+	void DamageHit(){
+
+		/**
+		 * Do health calculations with damage on health
+		 * Give Health to DamageTextInit using ToString method
+		 * */
+
+		DamageTextInit ("50");
+
+	}
+
+	void DamageTextInit(string damage){
+
+		//Sets up the object and rect
+		GameObject Temp = Instantiate (MobTextPrefab) as GameObject;
+		RectTransform TempRect = Temp.GetComponent<RectTransform> ();
+		//sets parent and local positions
+		Temp.transform.SetParent (transform.Find ("MobCanvas"));
+		TempRect.transform.localPosition = MobTextPrefab.transform.localPosition;
+		TempRect.transform.localScale = MobTextPrefab.transform.localScale;
+		TempRect.transform.localRotation = MobTextPrefab.transform.localRotation;
+
+		//sets the damage text and destroy in 1 second
+		Temp.GetComponent<UnityEngine.UI.Text> ().text = damage;
+		Destroy (Temp, 1);
+
 	}
 
 }
