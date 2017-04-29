@@ -30,12 +30,13 @@ public class GameController : MonoBehaviour {
 			float displacement = osu_Circle.transform.localScale.x * 50;
 
 			//sets postions and parent
-			osu_Circle.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform);
+			osu_Circle.transform.SetParent (GameObject.FindGameObjectWithTag ("UIController").transform);
 			osu_Circle.transform.position = new Vector2 (Screen.width / 2, Screen.height / 2 + displacement);
 		}
 
 		//Basic arrow shot (right click)
 		if (Input.GetButtonDown("Fire2"))
+
 		{
 			//if (finalHit == null)
 			spellController.StartSpawnSequence();
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour {
 		}
 		if (Input.GetButtonUp("Fire2")) {
 			spellController.EndSpawnSequence();
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().PlayerArrowAttack();
 			playerIsFiring = false;
 		}
     }
