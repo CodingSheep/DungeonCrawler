@@ -28,12 +28,14 @@ public class Player : MonoBehaviour {
 	public Texture2D HpBarTexture;
 	float hpBarLength;
 
+    private Animator anim;
     //For future use.
     private void Awake() {
         
     }
     void Start()
     {
+        anim = GetComponent<Animator>();
         gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //cursor = GameObject.FindGameObjectWithTag("Cursor");
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -47,6 +49,12 @@ public class Player : MonoBehaviour {
 		//Movement when paused or unpaused
 		if (!gamecontroller.isPaused)
 			Movement ();
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
+            anim.SetTrigger("Run");
+        }else {
+            anim.ResetTrigger("Run");
+        }
     }
 
     void FixedUpdate() {
