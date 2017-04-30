@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -29,9 +28,9 @@ public class Player : MonoBehaviour {
 	private bool rightClicked;
 	private float speedAfterPause;
 
-	public GameObject UI;
-	private Text thing;
-	private string text;
+	//Health 2.0
+	public Texture2D HpBarTexture;
+	float hpBarLength;
 
     //For future use.
     private void Awake() {
@@ -45,17 +44,14 @@ public class Player : MonoBehaviour {
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
 
         timeHeld = 0.0;
-
-		//Player Health setup
-		thing = UI.GetComponent <Text> ();
-		thing.text = "Health: " + health + "/" + maxHealth;
     }
 
     void Update()
 	{
 		//Update player health
-		thing.text = "Health: " + health + "/" + maxHealth;
+		hpBarLength = ((float)health / maxHealth) * 100;
 
+		//Movement when paused or unpaused
 		if (!gamecontroller.isPaused)
 			Movement ();
     }
@@ -87,5 +83,10 @@ public class Player : MonoBehaviour {
 		GetComponent<CharacterController>().SimpleMove(speed * new Vector3(h, 0, v).normalized);
 
 		//transform.position = deltamovement;
+	}
+
+	//Test for Health Bar
+	void OnGUI() {
+		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
 	}
 }
