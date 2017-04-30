@@ -19,11 +19,7 @@ public class Player : MonoBehaviour {
 	//private GameObject cursor;
 	private Ray camRay; //Ray from camera to mouse position
 	private RaycastHit camRayHit; //Hit point of raycast
-	private Vector3 deltamovement;
     private GameController gamecontroller;
-    private SpellController spellUI;
-
-    private double timeHeld;
 	private double test;
 	private bool rightClicked;
 	private float speedAfterPause;
@@ -41,9 +37,6 @@ public class Player : MonoBehaviour {
         gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //cursor = GameObject.FindGameObjectWithTag("Cursor");
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
-
-        timeHeld = 0.0;
     }
 
     void Update()
@@ -76,13 +69,10 @@ public class Player : MonoBehaviour {
 		//Uses the default Unity Input object too manage player input. This allows for multiple platforms, and easy customization in the future.
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
-		deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
 		//Im very sure this bit is obvious, though I will explain the Time.deltaTime.
 		//Time.deltaTime is basically the time it took to finish the last frame
 		//It's used with speed to basically say "I want to move 5 meters per second, not 5 meters per frame"
 		GetComponent<CharacterController>().SimpleMove(speed * new Vector3(h, 0, v).normalized);
-
-		//transform.position = deltamovement;
 	}
 
 	//Test for Health Bar
