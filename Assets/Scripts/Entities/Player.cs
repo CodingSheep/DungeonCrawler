@@ -32,12 +32,14 @@ public class Player : MonoBehaviour {
 	public Texture2D HpBarTexture;
 	float hpBarLength;
 
+    private Animator anim;
     //For future use.
     private void Awake() {
         
     }
     void Start()
     {
+        anim = GetComponent<Animator>();
         gamecontroller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         //cursor = GameObject.FindGameObjectWithTag("Cursor");
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -54,6 +56,12 @@ public class Player : MonoBehaviour {
 		//Movement when paused or unpaused
 		if (!gamecontroller.isPaused)
 			Movement ();
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
+            anim.SetTrigger("Run");
+        }else {
+            anim.ResetTrigger("Run");
+        }
     }
 
     void FixedUpdate() {
@@ -76,6 +84,7 @@ public class Player : MonoBehaviour {
 		//Uses the default Unity Input object too manage player input. This allows for multiple platforms, and easy customization in the future.
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
+
 		deltamovement = transform.position + speed * (new Vector3(h, 0, v)).normalized * Time.deltaTime; //Vector of movement direction * time since last called.
 		//Im very sure this bit is obvious, though I will explain the Time.deltaTime.
 		//Time.deltaTime is basically the time it took to finish the last frame
