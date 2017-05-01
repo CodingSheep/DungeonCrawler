@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 	public float freezeTime = 2f;
 	public float slowMult = 1.5f;
 
+	private bool invulnerable = false;
+
 	private Camera mainCam;
 	//private GameObject cursor;
 	private Ray camRay; //Ray from camera to mouse position
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour {
 
 	//Health 2.0
 	public Texture2D HpBarTexture;
+	public Texture2D HpBackTexture;
 	float hpBarLength;
 
     private Animator anim;
@@ -57,10 +60,10 @@ public class Player : MonoBehaviour {
 		if (!gamecontroller.isPaused)
 			Movement ();
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
-            anim.SetTrigger("Run");
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) {
+			anim.SetBool("Walking", true);
         }else {
-            anim.ResetTrigger("Run");
+			anim.SetBool("Walking", false);
         }
     }
 
@@ -69,6 +72,22 @@ public class Player : MonoBehaviour {
             AimPlayer();
         }
     }
+
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			health--;
+			invulnerable = true;
+			Invoke ("ResetVulnerability", 2f);
+		}
+	}
+
+	void OnCollisionStay(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			health--;
+			invulnerable = true;
+			Invoke ("ResetVulnerability", 2f);
+		}
+	}
 
     void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
@@ -96,6 +115,11 @@ public class Player : MonoBehaviour {
 
 	//Test for Health Bar
 	void OnGUI() {
+		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, 100, 10), HpBackTexture);
 		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
+	}
+
+	void ResetVulnerability() {
+		invulnerable = false;
 	}
 }
