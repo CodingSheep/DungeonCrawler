@@ -30,6 +30,7 @@ public class OsuCircle : MonoBehaviour {
 
     public bool hit;
 
+    public AudioSource source;
 	void Start () {
         //initializes variables
         /*
@@ -53,6 +54,7 @@ public class OsuCircle : MonoBehaviour {
         ApproachCircle.localScale = ApproachCircle.localScale * approachDistance;
         ApproachRate = (1-approachDistance) / (Time.time - PerfectHitTime);
         hit = false;
+        source = GetComponent<AudioSource>();
     }
 
 	// Update is called once per frame
@@ -66,6 +68,9 @@ public class OsuCircle : MonoBehaviour {
                 float AP = ApproachRate * Time.deltaTime;
                 ApproachCircle.localScale = ApproachCircle.localScale - new Vector3(AP, AP, AP);
             }
+        }
+        if(Time.time - PerfectHitTime > .5f) {
+            Destroy(this.gameObject);
         }
         //ApproachCircle.localScale = ApproachCircle.localScale + ((1/Time.deltaTime) * ApproachCircle.localScale);
         /*
@@ -131,9 +136,10 @@ public class OsuCircle : MonoBehaviour {
         hit = true;
         ExchangeArrow();
         hitScore = Time.time - PerfectHitTime;
-        Debug.Log(hitScore);
-        this.gameObject.SetActive(false);
-        Destroy(this.gameObject);
+        source.Play();
+        //Debug.Log(hitScore);
+        //this.gameObject.SetActive(false);
+        //Destroy(this.gameObject);
     }
     public void ExchangeArrow() {
         GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>().loaded = Arrow;

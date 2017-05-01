@@ -8,6 +8,7 @@ public class Arrow : MonoBehaviour {
 	public float lifetime = 2f;
 	public GameObject model;
 	public Player player = null;
+    public AudioSource source;
 
 	public enum arrowDmgTypes
 	{
@@ -18,11 +19,16 @@ public class Arrow : MonoBehaviour {
 	public void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 		Invoke ("DestroySelf", lifetime);
+        source = GetComponent<AudioSource>();
+        source.Play();
+        Debug.Log("Playing");
     }
 
     public void FixedUpdate(){
 		transform.Translate(Vector3.forward * speedMult * player.arrowSpeed);
     }
+
+
 
     void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag == "Enemy") {
