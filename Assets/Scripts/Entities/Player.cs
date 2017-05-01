@@ -60,10 +60,10 @@ public class Player : MonoBehaviour {
 		if (!gamecontroller.isPaused)
 			Movement ();
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
-            anim.SetTrigger("Run");
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) {
+			anim.SetBool("Walking", true);
         }else {
-            anim.ResetTrigger("Run");
+			anim.SetBool("Walking", false);
         }
     }
 
