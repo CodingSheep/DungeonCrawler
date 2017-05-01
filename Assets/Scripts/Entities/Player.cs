@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
 
 	//Health 2.0
 	public Texture2D HpBarTexture;
+	public Texture2D HpBackTexture;
 	float hpBarLength;
 
     private Animator anim;
@@ -80,6 +81,14 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionStay(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			health--;
+			invulnerable = true;
+			Invoke ("ResetVulnerability", 2f);
+		}
+	}
+
     void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
@@ -106,6 +115,7 @@ public class Player : MonoBehaviour {
 
 	//Test for Health Bar
 	void OnGUI() {
+		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, 100, 10), HpBackTexture);
 		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
 	}
 
