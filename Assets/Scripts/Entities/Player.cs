@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 	public float freezeTime = 2f;
 	public float slowMult = 1.5f;
 
+	private bool invulnerable = false;
+
 	private Camera mainCam;
 	//private GameObject cursor;
 	private Ray camRay; //Ray from camera to mouse position
@@ -70,6 +72,14 @@ public class Player : MonoBehaviour {
         }
     }
 
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.tag == "Enemy" && !invulnerable) {
+			health--;
+			invulnerable = true;
+			Invoke ("ResetVulnerability", 2f);
+		}
+	}
+
     void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
@@ -97,5 +107,9 @@ public class Player : MonoBehaviour {
 	//Test for Health Bar
 	void OnGUI() {
 		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
+	}
+
+	void ResetVulnerability() {
+		invulnerable = false;
 	}
 }
