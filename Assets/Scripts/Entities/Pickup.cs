@@ -6,8 +6,10 @@ public class Pickup : MonoBehaviour {
 
 	Player player;
 
-	public float minVal = 1;
-	public float maxVal = 1;
+	public float minVal = 1.1f;
+	public float maxVal = 1.4f;
+	public bool randomType;
+	public bool randomVal = true;
 	public enum pickupTypes
 	{
 		none = 0, speed = 1, arrowSpeed = 2, damage = 3, health = 4, maxHealth = 5
@@ -17,10 +19,25 @@ public class Pickup : MonoBehaviour {
 
 	void Start () {
 		player = GameObject.FindWithTag ("Player").GetComponent<Player>();
+		if (randomType) {
+			pickupType = (pickupTypes)Random.Range (1, 5);
+		}
+		if (randomVal) {
+			pickupValueOrMult = Random.Range (minVal, maxVal);
+		}
 	}
 	
 	void FixedUpdate () {
-		//bobbing up and down movement can be added here
+		if (GetComponent<SphereCollider> ().isTrigger) {
+			transform.rotation = Quaternion.Euler (new Vector3 (transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + 200 * Time.deltaTime, transform.rotation.eulerAngles.z));
+		}
+	}
+
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.tag == "Ground") {
+			GetComponent<Rigidbody> ().isKinematic = true;
+			GetComponent<SphereCollider> ().isTrigger = true;
+		}
 	}
 
 	void OnTriggerEnter(Collider col) {
