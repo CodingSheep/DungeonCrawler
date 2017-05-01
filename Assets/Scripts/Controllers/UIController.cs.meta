@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: c741598d2f34ced45a6470d38059b300
-timeCreated: 1489479598
+timeCreated: 1493668383
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cursorTexture: {instanceID: 0}
+  - AimLine: {instanceID: 0}
+  - ShootingAimLine: {instanceID: 0}
+  - OsuCircle: {fileID: 1529732885554140, guid: f66e31374feb947449859c928d404b4f,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
