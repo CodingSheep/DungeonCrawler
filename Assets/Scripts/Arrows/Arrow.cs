@@ -10,6 +10,8 @@ public class Arrow : MonoBehaviour {
 	public Player player = null;
     public AudioSource source;
 
+	private MobHealth enemy;
+
 	public enum arrowDmgTypes
 	{
 		basic = 0, fire = 1, ice = 2, slow = 3
@@ -29,10 +31,13 @@ public class Arrow : MonoBehaviour {
 
 
 
-	void OnTriggerEnter(Collider col) {
+    void OnTriggerEnter(Collider col) {
 		if (col.gameObject.tag == "Enemy") {
-			MobHealth enemy = col.gameObject.GetComponent<MobHealth> ();
+			enemy = col.gameObject.GetComponent<MobHealth> ();
 
+			enemy.curHealth--;
+
+			/*When we get around to this
 			switch (arrowDmgType) {
 			case arrowDmgTypes.basic:
 				enemy.DoDamage (player.arrowDmg);
@@ -46,7 +51,8 @@ public class Arrow : MonoBehaviour {
 			case arrowDmgTypes.slow:
 				enemy.ApplySlow (player.arrowDmg, player.slowMult);
 				break;
-			}
+			}*/
+
 			DestroySelf();
 		} else if (col.gameObject.tag == "World") {
 			DestroySelf();

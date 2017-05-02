@@ -43,8 +43,7 @@ public class UIController : MonoBehaviour {
 			Vector3 offset = new Vector3 (Mathf.Cos(2 * Mathf.PI * ((float)i/circleTypes.Count)), Mathf.Sin(2 * Mathf.PI * ((float)i/circleTypes.Count)), 0);
 			GameObject toSpawn = Instantiate(circleTypes[i], center + (offset * 200), Quaternion.identity, this.transform ) as GameObject;
 		}
-        //GameObject firstCircle = Instantiate(OsuCircle,Radial, Quaternion.identity, this.transform ) as GameObject;
-    }
+	}
 
     public void Release() {
         isShooting = false;
