@@ -6,10 +6,16 @@ using UnityEngine.AI;
 public class MobHealth : MonoBehaviour {
 
 	public float health = 10f;
+	public float curHealth;
 	private Mob2Movement movement2;
 	private NavMeshAgent nav;
 	private float navSpeed;
 	private bool alreadySlowed = false;
+
+	public Texture2D HpBarTexture;
+	public Texture2D HpBackTexture;
+	private float hpBarLength;
+	private Vector3 target;
 
 	void Start () {
 		
@@ -19,11 +25,18 @@ public class MobHealth : MonoBehaviour {
 		//for simple mover mobs
 		else if (GetComponent<NavMeshAgent>() != null)
 			nav = GetComponent<NavMeshAgent>();
-		
+	
+		curHealth = health;
 	}
 
 	void Update () {
-		
+		if (curHealth <= 0)
+			Destroy (this.gameObject);
+
+		hpBarLength = ((float)curHealth / health) * 100;
+
+		target = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
+		target.y = Screen.height - (target.y + 1);
 	}
 
 	//
@@ -98,5 +111,12 @@ public class MobHealth : MonoBehaviour {
 	}
 
 	//--------------------------------------------------------
+
+	//Test for Health Bar
+	void OnGUI() {
+		GUI.DrawTexture(new Rect(target.x - 50, target.y - 50, hpBarLength, 10), HpBackTexture);
+		GUI.DrawTexture(new Rect(target.x - 50, target.y - 50, hpBarLength, 10), HpBarTexture);
+	}
+
 	//--------------------------------------------------------
 }

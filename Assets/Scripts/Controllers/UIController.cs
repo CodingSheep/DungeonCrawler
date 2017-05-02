@@ -36,7 +36,7 @@ public class UIController : MonoBehaviour {
         //Debug.Log(center);
         //Debug.Log(Input.mousePosition + " mouse");
         Vector3 Radial = center + (Input.mousePosition - center).normalized * 200;
-        GameObject firstCircle = Instantiate(OsuCircle,Radial, Quaternion.identity, this.transform ) as GameObject;
+		GameObject firstCircle = Instantiate (OsuCircle, Radial, Quaternion.identity, this.transform) as GameObject;
     }
 
     public void Release() {
