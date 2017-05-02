@@ -23,7 +23,6 @@ public class Arrow : MonoBehaviour {
 		Invoke ("DestroySelf", lifetime);
         source = GetComponent<AudioSource>();
         source.Play();
-        Debug.Log("Playing");
     }
 
     public void FixedUpdate(){

@@ -15,6 +15,8 @@ public class UIController : MonoBehaviour {
 
 	public bool isPause = false;
 
+	public List<GameObject> circleTypes;
+
     public GameObject OsuCircle;
     // Use this for initialization
     void Start () {
@@ -36,8 +38,12 @@ public class UIController : MonoBehaviour {
         //Debug.Log(center);
         //Debug.Log(Input.mousePosition + " mouse");
         Vector3 Radial = center + (Input.mousePosition - center).normalized * 200;
-		GameObject firstCircle = Instantiate (OsuCircle, Radial, Quaternion.identity, this.transform) as GameObject;
-    }
+
+		for (int i = 0; i < circleTypes.Count; i++) {
+			Vector3 offset = new Vector3 (Mathf.Cos(2 * Mathf.PI * ((float)i/circleTypes.Count)), Mathf.Sin(2 * Mathf.PI * ((float)i/circleTypes.Count)), 0);
+			GameObject toSpawn = Instantiate(circleTypes[i], center + (offset * 200), Quaternion.identity, this.transform ) as GameObject;
+		}
+	}
 
     public void Release() {
         isShooting = false;
