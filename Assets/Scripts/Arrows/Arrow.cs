@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour {
 
 
 
-    void OnCollisionEnter(Collision col) {
+	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.tag == "Enemy") {
 			MobHealth enemy = col.gameObject.GetComponent<MobHealth> ();
 
