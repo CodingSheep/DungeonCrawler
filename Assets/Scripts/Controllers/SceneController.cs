@@ -12,6 +12,8 @@ public class SceneController : MonoBehaviour {
 		SceneManager.LoadScene ("menu");
 	}
 	public void Quit() {
+		if(UnityEditor.EditorApplication.isPlaying)
+			UnityEditor.EditorApplication.isPlaying = false;
 		Application.Quit ();
 	}
 }
