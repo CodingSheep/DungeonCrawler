@@ -35,9 +35,6 @@ public class Arrow : MonoBehaviour {
 		if (col.gameObject.tag == "Enemy") {
 			enemy = col.gameObject.GetComponent<MobHealth> ();
 
-			//enemy.curHealth--;
-
-
 			switch (arrowDmgType) {
 			case arrowDmgTypes.basic:
 				enemy.DoDamage (player.arrowDmg);
