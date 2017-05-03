@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
     private GameObject player;
@@ -29,6 +30,8 @@ public class UIController : MonoBehaviour {
     public GameObject OsuCircle;
     // Use this for initialization
     void Start () {
+		Time.timeScale = 1;
+
         player = GameObject.FindGameObjectWithTag("Player");
         hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
