@@ -46,14 +46,15 @@ public class MobHealth : MonoBehaviour {
 	//
 
 	public void DoDamage(float dmg) {
-		health -= dmg;
+		curHealth -= dmg;
 	}
 
 	//--------------------------------------------------------
 
 	public IEnumerator ApplyBurn(float dmg, int burnsLeft) {
-		yield return new WaitForSeconds (.5f); //half second burn rate
+		yield return new WaitForSeconds (1); //one second burn rate
 		BurnEffect (dmg);
+		Debug.Log ("Burning");
 		if (burnsLeft > 0) {
 			StartCoroutine (ApplyBurn (dmg, burnsLeft - 1)); //call burn again with 1 less repeat
 		}

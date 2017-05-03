@@ -35,9 +35,9 @@ public class Arrow : MonoBehaviour {
 		if (col.gameObject.tag == "Enemy") {
 			enemy = col.gameObject.GetComponent<MobHealth> ();
 
-			enemy.curHealth--;
+			//enemy.curHealth--;
 
-			/*When we get around to this
+
 			switch (arrowDmgType) {
 			case arrowDmgTypes.basic:
 				enemy.DoDamage (player.arrowDmg);
@@ -51,7 +51,7 @@ public class Arrow : MonoBehaviour {
 			case arrowDmgTypes.slow:
 				enemy.ApplySlow (player.arrowDmg, player.slowMult);
 				break;
-			}*/
+			}
 
 			DestroySelf();
 		} else if (col.gameObject.tag == "World") {
