@@ -43,7 +43,7 @@ public class Arrow : MonoBehaviour {
 				enemy.DoDamage (player.arrowDmg);
 				break;
 			case arrowDmgTypes.fire:
-				enemy.ApplyBurn (player.arrowDmg, player.burnAmount);
+				enemy.StartBurn (player.arrowDmg/2f, player.burnAmount);
 				break;
 			case arrowDmgTypes.ice:
 				enemy.ApplyFreeze (player.arrowDmg, player.freezeTime);
