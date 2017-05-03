@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MobHealth : MonoBehaviour {
 
@@ -17,6 +18,10 @@ public class MobHealth : MonoBehaviour {
 	private float hpBarLength;
 	private Vector3 target;
 
+	public GameObject damageText;
+
+	private UIController uic;
+
 	void Start () {
 		
 		//for jumper mobs
@@ -26,6 +31,8 @@ public class MobHealth : MonoBehaviour {
 		else if (GetComponent<NavMeshAgent>() != null)
 			nav = GetComponent<NavMeshAgent>();
 	
+		uic = GameObject.FindWithTag ("UIController").GetComponent<UIController> ();
+
 		curHealth = health;
 	}
 
@@ -39,6 +46,19 @@ public class MobHealth : MonoBehaviour {
 		target.y = Screen.height - (target.y + 1);
 	}
 
+	void InitDamageText(string str) {
+		GameObject toSpawn = Instantiate (damageText) as GameObject;
+		RectTransform rect = toSpawn.GetComponent<RectTransform> ();
+		toSpawn.transform.SetParent(transform.FindChild("MobCanvas"));
+		toSpawn.transform.localPosition = damageText.transform.localPosition;
+		toSpawn.transform.localScale = damageText.transform.localScale;
+		toSpawn.transform.localRotation = damageText.transform.localRotation;
+		toSpawn.GetComponent<Text> ().text = str;
+
+		toSpawn.GetComponent<Animator> ().SetTrigger ("Hit");
+		Destroy (toSpawn.gameObject, 2);
+	}
+
 	//
 	//--------------------------------------------------------
 	// STATUS EFFECTS
@@ -46,14 +66,25 @@ public class MobHealth : MonoBehaviour {
 	//
 
 	public void DoDamage(float dmg) {
-		health -= dmg;
+		InitDamageText (dmg.ToString ());
+		if (curHealth <= dmg) {
+			uic.UpdateScore (1);
+			Destroy (this.gameObject);
+		} else {
+			curHealth -= dmg;
+		}
 	}
 
 	//--------------------------------------------------------
 
+	public void StartBurn(float dmg, int burns) {
+		StartCoroutine(ApplyBurn (dmg, burns));
+	}
+
 	public IEnumerator ApplyBurn(float dmg, int burnsLeft) {
-		yield return new WaitForSeconds (.5f); //half second burn rate
+		yield return new WaitForSeconds (1); //one second burn rate
 		BurnEffect (dmg);
+		Debug.Log ("Burning");
 		if (burnsLeft > 0) {
 			StartCoroutine (ApplyBurn (dmg, burnsLeft - 1)); //call burn again with 1 less repeat
 		}
@@ -114,8 +145,10 @@ public class MobHealth : MonoBehaviour {
 
 	//Test for Health Bar
 	void OnGUI() {
-		GUI.DrawTexture(new Rect(target.x - 50, target.y - 50, hpBarLength, 10), HpBackTexture);
-		GUI.DrawTexture(new Rect(target.x - 50, target.y - 50, hpBarLength, 10), HpBarTexture);
+		if (!uic.isGameOver) {
+			GUI.DrawTexture (new Rect (target.x - 50, target.y - 50, hpBarLength, 10), HpBackTexture);
+			GUI.DrawTexture (new Rect (target.x - 50, target.y - 50, hpBarLength, 10), HpBarTexture);
+		}
 	}
 
 	//--------------------------------------------------------

@@ -24,6 +24,7 @@ public class Player : MonoBehaviour {
 	private Vector3 deltamovement;
     private GameController gamecontroller;
     private SpellController spellUI;
+	private UIController uic;
 
     private double timeHeld;
 	private double test;
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour {
         //cursor = GameObject.FindGameObjectWithTag("Cursor");
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         spellUI = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
+		uic = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
 
         timeHeld = 0.0;
     }
@@ -75,17 +77,31 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag == "Enemy" && !invulnerable) {
-			health--;
-			invulnerable = true;
-			Invoke ("ResetVulnerability", 2f);
+			if (health > 1) {
+				health--;
+				invulnerable = true;
+				Invoke ("ResetVulnerability", 2f);
+			} else {
+				if (uic.GetScore () > PlayerPrefs.GetInt ("highscore")) {
+					PlayerPrefs.SetInt ("highscore", uic.GetScore ());
+				}
+				uic.ShowGameOver ();
+			}
 		}
 	}
 
 	void OnCollisionStay(Collision col) {
 		if (col.gameObject.tag == "Enemy" && !invulnerable) {
-			health--;
-			invulnerable = true;
-			Invoke ("ResetVulnerability", 2f);
+			if (health > 1) {
+				health--;
+				invulnerable = true;
+				Invoke ("ResetVulnerability", 2f);
+			} else {
+				if (uic.GetScore () > PlayerPrefs.GetInt ("highscore")) {
+					PlayerPrefs.SetInt ("highscore", uic.GetScore ());
+				}
+				uic.ShowGameOver ();
+			}
 		}
 	}
 
@@ -115,8 +131,10 @@ public class Player : MonoBehaviour {
 
 	//Test for Health Bar
 	void OnGUI() {
-		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, 100, 10), HpBackTexture);
-		GUI.DrawTexture(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
+		if (!uic.isGameOver) {
+			GUI.DrawTexture (new Rect ((Screen.width / 2) - 50, (Screen.height / 2) - 50, 100, 10), HpBackTexture);
+			GUI.DrawTexture (new Rect ((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
+		}
 	}
 
 	void ResetVulnerability() {

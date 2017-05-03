@@ -23,7 +23,6 @@ public class Arrow : MonoBehaviour {
 		Invoke ("DestroySelf", lifetime);
         source = GetComponent<AudioSource>();
         source.Play();
-        Debug.Log("Playing");
     }
 
     public void FixedUpdate(){
@@ -36,15 +35,12 @@ public class Arrow : MonoBehaviour {
 		if (col.gameObject.tag == "Enemy") {
 			enemy = col.gameObject.GetComponent<MobHealth> ();
 
-			enemy.curHealth--;
-
-			/*When we get around to this
 			switch (arrowDmgType) {
 			case arrowDmgTypes.basic:
 				enemy.DoDamage (player.arrowDmg);
 				break;
 			case arrowDmgTypes.fire:
-				enemy.ApplyBurn (player.arrowDmg, player.burnAmount);
+				enemy.StartBurn (player.arrowDmg/2f, player.burnAmount);
 				break;
 			case arrowDmgTypes.ice:
 				enemy.ApplyFreeze (player.arrowDmg, player.freezeTime);
@@ -52,7 +48,7 @@ public class Arrow : MonoBehaviour {
 			case arrowDmgTypes.slow:
 				enemy.ApplySlow (player.arrowDmg, player.slowMult);
 				break;
-			}*/
+			}
 
 			DestroySelf();
 		} else if (col.gameObject.tag == "World") {

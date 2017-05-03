@@ -17,6 +17,11 @@ public class OsuCircle : MonoBehaviour {
 	private OsuCircle[] circle_arr;
     */
     public GameObject Arrow;
+	public enum arrowTypes
+	{
+		basic = 0, fast = 1, delayed = 2, fire = 3, ice = 4, slow = 5
+	}
+	public arrowTypes arrowType;
 
     public float TimeDelay;
     private float PerfectHitTime;
