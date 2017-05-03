@@ -17,6 +17,8 @@ public class MobHealth : MonoBehaviour {
 	private float hpBarLength;
 	private Vector3 target;
 
+	private UIController uic;
+
 	void Start () {
 		
 		//for jumper mobs
@@ -26,6 +28,8 @@ public class MobHealth : MonoBehaviour {
 		else if (GetComponent<NavMeshAgent>() != null)
 			nav = GetComponent<NavMeshAgent>();
 	
+		uic = GameObject.FindWithTag ("UIController").GetComponent<UIController> ();
+
 		curHealth = health;
 	}
 
@@ -46,7 +50,12 @@ public class MobHealth : MonoBehaviour {
 	//
 
 	public void DoDamage(float dmg) {
-		curHealth -= dmg;
+		if (curHealth <= dmg) {
+			uic.UpdateScore (1);
+			Destroy (this.gameObject);
+		} else {
+			curHealth -= dmg;
+		}
 	}
 
 	//--------------------------------------------------------
@@ -115,8 +124,10 @@ public class MobHealth : MonoBehaviour {
 
 	//Test for Health Bar
 	void OnGUI() {
-		GUI.DrawTexture(new Rect(target.x - 50, target.y - 50, hpBarLength, 10), HpBackTexture);
-		GUI.DrawTexture(new Rect(target.x - 50, target.y - 50, hpBarLength, 10), HpBarTexture);
+		if (!uic.isGameOver) {
+			GUI.DrawTexture (new Rect (target.x - 50, target.y - 50, hpBarLength, 10), HpBackTexture);
+			GUI.DrawTexture (new Rect (target.x - 50, target.y - 50, hpBarLength, 10), HpBarTexture);
+		}
 	}
 
 	//--------------------------------------------------------
