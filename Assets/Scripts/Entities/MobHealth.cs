@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MobHealth : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class MobHealth : MonoBehaviour {
 	public Texture2D HpBackTexture;
 	private float hpBarLength;
 	private Vector3 target;
+
+	public GameObject damageText;
 
 	private UIController uic;
 
@@ -43,6 +46,19 @@ public class MobHealth : MonoBehaviour {
 		target.y = Screen.height - (target.y + 1);
 	}
 
+	void InitDamageText(string str) {
+		GameObject toSpawn = Instantiate (damageText) as GameObject;
+		RectTransform rect = toSpawn.GetComponent<RectTransform> ();
+		toSpawn.transform.SetParent(transform.FindChild("MobCanvas"));
+		toSpawn.transform.localPosition = damageText.transform.localPosition;
+		toSpawn.transform.localScale = damageText.transform.localScale;
+		toSpawn.transform.localRotation = damageText.transform.localRotation;
+		toSpawn.GetComponent<Text> ().text = str;
+
+		toSpawn.GetComponent<Animator> ().SetTrigger ("Hit");
+		Destroy (toSpawn.gameObject, 2);
+	}
+
 	//
 	//--------------------------------------------------------
 	// STATUS EFFECTS
@@ -50,6 +66,7 @@ public class MobHealth : MonoBehaviour {
 	//
 
 	public void DoDamage(float dmg) {
+		InitDamageText (dmg.ToString ());
 		if (curHealth <= dmg) {
 			uic.UpdateScore (1);
 			Destroy (this.gameObject);
@@ -59,6 +76,10 @@ public class MobHealth : MonoBehaviour {
 	}
 
 	//--------------------------------------------------------
+
+	public void StartBurn(float dmg, int burns) {
+		StartCoroutine(ApplyBurn (dmg, burns));
+	}
 
 	public IEnumerator ApplyBurn(float dmg, int burnsLeft) {
 		yield return new WaitForSeconds (1); //one second burn rate
