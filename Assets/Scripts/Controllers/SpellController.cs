@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpellController : MonoBehaviour {
+    /*! \class SpellController
+     * Handles spell interactions in the game
+     */
+
     private UIController UIController;
     private GameController GameController;
 	private GameObject player;
