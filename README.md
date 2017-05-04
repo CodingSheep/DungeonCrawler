@@ -14,23 +14,23 @@ Our attempt at a dungeon crawler game.
 
 ## Vision Statement
 
-  "To deliver smooth interactive gameplay mechanics, and a game I could show off playing." 
+  "To deliver smooth interactive gameplay mechanics, and a game I could show off playing."
 Motivation:
   We all want to make a game that we would want to play.
-  
+
 ## Risks
 
-  C# is fairly new to some people on the team. 
-  Large soft projects are also a new endevour for many of us. 
-  Art and assets might be hard to account for. 
+  C# is fairly new to some people on the team.
+  Large soft projects are also a new endevour for many of us.
+  Art and assets might be hard to account for.
   And no experience working with eachother.
-  
+
 ## Mitigation
   The more experienced people will take time to teach the less experienced people how to use C# and Unity. And frequent communication.
   We will focus on organization and delegate tasks in a reasonable and productive manner.
   Simple geometric models, and dedication to creating assests.
   Frequent communication.
-  
+
 ## Requirements
   1. User story 1
     * As a player, I want to play a game with a rhythm game like mechanic, so that I can feel engaged to the game.
@@ -56,7 +56,7 @@ Motivation:
     * As a player, I want fast-paced gameplay and movement, so that the game feels more engaging.
     * Priority: Critical
     * Story Points: 1
-    
+
 ## Methodology
 
 Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycles, with frequent meeting and testing. But with a set end goal.
@@ -65,12 +65,15 @@ Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycl
  Github Issues and Milestones/Projects of the Organization
  1. [Github Milestones](https://github.com/softdev3308/DungeonCrawler/milestones)
  2. [Github Project Tracking](https://github.com/softdev3308/DungeonCrawler/projects/1)
- 
+
 ## Project Plan
 ![project](https://puu.sh/u6dqd/8710624e34.png)
 
 ## Organization
-All of the code that we wrote is in /Assets/Scripts. Test cases are in the unit_testing branch. Auto-documenter documents are in /AutoDocs. 
+All of the code that we wrote is in /Assets/Scripts. Test cases are in the unit_testing branch. Auto-documenter documents are in /AutoDocs.
+
+AutoDocs were made using Doxygen on c#
+Please use /AutoDocs/html/annotated.html to navigate the suite
 
 ## To Play
 Go to the folder labeled "Builds" and, depending on your OS, find the executable file to play the game!
