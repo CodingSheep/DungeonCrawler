@@ -5,30 +5,37 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
-    private GameObject player;
+    /*! \class UIController
+     * Controller object that handles most UI interactions in the GameScene
+     */
+    private GameObject player; //!< Player object
 
-    public Texture2D cursorTexture;
-    private Vector2 hotSpot = Vector2.zero;
+    public Texture2D cursorTexture; //!< Custom Cursor textures changed in the Editor
+    private Vector2 hotSpot = Vector2.zero; //!< Offset of the cursor (based on where anchor is set)
 
-    public GameObject AimLine;
-    public GameObject ShootingAimLine;
-    private GameObject shootline;
-    public bool isShooting;
+    public GameObject AimLine; //!< Gameobject that handles aim line
+    public GameObject ShootingAimLine; //!< Gameobject that handles the growing line
+    private GameObject shootline; //!< private gameobject
+    public bool isShooting; //!< Boolean object used in shootingaimline
 
-	public List<GameObject> circleTypes;
+	public List<GameObject> circleTypes; //!< List of OsuCircles that spawn around the player when firing
 
-	private Text scoreText;
-	private int score;
+	private Text scoreText; //!< Score
+	private int score; //!< current Int value of score
 
-	public bool isGameOver = false;
-	public Canvas gameOver;
-	public Text gameOverScore;
-	public Text gameOverHighScore;
+	public bool isGameOver = false; //!< Managed in scenes and menus (death menu)
+	public Canvas gameOver; //!< Death menu canvas
+	public Text gameOverScore; //!< Death menu Text object 
+	public Text gameOverHighScore; //!< Death menu Highscore text
 
-	public bool isPause = false;
+	public bool isPause = false; //!< boolean handles pausing and pause canvas
 
-    public GameObject OsuCircle;
-    // Use this for initialization
+    public GameObject OsuCircle; //!< Instantiate blank OsuCircle gameobject
+
+    /*!
+     * Instantiates all members and UI Assets
+     * Also sets default values for scoores and Canvases
+     */
     void Start () {
 		Time.timeScale = 1;
 
@@ -44,21 +51,25 @@ public class UIController : MonoBehaviour {
 		gameOverScore = GameObject.Find ("GameOverScore").GetComponent<Text> ();
 		gameOverHighScore = GameObject.Find ("GameOverHighScore").GetComponent<Text> ();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-
+    /*!
+     * Updates score shown on canvas
+     * @param num is the score that needs to be updated
+     */
 	public void UpdateScore(int num) {
 		score += num;
 		scoreText.text = "SCORE : " + score;
 	}
 
+    /*!
+     * Returns score
+     */
 	public int GetScore() {
 		return score;
 	}
 
+    /*!
+     * Creates the GameOver menu
+     */
 	public void ShowGameOver() {
 		Time.timeScale = 0;
 		isGameOver = true;
@@ -68,6 +79,9 @@ public class UIController : MonoBehaviour {
 		gameOver.enabled = true;
 	}
 
+    /*!
+     * Instantiates Shooting UI elements (Like Osu Circles)
+     */
     public void Shooting() {
         isShooting = true;
         Vector3 center = new Vector3(Screen.width / 2, Screen.height/2, 0.0f);
@@ -78,10 +92,13 @@ public class UIController : MonoBehaviour {
 		for (int i = 0; i < circleTypes.Count; i++) {
 			Vector3 offset = new Vector3 (Mathf.Cos(2 * Mathf.PI * ((float)i/circleTypes.Count)), Mathf.Sin(2 * Mathf.PI * ((float)i/circleTypes.Count)), 0);
 			GameObject toSpawn = Instantiate(circleTypes[i], center + (offset * 200), Quaternion.identity, this.transform ) as GameObject;
+            //! reads in list of CircleTypes (prefabs)
 		}
 
     }
-
+    /*!
+     * UI Elements on shooting Release
+     */
     public void Release() {
         isShooting = false;
         GameObject[] Circles = GameObject.FindGameObjectsWithTag("OsuCircle");
