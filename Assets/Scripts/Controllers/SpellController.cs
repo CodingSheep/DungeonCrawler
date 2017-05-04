@@ -8,22 +8,22 @@ public class SpellController : MonoBehaviour {
      * Handles spell interactions in the game
      */
 
-    private UIController UIController;
-    private GameController GameController;
-	private GameObject player;
-	public GameObject basicArrow;
-    public GameObject FastArrow;
-	//public Texture2D cursorTexture;
+    private UIController UIController; //!< UIController object for communication
+    private GameController GameController; //!< GameController object for communication
+    private GameObject player; //!< Player object
+	public GameObject basicArrow; //! Basic arrow to be instantiated on load
+    public GameObject FastArrow; //!< fastarrow to be instantiated on osucircle click
 
-	//Setup
-	public bool firing;
+	public bool firing; //!< boolean to keep track of player state
 
-	//Part of Osu Mechanic
-	private float osuTime;
-    public float osuTimeScale;
+	private float osuTime; //!< variable to keep track of how close the user was to clicking the circle in time
+    public float osuTimeScale; //!< speed of the OsuCircles
 
-    public GameObject loaded;
+    public GameObject loaded; //!< default arrow that gets interchanged on osucircle selection
 
+    /*!
+     * Sets member values
+     */
 	public void Start() {
         UIController = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
         GameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -33,8 +33,10 @@ public class SpellController : MonoBehaviour {
 
     }
 
+    /*!
+     * Update checks gamestates in current frame for any updates to spell related events, such as new arrows or firing/
+     */
 	public void Update() {
-        //Currently Breaking here for some reason
         UIController = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
         if (GameController != null) {
             if (GameController.playerIsFiring) {
@@ -43,11 +45,16 @@ public class SpellController : MonoBehaviour {
         }
     }
 
+    /*!
+     * @param instantiates an arrow gameobject
+     */
 	public void SpawnArrow(GameObject arrow) {
 		GameObject toSpawn = Instantiate (arrow, player.transform.position, player.transform.rotation, this.transform);
-		//toSpawn.GetComponent<Arrow> ().spell = spell;
 	}
-
+    /*!
+     * Starts the arrow shooting sequence. Sets loaded arrow to default basicArrow.
+     * Loaded then changes based on whether or not an Osucircle had been clicked.
+     */
     public void StartSpawnSequence()
     {
 		UIController.Shooting();
@@ -55,13 +62,18 @@ public class SpellController : MonoBehaviour {
         osuTime = 0;
     }
 
+    /*!
+     * Instantiates the loaded arrow upon bow release
+     */
     public void EndSpawnSequence()
     {
 		UIController.Release();
         SpawnArrow(loaded);
         osuTime = 0;
     }
-
+    /*!
+     * returns a float (seconds) on how close the player was to hitting the Approach circle in the appropriate time
+     */
     public float GetOsuTime() {
         return osuTime;
     }
