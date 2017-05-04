@@ -13,9 +13,5 @@ public class SceneController : MonoBehaviour {
 	}
 	public void Quit() {
 		Application.Quit ();
-
-		//We will only reach here if we're in editor mode
-		if(UnityEditor.EditorApplication.isPlaying)
-			UnityEditor.EditorApplication.isPlaying = false;
 	}
 }

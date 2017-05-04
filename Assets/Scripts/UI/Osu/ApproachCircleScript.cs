@@ -13,7 +13,7 @@ public class ApproachCircleScript : MonoBehaviour {
     void Start() {
         line = gameObject.GetComponent<LineRenderer>();
 
-        line.numPositions = (segments + 1);
+        line.positionCount = (segments + 1);
         line.useWorldSpace = false;
         CreatePoints();
     }
