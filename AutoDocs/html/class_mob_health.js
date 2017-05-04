@@ -1,0 +1,26 @@
+var class_mob_health =
+[
+    [ "ApplyBurn", "class_mob_health.html#a90c10dc6ba571545b3d466ec83ebf6e7", null ],
+    [ "ApplyFreeze", "class_mob_health.html#ac4b90844fdf1be4b5fad4693c48bd61f", null ],
+    [ "ApplySlow", "class_mob_health.html#a7374507ad90db5ced9395476a3943230", null ],
+    [ "BurnEffect", "class_mob_health.html#aba4ed1f920f770c312d214e541620f9f", null ],
+    [ "DoDamage", "class_mob_health.html#adaf878419692a8b6a16f8f3861a6c74e", null ],
+    [ "InitDamageText", "class_mob_health.html#a13e17984b18c95b8e6d56f52f9e11a71", null ],
+    [ "OnGUI", "class_mob_health.html#ae30ec0b3661db3d9306ead156bcc90c2", null ],
+    [ "Start", "class_mob_health.html#af397aaaf764c7338aa1a83714537a68a", null ],
+    [ "StartBurn", "class_mob_health.html#abcc0a1a5fef542a2c5f83e3d80d21d18", null ],
+    [ "Unfreeze", "class_mob_health.html#aa6acd5f6aad4b4d621db7d927169cd70", null ],
+    [ "Update", "class_mob_health.html#a0652c8b5a2fcb5cb791eb26305425024", null ],
+    [ "alreadySlowed", "class_mob_health.html#ac89dd915f414c757c3e0120ed403bb9b", null ],
+    [ "curHealth", "class_mob_health.html#a766429dd6a72c403a371b87e3522fa43", null ],
+    [ "damageText", "class_mob_health.html#ad20b76297e42388a314f26e863acdf09", null ],
+    [ "health", "class_mob_health.html#acf92ca7925059c25691b1a6fdc921e3f", null ],
+    [ "HpBackTexture", "class_mob_health.html#aa9c36ad6a31c1e07393b6e70f8b98caa", null ],
+    [ "hpBarLength", "class_mob_health.html#a452c19b63a316238a03bddd724a7e9ee", null ],
+    [ "HpBarTexture", "class_mob_health.html#a08f875a009f447e245015e1df63b4bb4", null ],
+    [ "movement2", "class_mob_health.html#a62d5d74d1e5f66d626fc1e76f2be84cc", null ],
+    [ "nav", "class_mob_health.html#afb9d2d290a111506515407311408ed98", null ],
+    [ "navSpeed", "class_mob_health.html#ac5aa23c1785ac8bdde4ca35b04b8967a", null ],
+    [ "target", "class_mob_health.html#ade867811ed397c0701ffa21a446e92ac", null ],
+    [ "uic", "class_mob_health.html#a4e2637916ef423d557a89d0d7d50cb8f", null ]
+];

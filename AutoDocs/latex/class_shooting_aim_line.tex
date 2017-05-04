@@ -1,0 +1,83 @@
+\hypertarget{class_shooting_aim_line}{}\section{Shooting\+Aim\+Line Class Reference}
+\label{class_shooting_aim_line}\index{Shooting\+Aim\+Line@{Shooting\+Aim\+Line}}
+Inheritance diagram for Shooting\+Aim\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_shooting_aim_line}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_shooting_aim_line_aea74f66ae5a79b70d07dbc7fe4970f34}{Start} ()
+\item 
+void \hyperlink{class_shooting_aim_line_abe1fb3aafc6c03c5010c842026b1368a}{Late\+Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Camera \hyperlink{class_shooting_aim_line_a7198b2c13fc8ce0a388f82138362cd67}{main\+Cam}
+\begin{DoxyCompactList}\small\item\em main\+Camera object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_a10ac775070726d01148aafc2471aab2a}\label{class_shooting_aim_line_a10ac775070726d01148aafc2471aab2a}} 
+\hyperlink{class_spell_controller}{Spell\+Controller} \hyperlink{class_shooting_aim_line_a10ac775070726d01148aafc2471aab2a}{spell\+Controller}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_spell_controller}{Spell\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_ae75dab10b6a07d162b97fe42d3c7075c}\label{class_shooting_aim_line_ae75dab10b6a07d162b97fe42d3c7075c}} 
+\hyperlink{class_game_controller}{Game\+Controller} \hyperlink{class_shooting_aim_line_ae75dab10b6a07d162b97fe42d3c7075c}{game\+Controller}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_game_controller}{Game\+Controller}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_aa696032892218780a70cb35f9891358f}\label{class_shooting_aim_line_aa696032892218780a70cb35f9891358f}} 
+Ray \hyperlink{class_shooting_aim_line_aa696032892218780a70cb35f9891358f}{cam\+Ray}
+\begin{DoxyCompactList}\small\item\em Ray from camera to mouse position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_a1a7e152ffea8365e17c6c5515e8f738f}\label{class_shooting_aim_line_a1a7e152ffea8365e17c6c5515e8f738f}} 
+Raycast\+Hit \hyperlink{class_shooting_aim_line_a1a7e152ffea8365e17c6c5515e8f738f}{cam\+Ray\+Hit}
+\begin{DoxyCompactList}\small\item\em Hit point of raycast. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_a7142bcf77a65c8f0149109c52f28dd94}\label{class_shooting_aim_line_a7142bcf77a65c8f0149109c52f28dd94}} 
+float \hyperlink{class_shooting_aim_line_a7142bcf77a65c8f0149109c52f28dd94}{osu\+Time}
+\begin{DoxyCompactList}\small\item\em Time since rightclick has been held. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_a8667da39555776758cd3d71f9a372c2b}\label{class_shooting_aim_line_a8667da39555776758cd3d71f9a372c2b}} 
+Line\+Renderer \hyperlink{class_shooting_aim_line_a8667da39555776758cd3d71f9a372c2b}{lineren}
+\begin{DoxyCompactList}\small\item\em Linerenderer of the line. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_acc23afdfb6681e1390bfe246cb4ac59e}\label{class_shooting_aim_line_acc23afdfb6681e1390bfe246cb4ac59e}} 
+Game\+Object \hyperlink{class_shooting_aim_line_acc23afdfb6681e1390bfe246cb4ac59e}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} object to know position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_a1bb334d20675dc824fca0978f71a31c0}\label{class_shooting_aim_line_a1bb334d20675dc824fca0978f71a31c0}} 
+Vector3 \hyperlink{class_shooting_aim_line_a1bb334d20675dc824fca0978f71a31c0}{target\+Pos}
+\begin{DoxyCompactList}\small\item\em Target position (where cursor is after some transforms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_a155051b31c29841ea8052b3fe2ac2e07}\label{class_shooting_aim_line_a155051b31c29841ea8052b3fe2ac2e07}} 
+Vector3 \hyperlink{class_shooting_aim_line_a155051b31c29841ea8052b3fe2ac2e07}{player\+Pos}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player}\textquotesingle{}s current position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shooting_aim_line_abe45c1b304f04fac4e870a6f070bee66}\label{class_shooting_aim_line_abe45c1b304f04fac4e870a6f070bee66}} 
+Vector3 \hyperlink{class_shooting_aim_line_abe45c1b304f04fac4e870a6f070bee66}{previous\+Mouse\+Position}
+\begin{DoxyCompactList}\small\item\em Keeps track of delta movements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shooting_aim_line_abe1fb3aafc6c03c5010c842026b1368a}\label{class_shooting_aim_line_abe1fb3aafc6c03c5010c842026b1368a}} 
+\index{Shooting\+Aim\+Line@{Shooting\+Aim\+Line}!Late\+Update@{Late\+Update}}
+\index{Late\+Update@{Late\+Update}!Shooting\+Aim\+Line@{Shooting\+Aim\+Line}}
+\subsubsection{\texorpdfstring{Late\+Update()}{LateUpdate()}}
+{\footnotesize\ttfamily void Shooting\+Aim\+Line.\+Late\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Updates last since it is G\+UI element to eleminate apparent UI issues \mbox{\Hypertarget{class_shooting_aim_line_aea74f66ae5a79b70d07dbc7fe4970f34}\label{class_shooting_aim_line_aea74f66ae5a79b70d07dbc7fe4970f34}} 
+\index{Shooting\+Aim\+Line@{Shooting\+Aim\+Line}!Start@{Start}}
+\index{Start@{Start}!Shooting\+Aim\+Line@{Shooting\+Aim\+Line}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Shooting\+Aim\+Line.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Sets member functions 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_shooting_aim_line_a7198b2c13fc8ce0a388f82138362cd67}\label{class_shooting_aim_line_a7198b2c13fc8ce0a388f82138362cd67}} 
+\index{Shooting\+Aim\+Line@{Shooting\+Aim\+Line}!main\+Cam@{main\+Cam}}
+\index{main\+Cam@{main\+Cam}!Shooting\+Aim\+Line@{Shooting\+Aim\+Line}}
+\subsubsection{\texorpdfstring{main\+Cam}{mainCam}}
+{\footnotesize\ttfamily Camera Shooting\+Aim\+Line.\+main\+Cam\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+main\+Camera object 
+
+A line to handle aiming with the mouse down and too approximate the time it\textquotesingle{}s been since the arrow has been loaded 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+U\+I/\+Osu/Shooting\+Aim\+Line.\+cs\end{DoxyCompactItemize}

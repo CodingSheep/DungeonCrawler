@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnPickups : MonoBehaviour {
+    /*! \class SpawnPickups
+     * Spawns certain items
+     */
 
 	public float radius = 20.0f;
 	private float timer = 0.0f;

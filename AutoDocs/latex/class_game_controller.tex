@@ -1,0 +1,78 @@
+\hypertarget{class_game_controller}{}\section{Game\+Controller Class Reference}
+\label{class_game_controller}\index{Game\+Controller@{Game\+Controller}}
+Inheritance diagram for Game\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_game_controller_a0b2f5dd3890fd4897ca83421d9ce439c}{Toggle\+Pause\+Menu} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_controller_ae49cd9c319e5d5ad8e4346f74fcd1ab4}\label{class_game_controller_ae49cd9c319e5d5ad8e4346f74fcd1ab4}} 
+Game\+Object \hyperlink{class_game_controller_ae49cd9c319e5d5ad8e4346f74fcd1ab4}{Osu\+Circle}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_osu_circle}{Osu\+Circle} gameobject to be instantiated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_controller_a3ce5989e4c40bdf139e70c9985559a78}\label{class_game_controller_a3ce5989e4c40bdf139e70c9985559a78}} 
+bool \hyperlink{class_game_controller_a3ce5989e4c40bdf139e70c9985559a78}{player\+Is\+Firing}
+\begin{DoxyCompactList}\small\item\em boolean to handle firing control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_controller_a4f83ac6f51abe164a979acdf01318905}\label{class_game_controller_a4f83ac6f51abe164a979acdf01318905}} 
+bool \hyperlink{class_game_controller_a4f83ac6f51abe164a979acdf01318905}{is\+Paused}
+\begin{DoxyCompactList}\small\item\em boolean to handel pause controll \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_controller_aef62bc59c2244238483cb489b74352ac}\label{class_game_controller_aef62bc59c2244238483cb489b74352ac}} 
+\hyperlink{class_pause_menu}{Pause\+Menu} \hyperlink{class_game_controller_aef62bc59c2244238483cb489b74352ac}{Menu}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_pause_menu}{Pause\+Menu} object to handle pausing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_game_controller_a97788a7aa0f09c8d748781683e5f045b}{Start} ()
+\item 
+void \hyperlink{class_game_controller_a5a89277529cadb49af7d55eba3bbf056}{Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_controller_a3de58fb8ba542b1777de9f3bd9bb0977}\label{class_game_controller_a3de58fb8ba542b1777de9f3bd9bb0977}} 
+\hyperlink{class_spell_controller}{Spell\+Controller} \hyperlink{class_game_controller_a3de58fb8ba542b1777de9f3bd9bb0977}{spell\+Controller}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_spell_controller}{Spell\+Controller} in scene to communicate with. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_controller_a2b44559411b7d7d6b52481b7f7b75852}\label{class_game_controller_a2b44559411b7d7d6b52481b7f7b75852}} 
+\hyperlink{class_u_i_controller}{U\+I\+Controller} \hyperlink{class_game_controller_a2b44559411b7d7d6b52481b7f7b75852}{UI}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_u_i_controller}{U\+I\+Controller} object to handle other UI related events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages overall gameflow and inputs not directly linked to player 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_controller_a97788a7aa0f09c8d748781683e5f045b}\label{class_game_controller_a97788a7aa0f09c8d748781683e5f045b}} 
+\index{Game\+Controller@{Game\+Controller}!Start@{Start}}
+\index{Start@{Start}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Game\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Sets default members and privates. \mbox{\Hypertarget{class_game_controller_a0b2f5dd3890fd4897ca83421d9ce439c}\label{class_game_controller_a0b2f5dd3890fd4897ca83421d9ce439c}} 
+\index{Game\+Controller@{Game\+Controller}!Toggle\+Pause\+Menu@{Toggle\+Pause\+Menu}}
+\index{Toggle\+Pause\+Menu@{Toggle\+Pause\+Menu}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Toggle\+Pause\+Menu()}{TogglePauseMenu()}}
+{\footnotesize\ttfamily void Game\+Controller.\+Toggle\+Pause\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Handles pausemenu interaction. stops time (however not updates) Becareful how we set object updates! \mbox{\Hypertarget{class_game_controller_a5a89277529cadb49af7d55eba3bbf056}\label{class_game_controller_a5a89277529cadb49af7d55eba3bbf056}} 
+\index{Game\+Controller@{Game\+Controller}!Update@{Update}}
+\index{Update@{Update}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Checks for any updates that need to be applied to game world such as if a player has held down the shoot button Unused Osucircle testing function
+
+\begin{DoxyNote}{Note}
+Fire2 is the default mousebutton 2 on PC, but can be used on other platforms when defining global controlls 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/Game\+Controller.\+cs\end{DoxyCompactItemize}

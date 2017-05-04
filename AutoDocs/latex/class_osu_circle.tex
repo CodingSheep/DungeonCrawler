@@ -1,0 +1,125 @@
+\hypertarget{class_osu_circle}{}\section{Osu\+Circle Class Reference}
+\label{class_osu_circle}\index{Osu\+Circle@{Osu\+Circle}}
+Inheritance diagram for Osu\+Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_osu_circle}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_osu_circle_af50d7f27362dacb1dc3b3825cee7f837}\label{class_osu_circle_af50d7f27362dacb1dc3b3825cee7f837}} 
+enum \hyperlink{class_osu_circle_af50d7f27362dacb1dc3b3825cee7f837}{arrow\+Types} \{ \newline
+{\bfseries basic} = 0, 
+{\bfseries fast} = 1, 
+{\bfseries delayed} = 2, 
+{\bfseries fire} = 3, 
+\newline
+{\bfseries ice} = 4, 
+{\bfseries slow} = 5
+ \}\begin{DoxyCompactList}\small\item\em $<$ Types of possible arrow types \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_osu_circle_a108fbacb0b9c0261fddddb8c4212f474}\label{class_osu_circle_a108fbacb0b9c0261fddddb8c4212f474}} 
+void {\bfseries cluster} (int num\+\_\+of\+\_\+obj)
+\item 
+void \hyperlink{class_osu_circle_ac1bcc007ef49c6e9de959168eea7bca4}{Hit\+Circle} ()
+\item 
+void \hyperlink{class_osu_circle_ae655fb82998de93d7542cb77f3ad406b}{Exchange\+Arrow} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_osu_circle_aaf07a385b1c32a713145d07dbaf9c5d0}{collapse\+\_\+speed}
+\begin{DoxyCompactList}\small\item\em Speed at which the Approach\+Circle collapses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_abc723e35c4cd1c869fed1f2be58711fa}\label{class_osu_circle_abc723e35c4cd1c869fed1f2be58711fa}} 
+Game\+Object \hyperlink{class_osu_circle_abc723e35c4cd1c869fed1f2be58711fa}{Arrow}
+\begin{DoxyCompactList}\small\item\em Type of arrow associated with the \hyperlink{class_osu_circle}{Osu\+Circle}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_abf7710df78d144e2bbbf2ee514ba1f02}\label{class_osu_circle_abf7710df78d144e2bbbf2ee514ba1f02}} 
+\hyperlink{class_osu_circle_af50d7f27362dacb1dc3b3825cee7f837}{arrow\+Types} \hyperlink{class_osu_circle_abf7710df78d144e2bbbf2ee514ba1f02}{arrow\+Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_arrow}{Arrow} type holder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_a9fe96e2fefe4e4bb189bbd6d276aeb34}\label{class_osu_circle_a9fe96e2fefe4e4bb189bbd6d276aeb34}} 
+float \hyperlink{class_osu_circle_a9fe96e2fefe4e4bb189bbd6d276aeb34}{Time\+Delay}
+\begin{DoxyCompactList}\small\item\em Time to hit the circle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_a8e9ec841a5fbf5928ea676f1ba89a5e8}\label{class_osu_circle_a8e9ec841a5fbf5928ea676f1ba89a5e8}} 
+float \hyperlink{class_osu_circle_a8e9ec841a5fbf5928ea676f1ba89a5e8}{approach\+Distance}
+\begin{DoxyCompactList}\small\item\em Distance the Approach circle starts at. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_a8f6408f9a87cff6a4297f129fb5f3920}\label{class_osu_circle_a8f6408f9a87cff6a4297f129fb5f3920}} 
+bool \hyperlink{class_osu_circle_a8f6408f9a87cff6a4297f129fb5f3920}{hit}
+\begin{DoxyCompactList}\small\item\em Bool handler wheather the button had beeen clicked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_a920d959e390a0e4a2e04c981aa608878}\label{class_osu_circle_a920d959e390a0e4a2e04c981aa608878}} 
+Audio\+Source \hyperlink{class_osu_circle_a920d959e390a0e4a2e04c981aa608878}{source}
+\begin{DoxyCompactList}\small\item\em Audio Source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_osu_circle_ad681160a65a26c66917d2264c3a4d23c}{Start} ()
+\item 
+void \hyperlink{class_osu_circle_afe2813ce3da745f0e5a43aafad6fb419}{Update} ()
+\item 
+\mbox{\Hypertarget{class_osu_circle_a0aa9d1bda97523ca244fdd683d20b088}\label{class_osu_circle_a0aa9d1bda97523ca244fdd683d20b088}} 
+void {\bfseries Late\+Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_osu_circle_aab3f795104cc3e0e96b533dc8d627bc6}\label{class_osu_circle_aab3f795104cc3e0e96b533dc8d627bc6}} 
+float \hyperlink{class_osu_circle_aab3f795104cc3e0e96b533dc8d627bc6}{Perfect\+Hit\+Time}
+\begin{DoxyCompactList}\small\item\em Time trime value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_ae1fc5ef284ed08000b50578259e69fc1}\label{class_osu_circle_ae1fc5ef284ed08000b50578259e69fc1}} 
+float \hyperlink{class_osu_circle_ae1fc5ef284ed08000b50578259e69fc1}{hit\+Score}
+\begin{DoxyCompactList}\small\item\em Holds the score that the player hit the circle with. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_aef5efb08c5ea74bd6875fda9456cd7d0}\label{class_osu_circle_aef5efb08c5ea74bd6875fda9456cd7d0}} 
+Rect\+Transform \hyperlink{class_osu_circle_aef5efb08c5ea74bd6875fda9456cd7d0}{Approach\+Circle}
+\begin{DoxyCompactList}\small\item\em Approach\+Cricle\textquotesingle{}s Position handled in later functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_osu_circle_a6770527fce5f357a3d4a25ff68bf64a4}\label{class_osu_circle_a6770527fce5f357a3d4a25ff68bf64a4}} 
+float \hyperlink{class_osu_circle_a6770527fce5f357a3d4a25ff68bf64a4}{Approach\+Rate}
+\begin{DoxyCompactList}\small\item\em Defined rate of the aproach Cricle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_osu_circle_ae655fb82998de93d7542cb77f3ad406b}\label{class_osu_circle_ae655fb82998de93d7542cb77f3ad406b}} 
+\index{Osu\+Circle@{Osu\+Circle}!Exchange\+Arrow@{Exchange\+Arrow}}
+\index{Exchange\+Arrow@{Exchange\+Arrow}!Osu\+Circle@{Osu\+Circle}}
+\subsubsection{\texorpdfstring{Exchange\+Arrow()}{ExchangeArrow()}}
+{\footnotesize\ttfamily void Osu\+Circle.\+Exchange\+Arrow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Changes the arrow in the \hyperlink{class_spell_controller}{Spell\+Controller} to the new arrow that has just been hit. \mbox{\Hypertarget{class_osu_circle_ac1bcc007ef49c6e9de959168eea7bca4}\label{class_osu_circle_ac1bcc007ef49c6e9de959168eea7bca4}} 
+\index{Osu\+Circle@{Osu\+Circle}!Hit\+Circle@{Hit\+Circle}}
+\index{Hit\+Circle@{Hit\+Circle}!Osu\+Circle@{Osu\+Circle}}
+\subsubsection{\texorpdfstring{Hit\+Circle()}{HitCircle()}}
+{\footnotesize\ttfamily void Osu\+Circle.\+Hit\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Called when a Circle is hit in time \mbox{\Hypertarget{class_osu_circle_ad681160a65a26c66917d2264c3a4d23c}\label{class_osu_circle_ad681160a65a26c66917d2264c3a4d23c}} 
+\index{Osu\+Circle@{Osu\+Circle}!Start@{Start}}
+\index{Start@{Start}!Osu\+Circle@{Osu\+Circle}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Osu\+Circle.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Instantiates Member values \mbox{\Hypertarget{class_osu_circle_afe2813ce3da745f0e5a43aafad6fb419}\label{class_osu_circle_afe2813ce3da745f0e5a43aafad6fb419}} 
+\index{Osu\+Circle@{Osu\+Circle}!Update@{Update}}
+\index{Update@{Update}!Osu\+Circle@{Osu\+Circle}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Osu\+Circle.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+updates \hyperlink{class_osu_circle}{Osu\+Circle} gameobject to check if it has been hit, or is pased its expected lifetime 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_osu_circle_aaf07a385b1c32a713145d07dbaf9c5d0}\label{class_osu_circle_aaf07a385b1c32a713145d07dbaf9c5d0}} 
+\index{Osu\+Circle@{Osu\+Circle}!collapse\+\_\+speed@{collapse\+\_\+speed}}
+\index{collapse\+\_\+speed@{collapse\+\_\+speed}!Osu\+Circle@{Osu\+Circle}}
+\subsubsection{\texorpdfstring{collapse\+\_\+speed}{collapse\_speed}}
+{\footnotesize\ttfamily float Osu\+Circle.\+collapse\+\_\+speed}
+
+
+
+Speed at which the Approach\+Circle collapses. 
+
+Handles \hyperlink{class_osu_circle}{Osu\+Circle} objects that get instantiated on holding down fire 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+U\+I/\+Osu/Osu\+Circle.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{class_pickup}{}\section{Pickup Class Reference}
+\label{class_pickup}\index{Pickup@{Pickup}}
+Inheritance diagram for Pickup\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pickup}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pickup_afcd81d084c606c839108b1226233e41b}\label{class_pickup_afcd81d084c606c839108b1226233e41b}} 
+float \hyperlink{class_pickup_afcd81d084c606c839108b1226233e41b}{min\+Val} = 1.\+1f
+\begin{DoxyCompactList}\small\item\em value the object adds lower bound \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_pickup_ab39a6532ea97da7e79051eed4414af28}\label{class_pickup_ab39a6532ea97da7e79051eed4414af28}} 
+float \hyperlink{class_pickup_ab39a6532ea97da7e79051eed4414af28}{max\+Val} = 1.\+4f
+\begin{DoxyCompactList}\small\item\em Value the object adds upper bound. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_pickup_a0154f246e4265336bb743a19dcabf224}\label{class_pickup_a0154f246e4265336bb743a19dcabf224}} 
+bool \hyperlink{class_pickup_a0154f246e4265336bb743a19dcabf224}{random\+Type}
+\begin{DoxyCompactList}\small\item\em type of buff \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_pickup_a06a0397d6124a8cd3f35f14d20c36418}\label{class_pickup_a06a0397d6124a8cd3f35f14d20c36418}} 
+bool {\bfseries random\+Val} = true
+\item 
+\mbox{\Hypertarget{class_pickup_a5dac153e6d3fc34709b91fc178bdbbbd}\label{class_pickup_a5dac153e6d3fc34709b91fc178bdbbbd}} 
+pickup\+Types \hyperlink{class_pickup_a5dac153e6d3fc34709b91fc178bdbbbd}{pickup\+Type}
+\begin{DoxyCompactList}\small\item\em the set pickup buff \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_pickup_a6d7b202bd29f9c620c8d2d266318e519}\label{class_pickup_a6d7b202bd29f9c620c8d2d266318e519}} 
+float \hyperlink{class_pickup_a6d7b202bd29f9c620c8d2d266318e519}{pickup\+Value\+Or\+Mult} = 1f
+\begin{DoxyCompactList}\small\item\em value or multiplier for pickup to apply to player \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_pickup_aa0f4313f4bb636d95ec9ba901f4dc932}{Start} ()
+\item 
+void \hyperlink{class_pickup_a86ae9269c20eca5a07f9e6ae24eaae7c}{Fixed\+Update} ()
+\item 
+void \hyperlink{class_pickup_af91a544b99c9d52864ec6a074df98d73}{On\+Collision\+Enter} (Collision col)
+\item 
+void \hyperlink{class_pickup_a5f190e230de9ed4839c26642785896be}{On\+Trigger\+Enter} (Collider col)
+\item 
+void \hyperlink{class_pickup_a0375f0d9e0a3021b0718e565978498b0}{Use\+Effect} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pickup_a65bec7d3f99a526334f3d8e262b9f658}\label{class_pickup_a65bec7d3f99a526334f3d8e262b9f658}} 
+\hyperlink{class_player}{Player} \hyperlink{class_pickup_a65bec7d3f99a526334f3d8e262b9f658}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pickup_a86ae9269c20eca5a07f9e6ae24eaae7c}\label{class_pickup_a86ae9269c20eca5a07f9e6ae24eaae7c}} 
+\index{Pickup@{Pickup}!Fixed\+Update@{Fixed\+Update}}
+\index{Fixed\+Update@{Fixed\+Update}!Pickup@{Pickup}}
+\subsubsection{\texorpdfstring{Fixed\+Update()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Pickup.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+slowly rotates the object \mbox{\Hypertarget{class_pickup_af91a544b99c9d52864ec6a074df98d73}\label{class_pickup_af91a544b99c9d52864ec6a074df98d73}} 
+\index{Pickup@{Pickup}!On\+Collision\+Enter@{On\+Collision\+Enter}}
+\index{On\+Collision\+Enter@{On\+Collision\+Enter}!Pickup@{Pickup}}
+\subsubsection{\texorpdfstring{On\+Collision\+Enter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void Pickup.\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{Collision}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Handels collision events, once it collides with the ground the Rigidbody should be set to Kinematic and not move 
+\begin{DoxyParams}{Parameters}
+{\em col} & is the oppisite collider \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pickup_a5f190e230de9ed4839c26642785896be}\label{class_pickup_a5f190e230de9ed4839c26642785896be}} 
+\index{Pickup@{Pickup}!On\+Trigger\+Enter@{On\+Trigger\+Enter}}
+\index{On\+Trigger\+Enter@{On\+Trigger\+Enter}!Pickup@{Pickup}}
+\subsubsection{\texorpdfstring{On\+Trigger\+Enter()}{OnTriggerEnter()}}
+{\footnotesize\ttfamily void Pickup.\+On\+Trigger\+Enter (\begin{DoxyParamCaption}\item[{Collider}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Handels collision events where an object walks \char`\"{}into\char`\"{} the collider If the collider is the player, the player will pick up the item 
+\begin{DoxyParams}{Parameters}
+{\em col} & is the coliding object\textquotesingle{}s collider \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pickup_aa0f4313f4bb636d95ec9ba901f4dc932}\label{class_pickup_aa0f4313f4bb636d95ec9ba901f4dc932}} 
+\index{Pickup@{Pickup}!Start@{Start}}
+\index{Start@{Start}!Pickup@{Pickup}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Pickup.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Instantiates member values and assigns pickup type (randomly) \mbox{\Hypertarget{class_pickup_a0375f0d9e0a3021b0718e565978498b0}\label{class_pickup_a0375f0d9e0a3021b0718e565978498b0}} 
+\index{Pickup@{Pickup}!Use\+Effect@{Use\+Effect}}
+\index{Use\+Effect@{Use\+Effect}!Pickup@{Pickup}}
+\subsubsection{\texorpdfstring{Use\+Effect()}{UseEffect()}}
+{\footnotesize\ttfamily void Pickup.\+Use\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+handels how different types of pickups are set 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Entities/Pickup.\+cs\end{DoxyCompactItemize}

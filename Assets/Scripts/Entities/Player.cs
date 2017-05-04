@@ -4,43 +4,46 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	//This sets a default speed for how fast our player can move in any direction
-	public int maxHealth = 5;
-	public int health = 5;
-	public float speed = 5.0f;
-    public float rotationSpeed;
-	public float arrowSpeed = 40f;
-	public float arrowDmg = 5f;
-	public int burnAmount = 5;
-	public float freezeTime = 2f;
-	public float slowMult = 1.5f;
+    /*! \class Player
+     * Everything player related is in this class
+     */
 
-	private bool invulnerable = false;
+	
+	public int maxHealth = 5; //!< Maxhealth of the player
+ 	public int health = 5; //!< Current health that gets changed
+	public float speed = 5.0f; //!< Starting speed of the player
+    public float rotationSpeed; //!< rotational speed of the player
+	public float arrowSpeed = 40f; //!< How fast arrows are initially shot at
+	public float arrowDmg = 5f; //!< How much damage arrows initially do
+	public int burnAmount = 5; //!< Default "burn" damage for fire arrows
+	public float freezeTime = 2f; //!< default "Freeze" time for ice arrows
+	public float slowMult = 1.5f; //!< Default speed multiplier for slow arrows
 
-	private Camera mainCam;
-	//private GameObject cursor;
-	private Ray camRay; //Ray from camera to mouse position
-	private RaycastHit camRayHit; //Hit point of raycast
-	private Vector3 deltamovement;
-    private GameController gamecontroller;
-    private SpellController spellUI;
-	private UIController uic;
+	private bool invulnerable = false; //!< Sets invulnerablility after player has taken damage
+     
+	private Camera mainCam; //!< main camera object
+	private Ray camRay; //!< Ray from camera to mouse position
+	private RaycastHit camRayHit; //!< Hit point of raycast
+	private Vector3 deltamovement; //!< Change in movement 
+    private GameController gamecontroller; //!< Gamecontroller object
+    private SpellController spellUI; //!< SpellController object
+	private UIController uic; //!< UI Controller object
 
-    private double timeHeld;
+    private double timeHeld; //!< Time holding fire
 	private double test;
-	private bool rightClicked;
-	private float speedAfterPause;
+	private bool rightClicked; //!< Bool for clicking the right mouse button
+	private float speedAfterPause; //!< Pausing handling 
 
 	//Health 2.0
-	public Texture2D HpBarTexture;
-	public Texture2D HpBackTexture;
-	float hpBarLength;
+	public Texture2D HpBarTexture; //!< Texture for player healthbar
+	public Texture2D HpBackTexture; //!< back texture for Player health
+	float hpBarLength; //!< Length of healthbar
 
-    private Animator anim;
-    //For future use.
-    private void Awake() {
-        
-    }
+    private Animator anim; //!< Animator controller 
+
+    /*!
+     * Instantiates member values
+     */
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -53,6 +56,11 @@ public class Player : MonoBehaviour {
         timeHeld = 0.0;
     }
 
+    /*!
+     * Updates member valeus
+     * Health set to appropriate length
+     * Also handles basic inputs for walking animation
+     */
     void Update()
 	{
 		//Update player health
@@ -69,12 +77,17 @@ public class Player : MonoBehaviour {
         }
     }
 
+    /*!
+     * Aim the player Polar the mouse's current position on screen to the game world
+     */
     void FixedUpdate() {
 		if (!gamecontroller.playerIsFiring && !gamecontroller.isPaused) {
             AimPlayer();
         }
     }
-
+    /*!
+     * Handels collision events
+     */
 	void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag == "Enemy" && !invulnerable) {
 			if (health > 1) {
@@ -90,7 +103,10 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionStay(Collision col) {
+    /*! 
+     * Handles how collisions interact when remaining inside the hitboxes of the player
+     */
+    void OnCollisionStay(Collision col) {
 		if (col.gameObject.tag == "Enemy" && !invulnerable) {
 			if (health > 1) {
 				health--;
@@ -105,6 +121,9 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+    /*!
+     * Aims player at the position the Mouse casts onto the gameworld
+     */
     void AimPlayer() {
 		camRay = mainCam.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast(camRay, out camRayHit)) {
@@ -115,6 +134,9 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+    /*! 
+     * Handles movement of the player in the gameworld with key interactiosn and Unitys SimpleMovement class
+     */
 	void Movement () {
 		//Uses the default Unity Input object too manage player input. This allows for multiple platforms, and easy customization in the future.
 		float h = Input.GetAxisRaw("Horizontal");
@@ -129,14 +151,14 @@ public class Player : MonoBehaviour {
 		//transform.position = deltamovement;
 	}
 
-	//Test for Health Bar
+	//!< Test for Health Bar
 	void OnGUI() {
 		if (!uic.isGameOver) {
 			GUI.DrawTexture (new Rect ((Screen.width / 2) - 50, (Screen.height / 2) - 50, 100, 10), HpBackTexture);
 			GUI.DrawTexture (new Rect ((Screen.width / 2) - 50, (Screen.height / 2) - 50, hpBarLength, 10), HpBarTexture);
 		}
 	}
-
+    //!< Undoes the invulnerablitiy of the player
 	void ResetVulnerability() {
 		invulnerable = false;
 	}

@@ -1,0 +1,53 @@
+\hypertarget{class_camera_controller}{}\section{Camera\+Controller Class Reference}
+\label{class_camera_controller}\index{Camera\+Controller@{Camera\+Controller}}
+Inheritance diagram for Camera\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera_controller}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_camera_controller_ad4a238c6f7db3ee003302a245d860860}{Start} ()
+\item 
+void \hyperlink{class_camera_controller_afcd241727886518c21b9609193e32d18}{Late\+Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_camera_controller_aff80d2275dae360196361c39078bfda4}\label{class_camera_controller_aff80d2275dae360196361c39078bfda4}} 
+Vector3 \hyperlink{class_camera_controller_aff80d2275dae360196361c39078bfda4}{offset}
+\begin{DoxyCompactList}\small\item\em Offset of the world to camera position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_camera_controller_aae794ec2d17947f671ce0eaef9aac8b7}\label{class_camera_controller_aae794ec2d17947f671ce0eaef9aac8b7}} 
+Game\+Object \hyperlink{class_camera_controller_aae794ec2d17947f671ce0eaef9aac8b7}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} Game\+Object to track movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that manages the movement of the Camera 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_controller_afcd241727886518c21b9609193e32d18}\label{class_camera_controller_afcd241727886518c21b9609193e32d18}} 
+\index{Camera\+Controller@{Camera\+Controller}!Late\+Update@{Late\+Update}}
+\index{Late\+Update@{Late\+Update}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Late\+Update()}{LateUpdate()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Late\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Updates the camera position to follow the player \begin{DoxyNote}{Note}
+\hyperlink{class_camera_controller_afcd241727886518c21b9609193e32d18}{Late\+Update()} to avoid unexpected behaviors with other gameobject updates(). Last thing in the scene to update 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_camera_controller_ad4a238c6f7db3ee003302a245d860860}\label{class_camera_controller_ad4a238c6f7db3ee003302a245d860860}} 
+\index{Camera\+Controller@{Camera\+Controller}!Start@{Start}}
+\index{Start@{Start}!Camera\+Controller@{Camera\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Camera\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyPostcond}{Postcondition}
+private members to appropriate objects 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/Camera\+Controller.\+cs\end{DoxyCompactItemize}

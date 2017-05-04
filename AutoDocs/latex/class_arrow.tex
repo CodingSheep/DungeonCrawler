@@ -1,0 +1,123 @@
+\hypertarget{class_arrow}{}\section{Arrow Class Reference}
+\label{class_arrow}\index{Arrow@{Arrow}}
+Inheritance diagram for Arrow\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_arrow}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_a6f10bb69bb3cb23483035a0eb1b286fa}\label{class_arrow_a6f10bb69bb3cb23483035a0eb1b286fa}} 
+enum {\bfseries arrow\+Dmg\+Types} \{ {\bfseries basic} = 0, 
+{\bfseries fire} = 1, 
+{\bfseries ice} = 2, 
+{\bfseries slow} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_arrow_a65ce0e1a14405dec237e13ee5631b07d}{Start} ()
+\item 
+void \hyperlink{class_arrow_aaf1023833f6420f4920d9013f9c46ef3}{Fixed\+Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_arrow_aae6ab7eee0fa3a72f17c4c46ce391e8a}{speed\+Mult}
+\item 
+float \hyperlink{class_arrow_a1ee7f10c0328ab7f8dccc8fcd061494b}{lifetime} = 2f
+\item 
+\mbox{\Hypertarget{class_arrow_a75efd0005fcd17e1425c4536b3c1c48b}\label{class_arrow_a75efd0005fcd17e1425c4536b3c1c48b}} 
+Game\+Object {\bfseries model}
+\item 
+\hyperlink{class_player}{Player} \hyperlink{class_arrow_ac895e2c34f4eebe49198b1139b966541}{player} = null
+\item 
+\mbox{\Hypertarget{class_arrow_a312ad503e7ac9a4d4548c4a7ea096f75}\label{class_arrow_a312ad503e7ac9a4d4548c4a7ea096f75}} 
+Audio\+Source {\bfseries source}
+\item 
+\mbox{\Hypertarget{class_arrow_ab10f23b78a724c0948d852e3fa11a2c1}\label{class_arrow_ab10f23b78a724c0948d852e3fa11a2c1}} 
+arrow\+Dmg\+Types {\bfseries arrow\+Dmg\+Type} = arrow\+Dmg\+Types.\+basic
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_arrow_a186cf27bfba2bb5ce6b6427a44889858}{On\+Trigger\+Enter} (Collider col)
+\item 
+void \hyperlink{class_arrow_a87945ea993d85a6e1d1a59cd10b2358e}{Destroy\+Self} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_arrow_a3fbdd74dc4c23d765744ece303a9599e}\label{class_arrow_a3fbdd74dc4c23d765744ece303a9599e}} 
+\hyperlink{class_mob_health}{Mob\+Health} {\bfseries enemy}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parent \hyperlink{class_arrow}{Arrow} class, which all arrows extend \begin{DoxyNote}{Note}
+this class should never be instantiated on its own. 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arrow_a87945ea993d85a6e1d1a59cd10b2358e}\label{class_arrow_a87945ea993d85a6e1d1a59cd10b2358e}} 
+\index{Arrow@{Arrow}!Destroy\+Self@{Destroy\+Self}}
+\index{Destroy\+Self@{Destroy\+Self}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{Destroy\+Self()}{DestroySelf()}}
+{\footnotesize\ttfamily void Arrow.\+Destroy\+Self (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Function called when \hyperlink{class_arrow}{Arrow} hits something. \textbackslash{} \begin{DoxyPostcond}{Postcondition}
+Destorys \hyperlink{class_arrow}{Arrow} 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_arrow_aaf1023833f6420f4920d9013f9c46ef3}\label{class_arrow_aaf1023833f6420f4920d9013f9c46ef3}} 
+\index{Arrow@{Arrow}!Fixed\+Update@{Fixed\+Update}}
+\index{Fixed\+Update@{Fixed\+Update}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{Fixed\+Update()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Arrow.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Defines movement for all arrows All arrows that extend \hyperlink{class_arrow}{Arrow} bust class this function at somepoint in their fixed\+Update(); \mbox{\Hypertarget{class_arrow_a186cf27bfba2bb5ce6b6427a44889858}\label{class_arrow_a186cf27bfba2bb5ce6b6427a44889858}} 
+\index{Arrow@{Arrow}!On\+Trigger\+Enter@{On\+Trigger\+Enter}}
+\index{On\+Trigger\+Enter@{On\+Trigger\+Enter}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{On\+Trigger\+Enter()}{OnTriggerEnter()}}
+{\footnotesize\ttfamily void Arrow.\+On\+Trigger\+Enter (\begin{DoxyParamCaption}\item[{Collider}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Event handler for when arrow hits an object with a collider 
+\begin{DoxyParams}{Parameters}
+{\em col} & is the other object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_arrow_a65ce0e1a14405dec237e13ee5631b07d}\label{class_arrow_a65ce0e1a14405dec237e13ee5631b07d}} 
+\index{Arrow@{Arrow}!Start@{Start}}
+\index{Start@{Start}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Arrow.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+any arrow class that extends this, must class this function with Base\+Arrow = base.\+game\+Object.\+Get\+Component$<$\+Arrow$>$(); Base\+Arrow.\+Start(); 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_arrow_a1ee7f10c0328ab7f8dccc8fcd061494b}\label{class_arrow_a1ee7f10c0328ab7f8dccc8fcd061494b}} 
+\index{Arrow@{Arrow}!lifetime@{lifetime}}
+\index{lifetime@{lifetime}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{lifetime}{lifetime}}
+{\footnotesize\ttfamily float Arrow.\+lifetime = 2f}
+
+Overall Lifetime of the arrow in seconds (To be extended in child class) \mbox{\Hypertarget{class_arrow_ac895e2c34f4eebe49198b1139b966541}\label{class_arrow_ac895e2c34f4eebe49198b1139b966541}} 
+\index{Arrow@{Arrow}!player@{player}}
+\index{player@{player}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \hyperlink{class_player}{Player} Arrow.\+player = null}
+
+Will be set in \hyperlink{class_arrow_a65ce0e1a14405dec237e13ee5631b07d}{Start()} function \mbox{\Hypertarget{class_arrow_aae6ab7eee0fa3a72f17c4c46ce391e8a}\label{class_arrow_aae6ab7eee0fa3a72f17c4c46ce391e8a}} 
+\index{Arrow@{Arrow}!speed\+Mult@{speed\+Mult}}
+\index{speed\+Mult@{speed\+Mult}!Arrow@{Arrow}}
+\subsubsection{\texorpdfstring{speed\+Mult}{speedMult}}
+{\footnotesize\ttfamily float Arrow.\+speed\+Mult}
+
+Overall speed of the arrow (To be extended in child class) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Arrows/Arrow.\+cs\end{DoxyCompactItemize}

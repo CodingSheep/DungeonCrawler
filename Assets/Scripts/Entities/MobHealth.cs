@@ -6,22 +6,30 @@ using UnityEngine.UI;
 
 public class MobHealth : MonoBehaviour {
 
-	public float health = 10f;
-	public float curHealth;
-	private Mob2Movement movement2;
-	private NavMeshAgent nav;
-	private float navSpeed;
-	private bool alreadySlowed = false;
+    /*! \class MobHealth
+     * Specific class for controlling Mob Health and status effects
+     * @note this Should not be a gameobject, but instead just a component attached to some gameobjects
+     */
 
-	public Texture2D HpBarTexture;
+	public float health = 10f; //!< Base health
+	public float curHealth; //!< Health at any given moment
+	private Mob2Movement movement2; //!< Movement sceme for mob2
+	private NavMeshAgent nav; //!< Nav mesh of the land to use Unity's Default pathing AI
+    private float navSpeed; //!< Speed 
+	private bool alreadySlowed = false; //!< Bool for speed
+
+	public Texture2D HpBarTexture; //!< HPBar texture
 	public Texture2D HpBackTexture;
-	private float hpBarLength;
-	private Vector3 target;
+	private float hpBarLength; //!< Interacts with UI canvas to change depending on remaining HP
+	private Vector3 target; //!< Target the mobthat's attached is moving towards
+      
+	public GameObject damageText; //!< Damage to show
 
-	public GameObject damageText;
+	private UIController uic; //!< UIController
 
-	private UIController uic;
-
+    /*!
+     * Instantiates member values and distinguishes between the type of mob
+     */
 	void Start () {
 		
 		//for jumper mobs
@@ -36,6 +44,9 @@ public class MobHealth : MonoBehaviour {
 		curHealth = health;
 	}
 
+    /*!
+     * Update position of the Healthbar to be slightly above the mob associated with this object
+     */
 	void Update () {
 		if (curHealth <= 0)
 			Destroy (this.gameObject);
@@ -45,7 +56,9 @@ public class MobHealth : MonoBehaviour {
 		target = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
 		target.y = Screen.height - (target.y + 1);
 	}
-
+    /*!
+     * shows damage upon getting hit with an arrow above the mob
+     */
 	void InitDamageText(string str) {
 		GameObject toSpawn = Instantiate (damageText) as GameObject;
 		RectTransform rect = toSpawn.GetComponent<RectTransform> ();
@@ -59,12 +72,10 @@ public class MobHealth : MonoBehaviour {
 		Destroy (toSpawn.gameObject, 2);
 	}
 
-	//
-	//--------------------------------------------------------
-	// STATUS EFFECTS
-	//--------------------------------------------------------
-	//
-
+    /*!
+     * Function to handle status effect like arrows
+     * @param dmg is Incoming damage
+     */
 	public void DoDamage(float dmg) {
 		InitDamageText (dmg.ToString ());
 		if (curHealth <= dmg) {
@@ -75,12 +86,20 @@ public class MobHealth : MonoBehaviour {
 		}
 	}
 
-	//--------------------------------------------------------
-
+    /*!
+     * Function to start a "Burn" like function to a mob using corrutines
+     * @param dmg Initial damage
+     * @param burns is burn per cycle
+     */
 	public void StartBurn(float dmg, int burns) {
 		StartCoroutine(ApplyBurn (dmg, burns));
 	}
 
+    /*!
+     * IEnumerator to apply damage continiously... the "burning" effect
+     * @param dmg initial damage
+     * @param burnsLeft how many loops to go through before expiring
+     */
 	public IEnumerator ApplyBurn(float dmg, int burnsLeft) {
 		yield return new WaitForSeconds (1); //one second burn rate
 		BurnEffect (dmg);
@@ -90,8 +109,11 @@ public class MobHealth : MonoBehaviour {
 		}
 	}
 
-	//--------------------------------------------------------
-
+	/*!
+     * Applies Freeze effect to mob.
+     * @param dmg initial Damage
+     * @param time duration of freeze
+     */
 	public void ApplyFreeze(float dmg, float time) {
 		/*audioSource.Play(freezeSound);*/
 		DoDamage (dmg);
@@ -107,9 +129,11 @@ public class MobHealth : MonoBehaviour {
 		
 		Invoke ("Unfreeze", time);
 	}
-
-	//--------------------------------------------------------
-
+    /*!
+     * Applies a slowing effect to the mob
+     * @param dmg initial damage
+     * @param slowMult the change to the speed multiplier of the mob
+     */
 	public void ApplySlow(float dmg, float slowMult) {
 		/*audioSource.play(slowSound)*/
 		DoDamage (dmg);
@@ -126,9 +150,9 @@ public class MobHealth : MonoBehaviour {
 				movement2.jumpRate = movement2.jumpRate / slowMult;
 		}
 	}
-
-	//--------------------------------------------------------
-
+    /*!
+     * Undoes the Freeze effect, called at freeze expiration
+     */
 	void Unfreeze() {
 		if (nav != null)
 			nav.speed = navSpeed;
@@ -136,20 +160,20 @@ public class MobHealth : MonoBehaviour {
 			movement2.enabled = true;
 	}
 
+    /*!
+     * Applies burn damage, called everytick
+     * @param the amount of damage to do (burn damage)
+     */
 	void BurnEffect(float dmg) {
 		//audioSource.Play(burnSound);
 		DoDamage(dmg);
 	}
 
-	//--------------------------------------------------------
-
-	//Test for Health Bar
+	//!<Test for Health Bar
 	void OnGUI() {
 		if (!uic.isGameOver) {
 			GUI.DrawTexture (new Rect (target.x - 50, target.y - 50, hpBarLength, 10), HpBackTexture);
 			GUI.DrawTexture (new Rect (target.x - 50, target.y - 50, hpBarLength, 10), HpBarTexture);
 		}
 	}
-
-	//--------------------------------------------------------
 }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hitcircle',['HitCircle',['../class_osu_circle.html#ac1bcc007ef49c6e9de959168eea7bca4',1,'OsuCircle']]]
+  ['getosutime',['GetOsuTime',['../class_spell_controller.html#ad6e891fc9dd19a3eccec2a05791abff4',1,'SpellController']]],
+  ['getscore',['GetScore',['../class_u_i_controller.html#a4d9cf4f88502ba97bf5b1956ba24773d',1,'UIController']]]
 ];

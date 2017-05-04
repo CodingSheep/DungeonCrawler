@@ -1,0 +1,195 @@
+\hypertarget{class_mob_health}{}\section{Mob\+Health Class Reference}
+\label{class_mob_health}\index{Mob\+Health@{Mob\+Health}}
+Inheritance diagram for Mob\+Health\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mob_health}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mob_health_adaf878419692a8b6a16f8f3861a6c74e}{Do\+Damage} (float dmg)
+\item 
+void \hyperlink{class_mob_health_abcc0a1a5fef542a2c5f83e3d80d21d18}{Start\+Burn} (float dmg, int burns)
+\item 
+I\+Enumerator \hyperlink{class_mob_health_a90c10dc6ba571545b3d466ec83ebf6e7}{Apply\+Burn} (float dmg, int burns\+Left)
+\item 
+void \hyperlink{class_mob_health_ac4b90844fdf1be4b5fad4693c48bd61f}{Apply\+Freeze} (float dmg, float time)
+\item 
+void \hyperlink{class_mob_health_a7374507ad90db5ced9395476a3943230}{Apply\+Slow} (float dmg, float slow\+Mult)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mob_health_acf92ca7925059c25691b1a6fdc921e3f}\label{class_mob_health_acf92ca7925059c25691b1a6fdc921e3f}} 
+float \hyperlink{class_mob_health_acf92ca7925059c25691b1a6fdc921e3f}{health} = 10f
+\begin{DoxyCompactList}\small\item\em Base health. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_a766429dd6a72c403a371b87e3522fa43}\label{class_mob_health_a766429dd6a72c403a371b87e3522fa43}} 
+float \hyperlink{class_mob_health_a766429dd6a72c403a371b87e3522fa43}{cur\+Health}
+\begin{DoxyCompactList}\small\item\em Health at any given moment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_a08f875a009f447e245015e1df63b4bb4}\label{class_mob_health_a08f875a009f447e245015e1df63b4bb4}} 
+Texture2D \hyperlink{class_mob_health_a08f875a009f447e245015e1df63b4bb4}{Hp\+Bar\+Texture}
+\begin{DoxyCompactList}\small\item\em H\+P\+Bar texture. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_aa9c36ad6a31c1e07393b6e70f8b98caa}\label{class_mob_health_aa9c36ad6a31c1e07393b6e70f8b98caa}} 
+Texture2D {\bfseries Hp\+Back\+Texture}
+\item 
+\mbox{\Hypertarget{class_mob_health_ad20b76297e42388a314f26e863acdf09}\label{class_mob_health_ad20b76297e42388a314f26e863acdf09}} 
+Game\+Object \hyperlink{class_mob_health_ad20b76297e42388a314f26e863acdf09}{damage\+Text}
+\begin{DoxyCompactList}\small\item\em Damage to show. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mob_health_af397aaaf764c7338aa1a83714537a68a}{Start} ()
+\item 
+void \hyperlink{class_mob_health_a0652c8b5a2fcb5cb791eb26305425024}{Update} ()
+\item 
+void \hyperlink{class_mob_health_a13e17984b18c95b8e6d56f52f9e11a71}{Init\+Damage\+Text} (string str)
+\item 
+void \hyperlink{class_mob_health_aa6acd5f6aad4b4d621db7d927169cd70}{Unfreeze} ()
+\item 
+void \hyperlink{class_mob_health_aba4ed1f920f770c312d214e541620f9f}{Burn\+Effect} (float dmg)
+\begin{DoxyCompactList}\small\item\em Test for Health Bar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_ae30ec0b3661db3d9306ead156bcc90c2}\label{class_mob_health_ae30ec0b3661db3d9306ead156bcc90c2}} 
+void {\bfseries On\+G\+UI} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mob_health_a62d5d74d1e5f66d626fc1e76f2be84cc}\label{class_mob_health_a62d5d74d1e5f66d626fc1e76f2be84cc}} 
+\hyperlink{class_mob2_movement}{Mob2\+Movement} \hyperlink{class_mob_health_a62d5d74d1e5f66d626fc1e76f2be84cc}{movement2}
+\begin{DoxyCompactList}\small\item\em Movement sceme for mob2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_afb9d2d290a111506515407311408ed98}\label{class_mob_health_afb9d2d290a111506515407311408ed98}} 
+Nav\+Mesh\+Agent \hyperlink{class_mob_health_afb9d2d290a111506515407311408ed98}{nav}
+\begin{DoxyCompactList}\small\item\em Nav mesh of the land to use Unity\textquotesingle{}s Default pathing AI. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_ac5aa23c1785ac8bdde4ca35b04b8967a}\label{class_mob_health_ac5aa23c1785ac8bdde4ca35b04b8967a}} 
+float \hyperlink{class_mob_health_ac5aa23c1785ac8bdde4ca35b04b8967a}{nav\+Speed}
+\begin{DoxyCompactList}\small\item\em Speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_ac89dd915f414c757c3e0120ed403bb9b}\label{class_mob_health_ac89dd915f414c757c3e0120ed403bb9b}} 
+bool \hyperlink{class_mob_health_ac89dd915f414c757c3e0120ed403bb9b}{already\+Slowed} = false
+\begin{DoxyCompactList}\small\item\em Bool for speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_a452c19b63a316238a03bddd724a7e9ee}\label{class_mob_health_a452c19b63a316238a03bddd724a7e9ee}} 
+float \hyperlink{class_mob_health_a452c19b63a316238a03bddd724a7e9ee}{hp\+Bar\+Length}
+\begin{DoxyCompactList}\small\item\em Interacts with UI canvas to change depending on remaining HP. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_ade867811ed397c0701ffa21a446e92ac}\label{class_mob_health_ade867811ed397c0701ffa21a446e92ac}} 
+Vector3 \hyperlink{class_mob_health_ade867811ed397c0701ffa21a446e92ac}{target}
+\begin{DoxyCompactList}\small\item\em Target the mobthat\textquotesingle{}s attached is moving towards. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob_health_a4e2637916ef423d557a89d0d7d50cb8f}\label{class_mob_health_a4e2637916ef423d557a89d0d7d50cb8f}} 
+\hyperlink{class_u_i_controller}{U\+I\+Controller} \hyperlink{class_mob_health_a4e2637916ef423d557a89d0d7d50cb8f}{uic}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_u_i_controller}{U\+I\+Controller}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specific class for controlling Mob Health and status effects \begin{DoxyNote}{Note}
+this Should not be a gameobject, but instead just a component attached to some gameobjects 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mob_health_a90c10dc6ba571545b3d466ec83ebf6e7}\label{class_mob_health_a90c10dc6ba571545b3d466ec83ebf6e7}} 
+\index{Mob\+Health@{Mob\+Health}!Apply\+Burn@{Apply\+Burn}}
+\index{Apply\+Burn@{Apply\+Burn}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Apply\+Burn()}{ApplyBurn()}}
+{\footnotesize\ttfamily I\+Enumerator Mob\+Health.\+Apply\+Burn (\begin{DoxyParamCaption}\item[{float}]{dmg,  }\item[{int}]{burns\+Left }\end{DoxyParamCaption})}
+
+I\+Enumerator to apply damage continiously... the \char`\"{}burning\char`\"{} effect 
+\begin{DoxyParams}{Parameters}
+{\em dmg} & initial damage \\
+\hline
+{\em burns\+Left} & how many loops to go through before expiring \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mob_health_ac4b90844fdf1be4b5fad4693c48bd61f}\label{class_mob_health_ac4b90844fdf1be4b5fad4693c48bd61f}} 
+\index{Mob\+Health@{Mob\+Health}!Apply\+Freeze@{Apply\+Freeze}}
+\index{Apply\+Freeze@{Apply\+Freeze}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Apply\+Freeze()}{ApplyFreeze()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Apply\+Freeze (\begin{DoxyParamCaption}\item[{float}]{dmg,  }\item[{float}]{time }\end{DoxyParamCaption})}
+
+Applies Freeze effect to mob. 
+\begin{DoxyParams}{Parameters}
+{\em dmg} & initial Damage \\
+\hline
+{\em time} & duration of freeze \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mob_health_a7374507ad90db5ced9395476a3943230}\label{class_mob_health_a7374507ad90db5ced9395476a3943230}} 
+\index{Mob\+Health@{Mob\+Health}!Apply\+Slow@{Apply\+Slow}}
+\index{Apply\+Slow@{Apply\+Slow}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Apply\+Slow()}{ApplySlow()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Apply\+Slow (\begin{DoxyParamCaption}\item[{float}]{dmg,  }\item[{float}]{slow\+Mult }\end{DoxyParamCaption})}
+
+Applies a slowing effect to the mob 
+\begin{DoxyParams}{Parameters}
+{\em dmg} & initial damage \\
+\hline
+{\em slow\+Mult} & the change to the speed multiplier of the mob \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mob_health_aba4ed1f920f770c312d214e541620f9f}\label{class_mob_health_aba4ed1f920f770c312d214e541620f9f}} 
+\index{Mob\+Health@{Mob\+Health}!Burn\+Effect@{Burn\+Effect}}
+\index{Burn\+Effect@{Burn\+Effect}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Burn\+Effect()}{BurnEffect()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Burn\+Effect (\begin{DoxyParamCaption}\item[{float}]{dmg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Test for Health Bar. 
+
+Applies burn damage, called everytick 
+\begin{DoxyParams}{Parameters}
+{\em the} & amount of damage to do (burn damage) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mob_health_adaf878419692a8b6a16f8f3861a6c74e}\label{class_mob_health_adaf878419692a8b6a16f8f3861a6c74e}} 
+\index{Mob\+Health@{Mob\+Health}!Do\+Damage@{Do\+Damage}}
+\index{Do\+Damage@{Do\+Damage}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Do\+Damage()}{DoDamage()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Do\+Damage (\begin{DoxyParamCaption}\item[{float}]{dmg }\end{DoxyParamCaption})}
+
+Function to handle status effect like arrows 
+\begin{DoxyParams}{Parameters}
+{\em dmg} & is Incoming damage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mob_health_a13e17984b18c95b8e6d56f52f9e11a71}\label{class_mob_health_a13e17984b18c95b8e6d56f52f9e11a71}} 
+\index{Mob\+Health@{Mob\+Health}!Init\+Damage\+Text@{Init\+Damage\+Text}}
+\index{Init\+Damage\+Text@{Init\+Damage\+Text}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Init\+Damage\+Text()}{InitDamageText()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Init\+Damage\+Text (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+shows damage upon getting hit with an arrow above the mob \mbox{\Hypertarget{class_mob_health_af397aaaf764c7338aa1a83714537a68a}\label{class_mob_health_af397aaaf764c7338aa1a83714537a68a}} 
+\index{Mob\+Health@{Mob\+Health}!Start@{Start}}
+\index{Start@{Start}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Instantiates member values and distinguishes between the type of mob \mbox{\Hypertarget{class_mob_health_abcc0a1a5fef542a2c5f83e3d80d21d18}\label{class_mob_health_abcc0a1a5fef542a2c5f83e3d80d21d18}} 
+\index{Mob\+Health@{Mob\+Health}!Start\+Burn@{Start\+Burn}}
+\index{Start\+Burn@{Start\+Burn}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Start\+Burn()}{StartBurn()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Start\+Burn (\begin{DoxyParamCaption}\item[{float}]{dmg,  }\item[{int}]{burns }\end{DoxyParamCaption})}
+
+Function to start a \char`\"{}\+Burn\char`\"{} like function to a mob using corrutines 
+\begin{DoxyParams}{Parameters}
+{\em dmg} & Initial damage \\
+\hline
+{\em burns} & is burn per cycle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mob_health_aa6acd5f6aad4b4d621db7d927169cd70}\label{class_mob_health_aa6acd5f6aad4b4d621db7d927169cd70}} 
+\index{Mob\+Health@{Mob\+Health}!Unfreeze@{Unfreeze}}
+\index{Unfreeze@{Unfreeze}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Unfreeze()}{Unfreeze()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Unfreeze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Undoes the Freeze effect, called at freeze expiration \mbox{\Hypertarget{class_mob_health_a0652c8b5a2fcb5cb791eb26305425024}\label{class_mob_health_a0652c8b5a2fcb5cb791eb26305425024}} 
+\index{Mob\+Health@{Mob\+Health}!Update@{Update}}
+\index{Update@{Update}!Mob\+Health@{Mob\+Health}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Mob\+Health.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Update position of the Healthbar to be slightly above the mob associated with this object 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Entities/Mob\+Health.\+cs\end{DoxyCompactItemize}

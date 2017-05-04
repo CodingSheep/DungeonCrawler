@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cluster',['cluster',['../class_osu_circle.html#a108fbacb0b9c0261fddddb8c4212f474',1,'OsuCircle']]]
+  ['burneffect',['BurnEffect',['../class_mob_health.html#aba4ed1f920f770c312d214e541620f9f',1,'MobHealth']]]
 ];

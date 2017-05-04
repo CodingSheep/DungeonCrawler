@@ -1,0 +1,169 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_ac51bc0232fa16f956acee68e1635f7dc}\label{class_player_ac51bc0232fa16f956acee68e1635f7dc}} 
+int \hyperlink{class_player_ac51bc0232fa16f956acee68e1635f7dc}{max\+Health} = 5
+\begin{DoxyCompactList}\small\item\em Maxhealth of the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_ab064f330cef84e2e062fd6446db24184}\label{class_player_ab064f330cef84e2e062fd6446db24184}} 
+int \hyperlink{class_player_ab064f330cef84e2e062fd6446db24184}{health} = 5
+\begin{DoxyCompactList}\small\item\em Current health that gets changed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_abd2291a934964b32e9bc06a7738042d3}\label{class_player_abd2291a934964b32e9bc06a7738042d3}} 
+float \hyperlink{class_player_abd2291a934964b32e9bc06a7738042d3}{speed} = 5.\+0f
+\begin{DoxyCompactList}\small\item\em Starting speed of the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a28b98e6712f03b881b07792d3c457f65}\label{class_player_a28b98e6712f03b881b07792d3c457f65}} 
+float \hyperlink{class_player_a28b98e6712f03b881b07792d3c457f65}{rotation\+Speed}
+\begin{DoxyCompactList}\small\item\em rotational speed of the player \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_ad71f4fd6a20074d500df63092298de62}\label{class_player_ad71f4fd6a20074d500df63092298de62}} 
+float \hyperlink{class_player_ad71f4fd6a20074d500df63092298de62}{arrow\+Speed} = 40f
+\begin{DoxyCompactList}\small\item\em How fast arrows are initially shot at. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_aecc56aacf8bc7000018ee06406a60076}\label{class_player_aecc56aacf8bc7000018ee06406a60076}} 
+float \hyperlink{class_player_aecc56aacf8bc7000018ee06406a60076}{arrow\+Dmg} = 5f
+\begin{DoxyCompactList}\small\item\em How much damage arrows initially do. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_ab8d9c5f386d98a1b32ccc928f8d4d29b}\label{class_player_ab8d9c5f386d98a1b32ccc928f8d4d29b}} 
+int \hyperlink{class_player_ab8d9c5f386d98a1b32ccc928f8d4d29b}{burn\+Amount} = 5
+\begin{DoxyCompactList}\small\item\em Default \char`\"{}burn\char`\"{} damage for fire arrows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a1723357f7c7ee28c6fe9d366708e83e8}\label{class_player_a1723357f7c7ee28c6fe9d366708e83e8}} 
+float \hyperlink{class_player_a1723357f7c7ee28c6fe9d366708e83e8}{freeze\+Time} = 2f
+\begin{DoxyCompactList}\small\item\em default \char`\"{}\+Freeze\char`\"{} time for ice arrows \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a17b09d930d828bb77903afa04073c3b2}\label{class_player_a17b09d930d828bb77903afa04073c3b2}} 
+float \hyperlink{class_player_a17b09d930d828bb77903afa04073c3b2}{slow\+Mult} = 1.\+5f
+\begin{DoxyCompactList}\small\item\em Default speed multiplier for slow arrows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a98d070bc739f23a42d48d3eae30badd0}\label{class_player_a98d070bc739f23a42d48d3eae30badd0}} 
+Texture2D \hyperlink{class_player_a98d070bc739f23a42d48d3eae30badd0}{Hp\+Bar\+Texture}
+\begin{DoxyCompactList}\small\item\em Texture for player healthbar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a91d04489f1b738260a27fba902157f9b}\label{class_player_a91d04489f1b738260a27fba902157f9b}} 
+Texture2D \hyperlink{class_player_a91d04489f1b738260a27fba902157f9b}{Hp\+Back\+Texture}
+\begin{DoxyCompactList}\small\item\em back texture for \hyperlink{class_player}{Player} health \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}{Start} ()
+\item 
+void \hyperlink{class_player_aace80372e18e32fe177e295fe5d93ba8}{Update} ()
+\item 
+void \hyperlink{class_player_aa0458562e3da0655ecb39a0031114335}{Fixed\+Update} ()
+\item 
+void \hyperlink{class_player_abd430d273ef011a22a6c63eee5067751}{On\+Collision\+Enter} (Collision col)
+\item 
+void \hyperlink{class_player_a281fbfe9664d247f3e4d4b2911b00dbe}{On\+Collision\+Stay} (Collision col)
+\item 
+void \hyperlink{class_player_a65c37e862c41df23b43ffc646ffa9fd0}{Aim\+Player} ()
+\item 
+void \hyperlink{class_player_a8d9dc0cb892c8fdb15f25e41c7189ebd}{Movement} ()
+\begin{DoxyCompactList}\small\item\em Test for Health Bar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a37c8ce5286efb3918e92a26892a09b12}\label{class_player_a37c8ce5286efb3918e92a26892a09b12}} 
+void \hyperlink{class_player_a37c8ce5286efb3918e92a26892a09b12}{On\+G\+UI} ()
+\begin{DoxyCompactList}\small\item\em Undoes the invulnerablitiy of the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a368f95446e99f0f007014e5755d91777}\label{class_player_a368f95446e99f0f007014e5755d91777}} 
+void {\bfseries Reset\+Vulnerability} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_aab2a1e98356973545e45c3071190b8e5}\label{class_player_aab2a1e98356973545e45c3071190b8e5}} 
+bool \hyperlink{class_player_aab2a1e98356973545e45c3071190b8e5}{invulnerable} = false
+\begin{DoxyCompactList}\small\item\em Sets invulnerablility after player has taken damage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a36830e22f302a4e03aa615efbc472881}\label{class_player_a36830e22f302a4e03aa615efbc472881}} 
+Camera \hyperlink{class_player_a36830e22f302a4e03aa615efbc472881}{main\+Cam}
+\begin{DoxyCompactList}\small\item\em main camera object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a5dfe4ae1b620a31044be3d8987a8661e}\label{class_player_a5dfe4ae1b620a31044be3d8987a8661e}} 
+Ray \hyperlink{class_player_a5dfe4ae1b620a31044be3d8987a8661e}{cam\+Ray}
+\begin{DoxyCompactList}\small\item\em Ray from camera to mouse position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a896f013d0fa8988d8508aac39ecf676d}\label{class_player_a896f013d0fa8988d8508aac39ecf676d}} 
+Raycast\+Hit \hyperlink{class_player_a896f013d0fa8988d8508aac39ecf676d}{cam\+Ray\+Hit}
+\begin{DoxyCompactList}\small\item\em Hit point of raycast. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a2954d91cf05871fed826b707e65604c5}\label{class_player_a2954d91cf05871fed826b707e65604c5}} 
+Vector3 \hyperlink{class_player_a2954d91cf05871fed826b707e65604c5}{deltamovement}
+\begin{DoxyCompactList}\small\item\em Change in movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_ae0baab096eb0714ffa516b6a1de9eed6}\label{class_player_ae0baab096eb0714ffa516b6a1de9eed6}} 
+\hyperlink{class_game_controller}{Game\+Controller} \hyperlink{class_player_ae0baab096eb0714ffa516b6a1de9eed6}{gamecontroller}
+\begin{DoxyCompactList}\small\item\em Gamecontroller object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_aa05f0fb4e449ec97d7bf20fd90aa1967}\label{class_player_aa05f0fb4e449ec97d7bf20fd90aa1967}} 
+\hyperlink{class_spell_controller}{Spell\+Controller} \hyperlink{class_player_aa05f0fb4e449ec97d7bf20fd90aa1967}{spell\+UI}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_spell_controller}{Spell\+Controller} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_afb08071e4a3f39dc03d0f36fad786dab}\label{class_player_afb08071e4a3f39dc03d0f36fad786dab}} 
+\hyperlink{class_u_i_controller}{U\+I\+Controller} \hyperlink{class_player_afb08071e4a3f39dc03d0f36fad786dab}{uic}
+\begin{DoxyCompactList}\small\item\em UI Controller object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_ad5c386687ea25d8dc7ed86fdd0850608}\label{class_player_ad5c386687ea25d8dc7ed86fdd0850608}} 
+double \hyperlink{class_player_ad5c386687ea25d8dc7ed86fdd0850608}{time\+Held}
+\begin{DoxyCompactList}\small\item\em Time holding fire. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a97f79d09dde65f96851c5b92d5db79b7}\label{class_player_a97f79d09dde65f96851c5b92d5db79b7}} 
+double {\bfseries test}
+\item 
+\mbox{\Hypertarget{class_player_ad694265b88e8ce48081e240b9ec915f2}\label{class_player_ad694265b88e8ce48081e240b9ec915f2}} 
+bool \hyperlink{class_player_ad694265b88e8ce48081e240b9ec915f2}{right\+Clicked}
+\begin{DoxyCompactList}\small\item\em Bool for clicking the right mouse button. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_acc2c43dd193b137522c1ad100fff0822}\label{class_player_acc2c43dd193b137522c1ad100fff0822}} 
+float \hyperlink{class_player_acc2c43dd193b137522c1ad100fff0822}{speed\+After\+Pause}
+\begin{DoxyCompactList}\small\item\em Pausing handling. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a49e75b5b68fa87751080bf40504fbdf3}\label{class_player_a49e75b5b68fa87751080bf40504fbdf3}} 
+float \hyperlink{class_player_a49e75b5b68fa87751080bf40504fbdf3}{hp\+Bar\+Length}
+\begin{DoxyCompactList}\small\item\em Length of healthbar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a70b6b51d74cd56fa84d032a4024792e6}\label{class_player_a70b6b51d74cd56fa84d032a4024792e6}} 
+Animator \hyperlink{class_player_a70b6b51d74cd56fa84d032a4024792e6}{anim}
+\begin{DoxyCompactList}\small\item\em Animator controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Everything player related is in this class 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a65c37e862c41df23b43ffc646ffa9fd0}\label{class_player_a65c37e862c41df23b43ffc646ffa9fd0}} 
+\index{Player@{Player}!Aim\+Player@{Aim\+Player}}
+\index{Aim\+Player@{Aim\+Player}!Player@{Player}}
+\subsubsection{\texorpdfstring{Aim\+Player()}{AimPlayer()}}
+{\footnotesize\ttfamily void Player.\+Aim\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Aims player at the position the Mouse casts onto the gameworld \mbox{\Hypertarget{class_player_aa0458562e3da0655ecb39a0031114335}\label{class_player_aa0458562e3da0655ecb39a0031114335}} 
+\index{Player@{Player}!Fixed\+Update@{Fixed\+Update}}
+\index{Fixed\+Update@{Fixed\+Update}!Player@{Player}}
+\subsubsection{\texorpdfstring{Fixed\+Update()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Player.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Aim the player Polar the mouse\textquotesingle{}s current position on screen to the game world \mbox{\Hypertarget{class_player_a8d9dc0cb892c8fdb15f25e41c7189ebd}\label{class_player_a8d9dc0cb892c8fdb15f25e41c7189ebd}} 
+\index{Player@{Player}!Movement@{Movement}}
+\index{Movement@{Movement}!Player@{Player}}
+\subsubsection{\texorpdfstring{Movement()}{Movement()}}
+{\footnotesize\ttfamily void Player.\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Test for Health Bar. 
+
+Handles movement of the player in the gameworld with key interactiosn and Unitys Simple\+Movement class \mbox{\Hypertarget{class_player_abd430d273ef011a22a6c63eee5067751}\label{class_player_abd430d273ef011a22a6c63eee5067751}} 
+\index{Player@{Player}!On\+Collision\+Enter@{On\+Collision\+Enter}}
+\index{On\+Collision\+Enter@{On\+Collision\+Enter}!Player@{Player}}
+\subsubsection{\texorpdfstring{On\+Collision\+Enter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void Player.\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{Collision}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Handels collision events \mbox{\Hypertarget{class_player_a281fbfe9664d247f3e4d4b2911b00dbe}\label{class_player_a281fbfe9664d247f3e4d4b2911b00dbe}} 
+\index{Player@{Player}!On\+Collision\+Stay@{On\+Collision\+Stay}}
+\index{On\+Collision\+Stay@{On\+Collision\+Stay}!Player@{Player}}
+\subsubsection{\texorpdfstring{On\+Collision\+Stay()}{OnCollisionStay()}}
+{\footnotesize\ttfamily void Player.\+On\+Collision\+Stay (\begin{DoxyParamCaption}\item[{Collision}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Handles how collisions interact when remaining inside the hitboxes of the player \mbox{\Hypertarget{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}\label{class_player_a1a09a3ded16ac1646f6bdd4f25fe0ddd}} 
+\index{Player@{Player}!Start@{Start}}
+\index{Start@{Start}!Player@{Player}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Player.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Instantiates member values \mbox{\Hypertarget{class_player_aace80372e18e32fe177e295fe5d93ba8}\label{class_player_aace80372e18e32fe177e295fe5d93ba8}} 
+\index{Player@{Player}!Update@{Update}}
+\index{Update@{Update}!Player@{Player}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Player.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Updates member valeus Health set to appropriate length Also handles basic inputs for walking animation 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Entities/Player.\+cs\end{DoxyCompactItemize}
