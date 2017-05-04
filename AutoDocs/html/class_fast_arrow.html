@@ -40,6 +40,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_fast_arrow-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">FastArrow Class Reference</div>  </div>
@@ -48,6 +50,18 @@ $(function() {
 
 <p>Inherits <a class="el" href="class_arrow.html">Arrow</a>.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a112df0c78fbcd99d22fc083c08e785de"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fast_arrow.html#a112df0c78fbcd99d22fc083c08e785de">Start</a> ()</td></tr>
+<tr class="separator:a112df0c78fbcd99d22fc083c08e785de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4821a5e4ca53ebc904663395ee312061"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fast_arrow.html#a4821a5e4ca53ebc904663395ee312061">Update</a> ()</td></tr>
+<tr class="separator:a4821a5e4ca53ebc904663395ee312061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aca9b777b6e4c2b4c611aec0433c2502d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_arrow.html">Arrow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fast_arrow.html#aca9b777b6e4c2b4c611aec0433c2502d">BaseArrow</a></td></tr>
+<tr class="separator:aca9b777b6e4c2b4c611aec0433c2502d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_arrow"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_arrow')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_arrow.html">Arrow</a></td></tr>
@@ -76,13 +90,91 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab10f23b78a724c0948d852e3fa11a2c1 inherit pub_attribs_class_arrow"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_arrow.html#a6f10bb69bb3cb23483035a0eb1b286fa">arrowDmgTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arrow.html#ab10f23b78a724c0948d852e3fa11a2c1">arrowDmgType</a> = <a class="el" href="class_arrow.html#a6f10bb69bb3cb23483035a0eb1b286faaf17aaabc20bfe045075927934fed52d2">arrowDmgTypes.basic</a></td></tr>
 <tr class="separator:ab10f23b78a724c0948d852e3fa11a2c1 inherit pub_attribs_class_arrow"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A faster moving arrow! Same as basicArrow, except a different prefab with more speed as a default </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a112df0c78fbcd99d22fc083c08e785de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112df0c78fbcd99d22fc083c08e785de">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">new void FastArrow.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section post"><dt>Postcondition</dt><dd>calls BaseArrow.Start(), then the parent class handels everything else. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>it appears that this needs to be called otherwise the object won't instantiate it's parent class </dd></dl>
+
+</div>
+</div>
+<a id="a4821a5e4ca53ebc904663395ee312061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4821a5e4ca53ebc904663395ee312061">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FastArrow.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aca9b777b6e4c2b4c611aec0433c2502d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca9b777b6e4c2b4c611aec0433c2502d">&#9670;&nbsp;</a></span>BaseArrow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_arrow.html">Arrow</a> FastArrow.BaseArrow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/Dev/UnityProject2/DungeonCrawler/Assets/Scripts/Arrows/<a class="el" href="_fast_arrow_8cs.html">FastArrow.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 4 2017 09:59:08 for DungeonCrawler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 4 2017 11:04:58 for DungeonCrawler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

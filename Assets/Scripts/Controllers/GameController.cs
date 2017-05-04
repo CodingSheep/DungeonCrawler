@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	// Use this for initialization
-	public GameObject OsuCircle;
-    public bool playerIsFiring;
-	public bool isPaused;
+	/*! \class GameController 
+     * Manages overall gameflow and inputs not directly linked to player
+     */
+	public GameObject OsuCircle; //!< OsuCircle gameobject to be instantiated
+    public bool playerIsFiring; //!< boolean to handle firing control
+	public bool isPaused; //!< boolean to handel pause controll
 
-	private SpellController spellController;
-	public PauseMenu Menu;
-	private UIController UI;
+	private SpellController spellController; //!< SpellController in scene to communicate with
+	public PauseMenu Menu; //!< PauseMenu object to handle pausing
+	private UIController UI; //!< UIController object to handle other UI related events
 
+    /*!
+     * Sets default members and privates.
+     */
 	void Start () {
         spellController = GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>();
         playerIsFiring = false;
 		isPaused = false;
     }
 
-	// Update is called once per frame
+	/*!
+     * Checks for any updates that need to be applied to game world
+     * such as if a player has held down the shoot button
+     */
 	void Update () {
-
+        /*!
+         * Unused Osucircle testing function
+         */
 		if (Input.GetKeyDown (KeyCode.Q)) {
 			//creates game object
 			GameObject osu_Circle= Instantiate (OsuCircle);
@@ -34,12 +44,11 @@ public class GameController : MonoBehaviour {
 			osu_Circle.transform.position = new Vector2 (Screen.width / 2, Screen.height / 2 + displacement);
 		}
 
-		//Basic arrow shot (right click)
-		if (Input.GetButtonDown("Fire2"))
+		if (Input.GetButtonDown("Fire2")) //! @note Fire2 is the default mousebutton 2 on PC, but can be used on other platforms when defining global controlls
 
 		{
 			//if (finalHit == null)
-			spellController.StartSpawnSequence();
+			spellController.StartSpawnSequence(); 
 			playerIsFiring = true;
 
 		}
@@ -49,7 +58,9 @@ public class GameController : MonoBehaviour {
 			playerIsFiring = false;
 		}
     }
-
+    /*! 
+     * Handles pausemenu interaction.
+     */
 	public void TogglePauseMenu()
 	{
 		// Not Optimal but readable
@@ -63,7 +74,7 @@ public class GameController : MonoBehaviour {
 		{
 			Menu.GetComponentInChildren<Canvas>().enabled = true;
 			isPaused = true;
-			Time.timeScale = 0.0f;
+			Time.timeScale = 0.0f; //! stops time (however not updates) Becareful how we set object updates!
 		}
 	}
 }

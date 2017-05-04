@@ -40,6 +40,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_camera_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CameraController Class Reference</div>  </div>
@@ -47,13 +49,134 @@ $(function() {
 <div class="contents">
 
 <p>Inherits MonoBehaviour.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad4a238c6f7db3ee003302a245d860860"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_controller.html#ad4a238c6f7db3ee003302a245d860860">Start</a> ()</td></tr>
+<tr class="separator:ad4a238c6f7db3ee003302a245d860860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd241727886518c21b9609193e32d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_controller.html#afcd241727886518c21b9609193e32d18">LateUpdate</a> ()</td></tr>
+<tr class="separator:afcd241727886518c21b9609193e32d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aff80d2275dae360196361c39078bfda4"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_controller.html#aff80d2275dae360196361c39078bfda4">offset</a></td></tr>
+<tr class="memdesc:aff80d2275dae360196361c39078bfda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset of the world to camera position.  <a href="#aff80d2275dae360196361c39078bfda4">More...</a><br /></td></tr>
+<tr class="separator:aff80d2275dae360196361c39078bfda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae794ec2d17947f671ce0eaef9aac8b7"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera_controller.html#aae794ec2d17947f671ce0eaef9aac8b7">player</a></td></tr>
+<tr class="memdesc:aae794ec2d17947f671ce0eaef9aac8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_player.html">Player</a> GameObject to track movement.  <a href="#aae794ec2d17947f671ce0eaef9aac8b7">More...</a><br /></td></tr>
+<tr class="separator:aae794ec2d17947f671ce0eaef9aac8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that manages the movement of the Camera </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afcd241727886518c21b9609193e32d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd241727886518c21b9609193e32d18">&#9670;&nbsp;</a></span>LateUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController.LateUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Updates the camera position to follow the player </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="class_camera_controller.html#afcd241727886518c21b9609193e32d18">LateUpdate()</a> to avoid unexpected behaviors with other gameobject updates(). Last thing in the scene to update </dd></dl>
+
+</div>
+</div>
+<a id="ad4a238c6f7db3ee003302a245d860860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4a238c6f7db3ee003302a245d860860">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section post"><dt>Postcondition</dt><dd>private members to appropriate objects </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aff80d2275dae360196361c39078bfda4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff80d2275dae360196361c39078bfda4">&#9670;&nbsp;</a></span>offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 CameraController.offset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Offset of the world to camera position. </p>
+
+</div>
+</div>
+<a id="aae794ec2d17947f671ce0eaef9aac8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae794ec2d17947f671ce0eaef9aac8b7">&#9670;&nbsp;</a></span>player</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject CameraController.player</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_player.html">Player</a> GameObject to track movement. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/Dev/UnityProject2/DungeonCrawler/Assets/Scripts/Controllers/<a class="el" href="_camera_controller_8cs.html">CameraController.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 4 2017 09:59:08 for DungeonCrawler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 4 2017 11:04:58 for DungeonCrawler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
