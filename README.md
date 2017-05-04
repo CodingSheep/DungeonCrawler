@@ -1,39 +1,39 @@
 # DungeonCrawler
 Our attempt at a dungeon crawler game.
 
-##Who
+## Who
   1.  Joe Alsko, JAlsko
   2.  Sky Johnson, nullmage
   3.  Jacob Toomey, jcbtmy
   4.  Jarrod Raine, codingsheep
   5.  Stevan Maksimovic, stevmak
 
-##Title
+## Title
   That One Dungeon Crawler
-##Description
+## Description
 
   A game that uses a rhythm game like interaction as a pivotal part of the base game mechanic. This game will be a dungeon crawler-esk 2.5d isometric rouge-like hack and slash. Made in Unity.
 
-##Vision Statement
+## Vision Statement
 
   "To deliver smooth interactive gameplay mechanics, and a game I could show off playing." 
 Motivation:
   We all want to make a game that we would want to play.
   
-##Risks
+## Risks
 
   C# is fairly new to some people on the team. 
   Large soft projects are also a new endevour for many of us. 
   Art and assets might be hard to account for. 
   And no experience working with eachother.
   
-##Mitigation
+## Mitigation
   The more experienced people will take time to teach the less experienced people how to use C# and Unity. And frequent communication.
   We will focus on organization and delegate tasks in a reasonable and productive manner.
   Simple geometric models, and dedication to creating assests.
   Frequent communication.
   
-##Requirements
+## Requirements
   1. User story 1
     * As a player, I want to play a game with a rhythm game like mechanic, so that I can feel engaged to the game.
     * Priority: Critical
@@ -59,14 +59,17 @@ Motivation:
     * Priority: Critical
     * Story Points: 1
     
-##Methodology
+## Methodology
 
 Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycles, with frequent meeting and testing. But with a set end goal.
 
-##Tracking Software
+## Tracking Software
  Github Issues and Milestones/Projects of the Organization
  1. [Github Milestones](https://github.com/softdev3308/DungeonCrawler/milestones)
  2. [Github Project Tracking](https://github.com/softdev3308/DungeonCrawler/projects/1)
  
-##Project Plan
+## Project Plan
 ![project](https://puu.sh/u6dqd/8710624e34.png)
+
+## To Play
+Go to the folder labeled "Builds" and, depending on your OS, find the executable file to play the game!
