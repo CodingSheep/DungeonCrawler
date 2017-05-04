@@ -37,7 +37,7 @@ public class DoxygenWindow : EditorWindow
 {
 	public static DoxygenWindow Instance;
 	public enum WindowModes{Generate,Configuration,About}
-    public string UnityProjectID = "DungeonCrawler";//PlayerSettings.productName+":";
+	public string UnityProjectID = PlayerSettings.productName+":";
 	public string AssestsFolder = Application.dataPath;
 	public string[] Themes = new string[3] {"Default", "Dark and Colorful", "Light and Clean"};
 	public int SelectedTheme = 1;
