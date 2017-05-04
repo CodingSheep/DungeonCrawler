@@ -1,0 +1,90 @@
+\hypertarget{class_mob1_movement}{}\section{Mob1\+Movement Class Reference}
+\label{class_mob1_movement}\index{Mob1\+Movement@{Mob1\+Movement}}
+Inheritance diagram for Mob1\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mob1_movement}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mob1_movement_a60cea12c3ca0514b7fa3bdd78fccc257}\label{class_mob1_movement_a60cea12c3ca0514b7fa3bdd78fccc257}} 
+Game\+Object {\bfseries Mob\+Canvas}
+\item 
+\mbox{\Hypertarget{class_mob1_movement_a90c9578db347384411e4ad1f8ecd0133}\label{class_mob1_movement_a90c9578db347384411e4ad1f8ecd0133}} 
+Game\+Object {\bfseries Mob\+Text\+Prefab}
+\item 
+\mbox{\Hypertarget{class_mob1_movement_aa5d29d107c8b3c137f630e80c06a6f30}\label{class_mob1_movement_aa5d29d107c8b3c137f630e80c06a6f30}} 
+float \hyperlink{class_mob1_movement_aa5d29d107c8b3c137f630e80c06a6f30}{speed}
+\begin{DoxyCompactList}\small\item\em speed which the mob approaches the player \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mob1_movement_ab5d6209e3082865eb69e197997e7c8f7}{Awake} ()
+\item 
+void \hyperlink{class_mob1_movement_a788bc296f79b07051e91a3c1d1613bc9}{Update} ()
+\item 
+void \hyperlink{class_mob1_movement_a208b9f2f72d057c44055af58371bdfd1}{Damage\+Hit} ()
+\item 
+void \hyperlink{class_mob1_movement_a8c36ef4e56bc37704d47635c444a07c6}{Damage\+Text\+Init} (string damage)
+\item 
+void \hyperlink{class_mob1_movement_a77cf67d8073a810fd269199883b485b6}{Stabilize\+Canvas} ()
+\begin{DoxyCompactList}\small\item\em $<$ Stabilizes the canvas with respect to the camera because the player is moving \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mob1_movement_a7d4076faee2feead1c09d2a670aa24c5}\label{class_mob1_movement_a7d4076faee2feead1c09d2a670aa24c5}} 
+Transform \hyperlink{class_mob1_movement_a7d4076faee2feead1c09d2a670aa24c5}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player}\textquotesingle{}s current position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob1_movement_a48a34641232183ed3da4641f82dd4f20}\label{class_mob1_movement_a48a34641232183ed3da4641f82dd4f20}} 
+Unity\+Engine.\+A\+I.\+Nav\+Mesh\+Agent {\bfseries nav}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic mob class This mob follows the player directly 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mob1_movement_ab5d6209e3082865eb69e197997e7c8f7}\label{class_mob1_movement_ab5d6209e3082865eb69e197997e7c8f7}} 
+\index{Mob1\+Movement@{Mob1\+Movement}!Awake@{Awake}}
+\index{Awake@{Awake}!Mob1\+Movement@{Mob1\+Movement}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Mob1\+Movement.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Sets member values \mbox{\Hypertarget{class_mob1_movement_a208b9f2f72d057c44055af58371bdfd1}\label{class_mob1_movement_a208b9f2f72d057c44055af58371bdfd1}} 
+\index{Mob1\+Movement@{Mob1\+Movement}!Damage\+Hit@{Damage\+Hit}}
+\index{Damage\+Hit@{Damage\+Hit}!Mob1\+Movement@{Mob1\+Movement}}
+\subsubsection{\texorpdfstring{Damage\+Hit()}{DamageHit()}}
+{\footnotesize\ttfamily void Mob1\+Movement.\+Damage\+Hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Do health calculations with damage on health Give Health to Damage\+Text\+Init using To\+String method \mbox{\Hypertarget{class_mob1_movement_a8c36ef4e56bc37704d47635c444a07c6}\label{class_mob1_movement_a8c36ef4e56bc37704d47635c444a07c6}} 
+\index{Mob1\+Movement@{Mob1\+Movement}!Damage\+Text\+Init@{Damage\+Text\+Init}}
+\index{Damage\+Text\+Init@{Damage\+Text\+Init}!Mob1\+Movement@{Mob1\+Movement}}
+\subsubsection{\texorpdfstring{Damage\+Text\+Init()}{DamageTextInit()}}
+{\footnotesize\ttfamily void Mob1\+Movement.\+Damage\+Text\+Init (\begin{DoxyParamCaption}\item[{string}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Creates Damage text on hit \mbox{\Hypertarget{class_mob1_movement_a77cf67d8073a810fd269199883b485b6}\label{class_mob1_movement_a77cf67d8073a810fd269199883b485b6}} 
+\index{Mob1\+Movement@{Mob1\+Movement}!Stabilize\+Canvas@{Stabilize\+Canvas}}
+\index{Stabilize\+Canvas@{Stabilize\+Canvas}!Mob1\+Movement@{Mob1\+Movement}}
+\subsubsection{\texorpdfstring{Stabilize\+Canvas()}{StabilizeCanvas()}}
+{\footnotesize\ttfamily void Mob1\+Movement.\+Stabilize\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+$<$ Stabilizes the canvas with respect to the camera because the player is moving 
+
+Smooths the damage text\textquotesingle{}s canvas to decrease jitter \begin{DoxyNote}{Note}
+52.\+0f for the camera angle and stable\+\_\+y to make up for rotation of the player 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_mob1_movement_a788bc296f79b07051e91a3c1d1613bc9}\label{class_mob1_movement_a788bc296f79b07051e91a3c1d1613bc9}} 
+\index{Mob1\+Movement@{Mob1\+Movement}!Update@{Update}}
+\index{Update@{Update}!Mob1\+Movement@{Mob1\+Movement}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Mob1\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Updates all members and checks for test \char`\"{}\+T\char`\"{} input for damage 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Entities/Mob1\+Movement.\+cs\end{DoxyCompactItemize}

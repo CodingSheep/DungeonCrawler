@@ -1,0 +1,68 @@
+\hypertarget{class_delayed}{}\section{Delayed Class Reference}
+\label{class_delayed}\index{Delayed@{Delayed}}
+Inheritance diagram for Delayed\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_delayed}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_delayed_ace12fa36fce732dcb6302d3fc5a43a12}\label{class_delayed_ace12fa36fce732dcb6302d3fc5a43a12}} 
+Game\+Object \hyperlink{class_delayed_ace12fa36fce732dcb6302d3fc5a43a12}{Basic\+Arrow}
+\begin{DoxyCompactList}\small\item\em Gameobject to be instantiate. In this case the \hyperlink{class_basic_arrow}{Basic\+Arrow} prefab. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_delayed_a2d248a33685341b8645c8060c6e291bd}\label{class_delayed_a2d248a33685341b8645c8060c6e291bd}} 
+float \hyperlink{class_delayed_a2d248a33685341b8645c8060c6e291bd}{spawntimer}
+\begin{DoxyCompactList}\small\item\em Set how long the spawning will continue for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+new void \hyperlink{class_delayed_a680d8010c92af858e6d0ee4fe4711961}{Start} ()
+\item 
+new void \hyperlink{class_delayed_a2c17802ed1b249f91240a20a07ef1019}{Fixed\+Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_delayed_a0acfe588c36cd67c143d8c293f32ff7e}\label{class_delayed_a0acfe588c36cd67c143d8c293f32ff7e}} 
+\hyperlink{class_arrow}{Arrow} \hyperlink{class_delayed_a0acfe588c36cd67c143d8c293f32ff7e}{Base\+Arrow}
+\begin{DoxyCompactList}\small\item\em Base\+Arrow Component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_delayed_a53603baf85cfda409690e85740cff1d6}\label{class_delayed_a53603baf85cfda409690e85740cff1d6}} 
+float \hyperlink{class_delayed_a53603baf85cfda409690e85740cff1d6}{spawntime}
+\begin{DoxyCompactList}\small\item\em float to keep track of current time in gameworld. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_delayed_a7e66f6655bed06e61335d2de08327c66}\label{class_delayed_a7e66f6655bed06e61335d2de08327c66}} 
+Vector3 \hyperlink{class_delayed_a7e66f6655bed06e61335d2de08327c66}{Initial\+Position}
+\begin{DoxyCompactList}\small\item\em sets position to spawn new Basic\+Arrows \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_delayed}{Delayed} arrow shoots one arrow, then spawns more basic arrows in the same direction for a set duration. \begin{DoxyNote}{Note}
+Death of this arrow type is managed by the parent class 
+
+Prefab class 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_delayed_a2c17802ed1b249f91240a20a07ef1019}\label{class_delayed_a2c17802ed1b249f91240a20a07ef1019}} 
+\index{Delayed@{Delayed}!Fixed\+Update@{Fixed\+Update}}
+\index{Fixed\+Update@{Fixed\+Update}!Delayed@{Delayed}}
+\subsubsection{\texorpdfstring{Fixed\+Update()}{FixedUpdate()}}
+{\footnotesize\ttfamily new void Delayed.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Calls base\+Arrow fixed\+Update() and then instantiates more arrows if Time.\+time $>$ spawntime \mbox{\Hypertarget{class_delayed_a680d8010c92af858e6d0ee4fe4711961}\label{class_delayed_a680d8010c92af858e6d0ee4fe4711961}} 
+\index{Delayed@{Delayed}!Start@{Start}}
+\index{Start@{Start}!Delayed@{Delayed}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily new void Delayed.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Sets spawntime of next basic arrow to Time.\+time + spawntimer. \begin{DoxyPostcond}{Postcondition}
+a set object invisible object that spawns more basearrows. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Arrows/Delayed.\+cs\end{DoxyCompactItemize}

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['update',['Update',['../class_spell_controller.html#a21bc9cc1d9dcf0fdebc52754a9008552',1,'SpellController']]],
-  ['updatescore',['UpdateScore',['../class_u_i_controller.html#a87a0993fd494e90a55c6414d75467dd7',1,'UIController']]]
+  ['oncollisionenter',['OnCollisionEnter',['../class_pickup.html#af91a544b99c9d52864ec6a074df98d73',1,'Pickup.OnCollisionEnter()'],['../class_player.html#abd430d273ef011a22a6c63eee5067751',1,'Player.OnCollisionEnter()']]],
+  ['oncollisionstay',['OnCollisionStay',['../class_player.html#a281fbfe9664d247f3e4d4b2911b00dbe',1,'Player']]],
+  ['ongui',['OnGUI',['../class_player.html#a37c8ce5286efb3918e92a26892a09b12',1,'Player']]],
+  ['ontriggerenter',['OnTriggerEnter',['../class_arrow.html#a186cf27bfba2bb5ce6b6427a44889858',1,'Arrow.OnTriggerEnter()'],['../class_pickup.html#a5f190e230de9ed4839c26642785896be',1,'Pickup.OnTriggerEnter()']]]
 ];

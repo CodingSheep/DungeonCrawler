@@ -1,0 +1,76 @@
+\hypertarget{class_mob2_movement}{}\section{Mob2\+Movement Class Reference}
+\label{class_mob2_movement}\index{Mob2\+Movement@{Mob2\+Movement}}
+Inheritance diagram for Mob2\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mob2_movement}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mob2_movement_a562eaed5122c4ab12bd8e6da9ee5cae4}\label{class_mob2_movement_a562eaed5122c4ab12bd8e6da9ee5cae4}} 
+float \hyperlink{class_mob2_movement_a562eaed5122c4ab12bd8e6da9ee5cae4}{jump\+Rate} = 2f
+\begin{DoxyCompactList}\small\item\em Frequency of jumping. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob2_movement_a55cced54062a86039e52800d49c65f18}\label{class_mob2_movement_a55cced54062a86039e52800d49c65f18}} 
+float \hyperlink{class_mob2_movement_a55cced54062a86039e52800d49c65f18}{jump\+Height} = 1000f
+\begin{DoxyCompactList}\small\item\em force of jumping \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mob2_movement_a1caeb0925d5a847a3458ba312c35adb9}{Awake} ()
+\item 
+void \hyperlink{class_mob2_movement_ad5700e3c04953999dc85ba86cbcf889d}{Update} ()
+\item 
+void \hyperlink{class_mob2_movement_aedc7ef856890634eafcb09ed1e6d0a5f}{Jump} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mob2_movement_adba86d6852cafaebc8c24d03c5060a79}\label{class_mob2_movement_adba86d6852cafaebc8c24d03c5060a79}} 
+Transform \hyperlink{class_mob2_movement_adba86d6852cafaebc8c24d03c5060a79}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} position/transform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mob2_movement_a9d18fd4ab57a4b254e41572a5e51221a}\label{class_mob2_movement_a9d18fd4ab57a4b254e41572a5e51221a}} 
+Nav\+Mesh\+Agent {\bfseries nav}
+\item 
+\mbox{\Hypertarget{class_mob2_movement_a277e1f62e34bfe7d2992de75b515c15d}\label{class_mob2_movement_a277e1f62e34bfe7d2992de75b515c15d}} 
+Rigidbody {\bfseries rb}
+\item 
+\mbox{\Hypertarget{class_mob2_movement_ab46f0903ccfe3b8a8a8d958cb9891bc8}\label{class_mob2_movement_ab46f0903ccfe3b8a8a8d958cb9891bc8}} 
+Animator {\bfseries anim}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This mob Occasionally jumps at the player 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mob2_movement_a1caeb0925d5a847a3458ba312c35adb9}\label{class_mob2_movement_a1caeb0925d5a847a3458ba312c35adb9}} 
+\index{Mob2\+Movement@{Mob2\+Movement}!Awake@{Awake}}
+\index{Awake@{Awake}!Mob2\+Movement@{Mob2\+Movement}}
+\subsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Mob2\+Movement.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Sets member values \mbox{\Hypertarget{class_mob2_movement_aedc7ef856890634eafcb09ed1e6d0a5f}\label{class_mob2_movement_aedc7ef856890634eafcb09ed1e6d0a5f}} 
+\index{Mob2\+Movement@{Mob2\+Movement}!Jump@{Jump}}
+\index{Jump@{Jump}!Mob2\+Movement@{Mob2\+Movement}}
+\subsubsection{\texorpdfstring{Jump()}{Jump()}}
+{\footnotesize\ttfamily void Mob2\+Movement.\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Unity Physics engine calculation to jump at the player\textquotesingle{}s current location Animation for Surround attack \begin{DoxyNote}{Note}
+since it looks neat 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_mob2_movement_ad5700e3c04953999dc85ba86cbcf889d}\label{class_mob2_movement_ad5700e3c04953999dc85ba86cbcf889d}} 
+\index{Mob2\+Movement@{Mob2\+Movement}!Update@{Update}}
+\index{Update@{Update}!Mob2\+Movement@{Mob2\+Movement}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Mob2\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Constantly rotate to look at player \begin{DoxyNote}{Note}
+since this mob only moves with jumps, this is used. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Entities/Mob2\+Movement.\+cs\end{DoxyCompactItemize}

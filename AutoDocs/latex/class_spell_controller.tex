@@ -1,0 +1,120 @@
+\hypertarget{class_spell_controller}{}\section{Spell\+Controller Class Reference}
+\label{class_spell_controller}\index{Spell\+Controller@{Spell\+Controller}}
+Inheritance diagram for Spell\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spell_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_spell_controller_a63da1ad10f9cb7931912cd60704875f5}{Start} ()
+\item 
+void \hyperlink{class_spell_controller_a21bc9cc1d9dcf0fdebc52754a9008552}{Update} ()
+\item 
+void \hyperlink{class_spell_controller_a779832e1b2aa56a36708f5fe7c7cc434}{Spawn\+Arrow} (Game\+Object arrow)
+\item 
+void \hyperlink{class_spell_controller_a60e9f69e1644149911c54e667a297ba8}{Start\+Spawn\+Sequence} ()
+\item 
+void \hyperlink{class_spell_controller_a9b3f29e4230fcdf1b601c6a8d49574e0}{End\+Spawn\+Sequence} ()
+\item 
+float \hyperlink{class_spell_controller_ad6e891fc9dd19a3eccec2a05791abff4}{Get\+Osu\+Time} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spell_controller_a70254f75318edd987407835df7806046}\label{class_spell_controller_a70254f75318edd987407835df7806046}} 
+Game\+Object {\bfseries basic\+Arrow}
+\item 
+Game\+Object \hyperlink{class_spell_controller_aa36968ec27a32acb26ec87db86af9415}{Fast\+Arrow}
+\begin{DoxyCompactList}\small\item\em Basic arrow to be instantiated on load. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spell_controller_a2d0099eccd4c793b1a97ad6bde7a0733}\label{class_spell_controller_a2d0099eccd4c793b1a97ad6bde7a0733}} 
+bool \hyperlink{class_spell_controller_a2d0099eccd4c793b1a97ad6bde7a0733}{firing}
+\begin{DoxyCompactList}\small\item\em boolean to keep track of player state \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spell_controller_a6d3ca0bdc911a31cf5036441339b075c}\label{class_spell_controller_a6d3ca0bdc911a31cf5036441339b075c}} 
+float \hyperlink{class_spell_controller_a6d3ca0bdc911a31cf5036441339b075c}{osu\+Time\+Scale}
+\begin{DoxyCompactList}\small\item\em speed of the Osu\+Circles \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spell_controller_a16ce771d6fc67978547d50e604d8e3d9}\label{class_spell_controller_a16ce771d6fc67978547d50e604d8e3d9}} 
+Game\+Object \hyperlink{class_spell_controller_a16ce771d6fc67978547d50e604d8e3d9}{loaded}
+\begin{DoxyCompactList}\small\item\em default arrow that gets interchanged on osucircle selection \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spell_controller_a01fd503ede5facdd5e8dd6ed02dca4ba}\label{class_spell_controller_a01fd503ede5facdd5e8dd6ed02dca4ba}} 
+\hyperlink{class_u_i_controller}{U\+I\+Controller} \hyperlink{class_spell_controller_a01fd503ede5facdd5e8dd6ed02dca4ba}{U\+I\+Controller}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_u_i_controller}{U\+I\+Controller} object for communication. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spell_controller_aebf669b2371dc1e055144a731ad56a84}\label{class_spell_controller_aebf669b2371dc1e055144a731ad56a84}} 
+\hyperlink{class_game_controller}{Game\+Controller} \hyperlink{class_spell_controller_aebf669b2371dc1e055144a731ad56a84}{Game\+Controller}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_game_controller}{Game\+Controller} object for communication. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spell_controller_a29b551a129180a586d25625380f6eb39}\label{class_spell_controller_a29b551a129180a586d25625380f6eb39}} 
+Game\+Object \hyperlink{class_spell_controller_a29b551a129180a586d25625380f6eb39}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spell_controller_a7448d6b3424043cb1b182e82d0008a6d}\label{class_spell_controller_a7448d6b3424043cb1b182e82d0008a6d}} 
+float \hyperlink{class_spell_controller_a7448d6b3424043cb1b182e82d0008a6d}{osu\+Time}
+\begin{DoxyCompactList}\small\item\em variable to keep track of how close the user was to clicking the circle in time \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles spell interactions in the game 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spell_controller_a9b3f29e4230fcdf1b601c6a8d49574e0}\label{class_spell_controller_a9b3f29e4230fcdf1b601c6a8d49574e0}} 
+\index{Spell\+Controller@{Spell\+Controller}!End\+Spawn\+Sequence@{End\+Spawn\+Sequence}}
+\index{End\+Spawn\+Sequence@{End\+Spawn\+Sequence}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{End\+Spawn\+Sequence()}{EndSpawnSequence()}}
+{\footnotesize\ttfamily void Spell\+Controller.\+End\+Spawn\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Instantiates the loaded arrow upon bow release \mbox{\Hypertarget{class_spell_controller_ad6e891fc9dd19a3eccec2a05791abff4}\label{class_spell_controller_ad6e891fc9dd19a3eccec2a05791abff4}} 
+\index{Spell\+Controller@{Spell\+Controller}!Get\+Osu\+Time@{Get\+Osu\+Time}}
+\index{Get\+Osu\+Time@{Get\+Osu\+Time}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Osu\+Time()}{GetOsuTime()}}
+{\footnotesize\ttfamily float Spell\+Controller.\+Get\+Osu\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+returns a float (seconds) on how close the player was to hitting the Approach circle in the appropriate time \mbox{\Hypertarget{class_spell_controller_a779832e1b2aa56a36708f5fe7c7cc434}\label{class_spell_controller_a779832e1b2aa56a36708f5fe7c7cc434}} 
+\index{Spell\+Controller@{Spell\+Controller}!Spawn\+Arrow@{Spawn\+Arrow}}
+\index{Spawn\+Arrow@{Spawn\+Arrow}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{Spawn\+Arrow()}{SpawnArrow()}}
+{\footnotesize\ttfamily void Spell\+Controller.\+Spawn\+Arrow (\begin{DoxyParamCaption}\item[{Game\+Object}]{arrow }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em instantiates} & an arrow gameobject \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_spell_controller_a63da1ad10f9cb7931912cd60704875f5}\label{class_spell_controller_a63da1ad10f9cb7931912cd60704875f5}} 
+\index{Spell\+Controller@{Spell\+Controller}!Start@{Start}}
+\index{Start@{Start}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Spell\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets member values \mbox{\Hypertarget{class_spell_controller_a60e9f69e1644149911c54e667a297ba8}\label{class_spell_controller_a60e9f69e1644149911c54e667a297ba8}} 
+\index{Spell\+Controller@{Spell\+Controller}!Start\+Spawn\+Sequence@{Start\+Spawn\+Sequence}}
+\index{Start\+Spawn\+Sequence@{Start\+Spawn\+Sequence}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{Start\+Spawn\+Sequence()}{StartSpawnSequence()}}
+{\footnotesize\ttfamily void Spell\+Controller.\+Start\+Spawn\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts the arrow shooting sequence. Sets loaded arrow to default basic\+Arrow. Loaded then changes based on whether or not an Osucircle had been clicked. \mbox{\Hypertarget{class_spell_controller_a21bc9cc1d9dcf0fdebc52754a9008552}\label{class_spell_controller_a21bc9cc1d9dcf0fdebc52754a9008552}} 
+\index{Spell\+Controller@{Spell\+Controller}!Update@{Update}}
+\index{Update@{Update}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Spell\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update checks gamestates in current frame for any updates to spell related events, such as new arrows or firing/ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_spell_controller_aa36968ec27a32acb26ec87db86af9415}\label{class_spell_controller_aa36968ec27a32acb26ec87db86af9415}} 
+\index{Spell\+Controller@{Spell\+Controller}!Fast\+Arrow@{Fast\+Arrow}}
+\index{Fast\+Arrow@{Fast\+Arrow}!Spell\+Controller@{Spell\+Controller}}
+\subsubsection{\texorpdfstring{Fast\+Arrow}{FastArrow}}
+{\footnotesize\ttfamily Game\+Object Spell\+Controller.\+Fast\+Arrow}
+
+
+
+Basic arrow to be instantiated on load. 
+
+fastarrow to be instantiated on osucircle click 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/Spell\+Controller.\+cs\end{DoxyCompactItemize}

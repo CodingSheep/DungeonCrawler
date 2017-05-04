@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit',['Quit',['../class_scene_controller.html#a9b24f2313df6b1ee47e72a978fc3528d',1,'SceneController.Quit()'],['../class_quit_on_click.html#a2ae4a389fc44a04218d7a1353bcc870a',1,'QuitOnClick.Quit()']]]
+  ['initdamagetext',['InitDamageText',['../class_mob_health.html#a13e17984b18c95b8e6d56f52f9e11a71',1,'MobHealth']]]
 ];

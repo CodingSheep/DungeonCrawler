@@ -1,0 +1,132 @@
+\hypertarget{class_u_i_controller}{}\section{U\+I\+Controller Class Reference}
+\label{class_u_i_controller}\index{U\+I\+Controller@{U\+I\+Controller}}
+Inheritance diagram for U\+I\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_u_i_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_i_controller_a87a0993fd494e90a55c6414d75467dd7}{Update\+Score} (int num)
+\item 
+int \hyperlink{class_u_i_controller_a4d9cf4f88502ba97bf5b1956ba24773d}{Get\+Score} ()
+\item 
+void \hyperlink{class_u_i_controller_a0c9a9ed0d8276bed8374ee2ee484ff0f}{Show\+Game\+Over} ()
+\item 
+void \hyperlink{class_u_i_controller_a96b6e594843a18425eddbb2adc5ede02}{Shooting} ()
+\item 
+void \hyperlink{class_u_i_controller_a720867c07d063e353bd105d582ad3646}{Release} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_i_controller_aac6233fbba2e67548334fcebda846b13}\label{class_u_i_controller_aac6233fbba2e67548334fcebda846b13}} 
+Texture2D \hyperlink{class_u_i_controller_aac6233fbba2e67548334fcebda846b13}{cursor\+Texture}
+\begin{DoxyCompactList}\small\item\em Custom Cursor textures changed in the Editor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a06c89b8bab048dc7da9e95f83dc98512}\label{class_u_i_controller_a06c89b8bab048dc7da9e95f83dc98512}} 
+Game\+Object \hyperlink{class_u_i_controller_a06c89b8bab048dc7da9e95f83dc98512}{Aim\+Line}
+\begin{DoxyCompactList}\small\item\em Gameobject that handles aim line. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a21bbf8d28555e4bbbf02eb36b3b4fd09}\label{class_u_i_controller_a21bbf8d28555e4bbbf02eb36b3b4fd09}} 
+Game\+Object \hyperlink{class_u_i_controller_a21bbf8d28555e4bbbf02eb36b3b4fd09}{Shooting\+Aim\+Line}
+\begin{DoxyCompactList}\small\item\em Gameobject that handles the growing line. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a6ea44aea6d6acc117d660b518612e983}\label{class_u_i_controller_a6ea44aea6d6acc117d660b518612e983}} 
+bool \hyperlink{class_u_i_controller_a6ea44aea6d6acc117d660b518612e983}{is\+Shooting}
+\begin{DoxyCompactList}\small\item\em Boolean object used in shootingaimline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a9e07150f7246ddee7be0b4d07040a33d}\label{class_u_i_controller_a9e07150f7246ddee7be0b4d07040a33d}} 
+List$<$ Game\+Object $>$ \hyperlink{class_u_i_controller_a9e07150f7246ddee7be0b4d07040a33d}{circle\+Types}
+\begin{DoxyCompactList}\small\item\em List of Osu\+Circles that spawn around the player when firing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a151e5f189914d2ed009b093e9d6be436}\label{class_u_i_controller_a151e5f189914d2ed009b093e9d6be436}} 
+bool \hyperlink{class_u_i_controller_a151e5f189914d2ed009b093e9d6be436}{is\+Game\+Over} = false
+\begin{DoxyCompactList}\small\item\em Managed in scenes and menus (death menu) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a3de0644d27645eb1981abc610a3a82f9}\label{class_u_i_controller_a3de0644d27645eb1981abc610a3a82f9}} 
+Canvas \hyperlink{class_u_i_controller_a3de0644d27645eb1981abc610a3a82f9}{game\+Over}
+\begin{DoxyCompactList}\small\item\em Death menu canvas. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a7d3370f23eac3cedd37d8c9762aaa520}\label{class_u_i_controller_a7d3370f23eac3cedd37d8c9762aaa520}} 
+Text \hyperlink{class_u_i_controller_a7d3370f23eac3cedd37d8c9762aaa520}{game\+Over\+Score}
+\begin{DoxyCompactList}\small\item\em Death menu Text object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a62aa99b5e6e950e1077480846bad3b86}\label{class_u_i_controller_a62aa99b5e6e950e1077480846bad3b86}} 
+Text \hyperlink{class_u_i_controller_a62aa99b5e6e950e1077480846bad3b86}{game\+Over\+High\+Score}
+\begin{DoxyCompactList}\small\item\em Death menu Highscore text. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_acfe28763f2de32925f0883a3d38792b6}\label{class_u_i_controller_acfe28763f2de32925f0883a3d38792b6}} 
+bool \hyperlink{class_u_i_controller_acfe28763f2de32925f0883a3d38792b6}{is\+Pause} = false
+\begin{DoxyCompactList}\small\item\em boolean handles pausing and pause canvas \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a3a17542c374d9d162acc7d636d2cdcb9}\label{class_u_i_controller_a3a17542c374d9d162acc7d636d2cdcb9}} 
+Game\+Object \hyperlink{class_u_i_controller_a3a17542c374d9d162acc7d636d2cdcb9}{Osu\+Circle}
+\begin{DoxyCompactList}\small\item\em Instantiate blank \hyperlink{class_osu_circle}{Osu\+Circle} gameobject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_u_i_controller_a676b3b972c33885db4565ee43f23e459}{Start} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_i_controller_a98e6ab376e28858f95189dbdbda70620}\label{class_u_i_controller_a98e6ab376e28858f95189dbdbda70620}} 
+Game\+Object \hyperlink{class_u_i_controller_a98e6ab376e28858f95189dbdbda70620}{player}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a2dabfeddc98455ff4a93d843ebb6c4d8}\label{class_u_i_controller_a2dabfeddc98455ff4a93d843ebb6c4d8}} 
+Vector2 \hyperlink{class_u_i_controller_a2dabfeddc98455ff4a93d843ebb6c4d8}{hot\+Spot} = Vector2.\+zero
+\begin{DoxyCompactList}\small\item\em Offset of the cursor (based on where anchor is set) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a5f32d4a4d789be31b0bd9609ff2307a2}\label{class_u_i_controller_a5f32d4a4d789be31b0bd9609ff2307a2}} 
+Game\+Object \hyperlink{class_u_i_controller_a5f32d4a4d789be31b0bd9609ff2307a2}{shootline}
+\begin{DoxyCompactList}\small\item\em private gameobject \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a9eb845eb67cb3403b17de6bd505a4379}\label{class_u_i_controller_a9eb845eb67cb3403b17de6bd505a4379}} 
+Text \hyperlink{class_u_i_controller_a9eb845eb67cb3403b17de6bd505a4379}{score\+Text}
+\begin{DoxyCompactList}\small\item\em Score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_i_controller_a8cca6d3f1aee858d74eef5bd8f1846d2}\label{class_u_i_controller_a8cca6d3f1aee858d74eef5bd8f1846d2}} 
+int \hyperlink{class_u_i_controller_a8cca6d3f1aee858d74eef5bd8f1846d2}{score}
+\begin{DoxyCompactList}\small\item\em current Int value of score \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controller object that handles most UI interactions in the Game\+Scene 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_i_controller_a4d9cf4f88502ba97bf5b1956ba24773d}\label{class_u_i_controller_a4d9cf4f88502ba97bf5b1956ba24773d}} 
+\index{U\+I\+Controller@{U\+I\+Controller}!Get\+Score@{Get\+Score}}
+\index{Get\+Score@{Get\+Score}!U\+I\+Controller@{U\+I\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Score()}{GetScore()}}
+{\footnotesize\ttfamily int U\+I\+Controller.\+Get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns score \mbox{\Hypertarget{class_u_i_controller_a720867c07d063e353bd105d582ad3646}\label{class_u_i_controller_a720867c07d063e353bd105d582ad3646}} 
+\index{U\+I\+Controller@{U\+I\+Controller}!Release@{Release}}
+\index{Release@{Release}!U\+I\+Controller@{U\+I\+Controller}}
+\subsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily void U\+I\+Controller.\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+UI Elements on shooting Release \mbox{\Hypertarget{class_u_i_controller_a96b6e594843a18425eddbb2adc5ede02}\label{class_u_i_controller_a96b6e594843a18425eddbb2adc5ede02}} 
+\index{U\+I\+Controller@{U\+I\+Controller}!Shooting@{Shooting}}
+\index{Shooting@{Shooting}!U\+I\+Controller@{U\+I\+Controller}}
+\subsubsection{\texorpdfstring{Shooting()}{Shooting()}}
+{\footnotesize\ttfamily void U\+I\+Controller.\+Shooting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Instantiates Shooting UI elements (Like Osu Circles) reads in list of Circle\+Types (prefabs) \mbox{\Hypertarget{class_u_i_controller_a0c9a9ed0d8276bed8374ee2ee484ff0f}\label{class_u_i_controller_a0c9a9ed0d8276bed8374ee2ee484ff0f}} 
+\index{U\+I\+Controller@{U\+I\+Controller}!Show\+Game\+Over@{Show\+Game\+Over}}
+\index{Show\+Game\+Over@{Show\+Game\+Over}!U\+I\+Controller@{U\+I\+Controller}}
+\subsubsection{\texorpdfstring{Show\+Game\+Over()}{ShowGameOver()}}
+{\footnotesize\ttfamily void U\+I\+Controller.\+Show\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates the Game\+Over menu \mbox{\Hypertarget{class_u_i_controller_a676b3b972c33885db4565ee43f23e459}\label{class_u_i_controller_a676b3b972c33885db4565ee43f23e459}} 
+\index{U\+I\+Controller@{U\+I\+Controller}!Start@{Start}}
+\index{Start@{Start}!U\+I\+Controller@{U\+I\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void U\+I\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Instantiates all members and UI Assets Also sets default values for scoores and Canvases \mbox{\Hypertarget{class_u_i_controller_a87a0993fd494e90a55c6414d75467dd7}\label{class_u_i_controller_a87a0993fd494e90a55c6414d75467dd7}} 
+\index{U\+I\+Controller@{U\+I\+Controller}!Update\+Score@{Update\+Score}}
+\index{Update\+Score@{Update\+Score}!U\+I\+Controller@{U\+I\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Score()}{UpdateScore()}}
+{\footnotesize\ttfamily void U\+I\+Controller.\+Update\+Score (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+Updates score shown on canvas 
+\begin{DoxyParams}{Parameters}
+{\em num} & is the score that needs to be updated \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/U\+I\+Controller.\+cs\end{DoxyCompactItemize}

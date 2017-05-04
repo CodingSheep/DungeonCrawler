@@ -1,0 +1,64 @@
+\hypertarget{class_spawn_controller}{}\section{Spawn\+Controller Class Reference}
+\label{class_spawn_controller}\index{Spawn\+Controller@{Spawn\+Controller}}
+Inheritance diagram for Spawn\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spawn_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_controller_acd9a03f2504ffc0bee3cb51f49ffe70d}\label{class_spawn_controller_acd9a03f2504ffc0bee3cb51f49ffe70d}} 
+Game\+Object \hyperlink{class_spawn_controller_acd9a03f2504ffc0bee3cb51f49ffe70d}{enemy}
+\begin{DoxyCompactList}\small\item\em Type of enemy to spawn. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spawn_controller_af5d0d5091092b0d6dcee6f670ba96b59}\label{class_spawn_controller_af5d0d5091092b0d6dcee6f670ba96b59}} 
+float \hyperlink{class_spawn_controller_af5d0d5091092b0d6dcee6f670ba96b59}{spawn\+Time}
+\begin{DoxyCompactList}\small\item\em How often that type of enemy spawns. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_spawn_controller_a094ea9629e5c9d39c4262f865ffae644}\label{class_spawn_controller_a094ea9629e5c9d39c4262f865ffae644}} 
+Transform \mbox{[}$\,$\mbox{]} \hyperlink{class_spawn_controller_a094ea9629e5c9d39c4262f865ffae644}{spawn\+Points}
+\begin{DoxyCompactList}\small\item\em avaible spawnpoints for that type of enemy \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_spawn_controller_a5aa835725a1507e10580c9887069f243}{Start} ()
+\item 
+void \hyperlink{class_spawn_controller_ac102b761c5d0f090ef09acaeb5180f8b}{Spawn} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_spawn_controller_a168d59f6d4b8be8f74aa1bd0c1dd5de3}\label{class_spawn_controller_a168d59f6d4b8be8f74aa1bd0c1dd5de3}} 
+float \hyperlink{class_spawn_controller_a168d59f6d4b8be8f74aa1bd0c1dd5de3}{player\+Health}
+\begin{DoxyCompactList}\small\item\em Keeps track of current player health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles how a specific enemy mob spawns. \begin{DoxyNote}{Note}
+Prefab class 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spawn_controller_ac102b761c5d0f090ef09acaeb5180f8b}\label{class_spawn_controller_ac102b761c5d0f090ef09acaeb5180f8b}} 
+\index{Spawn\+Controller@{Spawn\+Controller}!Spawn@{Spawn}}
+\index{Spawn@{Spawn}!Spawn\+Controller@{Spawn\+Controller}}
+\subsubsection{\texorpdfstring{Spawn()}{Spawn()}}
+{\footnotesize\ttfamily void Spawn\+Controller.\+Spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Spawns a new mob if the player is not dead \mbox{\Hypertarget{class_spawn_controller_a5aa835725a1507e10580c9887069f243}\label{class_spawn_controller_a5aa835725a1507e10580c9887069f243}} 
+\index{Spawn\+Controller@{Spawn\+Controller}!Start@{Start}}
+\index{Start@{Start}!Spawn\+Controller@{Spawn\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Spawn\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Instantiates the \hyperlink{class_spawn_controller}{Spawn\+Controller}
+\begin{DoxyItemize}
+\item Sets spawntime too 3.\+0f seconds by default
+\item Sets Playerhealth
+\item and starts the spawn sequence 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Controllers/Spawn\+Controller.\+cs\end{DoxyCompactItemize}

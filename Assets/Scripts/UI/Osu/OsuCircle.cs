@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OsuCircle : MonoBehaviour {
+    /*! \OsuCircle
+     * Handles OsuCircle objects that get instantiated on holding down fire
+     */
 
 	// Use this for initialization
-	public float collapse_speed;
+	public float collapse_speed; //!< Speed at which the ApproachCircle collapses
 	//public float target_size;
 	//public Vector3 scale;
     /*
@@ -16,26 +19,30 @@ public class OsuCircle : MonoBehaviour {
 	private Vector3 pos;
 	private OsuCircle[] circle_arr;
     */
-    public GameObject Arrow;
-	public enum arrowTypes
+    public GameObject Arrow; //!< Type of arrow associated with the OsuCircle
+	public enum arrowTypes //!< Types of possible arrow types
 	{
 		basic = 0, fast = 1, delayed = 2, fire = 3, ice = 4, slow = 5
 	}
-	public arrowTypes arrowType;
+	public arrowTypes arrowType; //!< Arrow type holder
 
-    public float TimeDelay;
-    private float PerfectHitTime;
+    public float TimeDelay; //!< Time to hit the circle
+    private float PerfectHitTime; //!< Time trime value
 
-    private float hitScore;
+    private float hitScore; //!< Holds the score that the player hit the circle with
 
-    private RectTransform ApproachCircle;
-    private float ApproachRate;
+    private RectTransform ApproachCircle; //!< ApproachCricle's Position handled in later functions
+    private float ApproachRate; //!< Defined rate of the aproach Cricle
 
-    public float approachDistance;
+    public float approachDistance; //!< Distance the Approach circle starts at
 
-    public bool hit;
+    public bool hit; //!< Bool handler wheather the button had beeen clicked
 
-    public AudioSource source;
+    public AudioSource source; //!< Audio Source
+
+    /*!
+     * Instantiates Member values
+     */
 	void Start () {
         //initializes variables
         /*
@@ -62,7 +69,9 @@ public class OsuCircle : MonoBehaviour {
         source = GetComponent<AudioSource>();
     }
 
-	// Update is called once per frame
+	/*!
+     * updates OsuCircle gameobject to check if it has been hit, or is pased its expected lifetime
+     */
 	void Update () {
         if (Time.time - PerfectHitTime > 0) {
             if(ApproachCircle != null) {
@@ -137,6 +146,11 @@ public class OsuCircle : MonoBehaviour {
         */
 
 	}
+
+    /*!
+     * Called when a Circle is hit in time
+     * 
+     */
 	public void HitCircle() {
         hit = true;
         ExchangeArrow();
@@ -146,6 +160,9 @@ public class OsuCircle : MonoBehaviour {
         //this.gameObject.SetActive(false);
         //Destroy(this.gameObject);
     }
+    /*!
+     * Changes the arrow in the SpellController to the new arrow that has just been hit.
+     */
     public void ExchangeArrow() {
         GameObject.FindGameObjectWithTag("SpellController").GetComponent<SpellController>().loaded = Arrow;
     }

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['name',['name',['../class_spell.html#ae6a6af372417cf9f204db6ea1cb18de6',1,'Spell']]],
-  ['none',['none',['../class_pickup.html#a0efb7ce09074cb52b6097c80ce99ab6da334c4a4c42fdb79d7ebc3e73b517e6f8',1,'Pickup']]]
+  ['nav',['nav',['../class_mob_health.html#afb9d2d290a111506515407311408ed98',1,'MobHealth']]],
+  ['navspeed',['navSpeed',['../class_mob_health.html#ac5aa23c1785ac8bdde4ca35b04b8967a',1,'MobHealth']]]
 ];
