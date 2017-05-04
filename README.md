@@ -69,5 +69,8 @@ Iterfall, a mix of agile and waterfall. Focusing on sprintbased development cycl
 ## Project Plan
 ![project](https://puu.sh/u6dqd/8710624e34.png)
 
+## Organization
+All of the code that we wrote is in /Assets/Scripts. Test cases are in the unit_testing branch. Auto-documenter documents are in /AutoDocs. 
+
 ## To Play
 Go to the folder labeled "Builds" and, depending on your OS, find the executable file to play the game!
